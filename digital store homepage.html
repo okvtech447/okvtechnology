@@ -1,0 +1,609 @@
+<html><head><base href="https://okvdigitalstore.com"><title>OKV Digital Store - Your One-Stop Shop for Digital Products</title>
+<style>
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideInFromLeft {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInFromRight {
+        0% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
+    :root {
+        --primary-blue: #3498db;
+        --dark-blue: #2980b9;
+        --light-gray: #f8f9fa;
+        --medium-gray: #95a5a6;
+        --dark-gray: #34495e;
+        --accent-color: #e74c3c;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--dark-gray);
+        background-color: var(--light-gray);
+    }
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .header {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        animation: slideInFromTop 0.5s ease-out;
+    }
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+    }
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-blue);
+        transition: color 0.3s ease;
+    }
+    .logo:hover {
+        color: var(--dark-blue);
+    }
+    .nav-menu {
+        display: flex;
+        gap: 1.5rem;
+    }
+    .nav-menu a {
+        color: var(--dark-gray);
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .nav-menu a:hover {
+        color: var(--primary-blue);
+        transform: translateY(-2px);
+    }
+    .search-bar {
+        display: flex;
+        align-items: center;
+    }
+    .search-bar input {
+        padding: 0.5rem;
+        border: 1px solid var(--medium-gray);
+        border-radius: 4px 0 0 4px;
+        outline: none;
+        transition: box-shadow 0.3s ease;
+    }
+    .search-bar input:focus {
+        box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.5);
+    }
+    .search-bar button {
+        background-color: var(--primary-blue);
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border-radius: 0 4px 4px 0;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .search-bar button:hover {
+        background-color: var(--dark-blue);
+        transform: translateY(-2px);
+    }
+    .cart-icon {
+        font-size: 1.2rem;
+        cursor: pointer;
+        color: var(--dark-gray);
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .cart-icon:hover {
+        color: var(--primary-blue);
+        transform: scale(1.1);
+    }
+    .hero-section {
+        background: linear-gradient(rgba(52, 152, 219, 0.8), rgba(52, 152, 219, 0.8)), url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 6rem 0;
+        animation: fadeIn 1s ease-out;
+    }
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        animation: slideInFromLeft 1s ease-out;
+    }
+    .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        animation: slideInFromRight 1s ease-out;
+    }
+    .cta-button {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        margin: 0.5rem;
+        background-color: var(--accent-color);
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        animation: fadeIn 1s ease-out 0.5s both;
+    }
+    .cta-button:hover {
+        background-color: #c0392b;
+        transform: translateY(-3px);
+    }
+    .main-content {
+        padding: 4rem 0;
+        animation: fadeIn 1s ease-out;
+    }
+    .featured-products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+    .product-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: fadeIn 0.5s ease-out;
+    }
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .product-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    .product-card:hover .product-image {
+        transform: scale(1.05);
+    }
+    .product-info {
+        padding: 1.5rem;
+    }
+    .product-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: var(--dark-gray);
+    }
+    .product-category {
+        color: var(--medium-gray);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    .product-price {
+        font-weight: bold;
+        color: var(--primary-blue);
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .buy-now-button {
+        display: block;
+        width: 100%;
+        padding: 0.8rem;
+        background-color: var(--accent-color);
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .buy-now-button:hover {
+        background-color: #c0392b;
+        transform: translateY(-2px);
+    }
+    .testimonials {
+        background-color: white;
+        padding: 4rem 0;
+        animation: fadeIn 1s ease-out;
+    }
+    .testimonial-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    .testimonial {
+        background-color: var(--light-gray);
+        border-radius: 10px;
+        padding: 2rem;
+        max-width: 350px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    .testimonial:hover {
+        transform: translateY(-5px);
+    }
+    .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1rem;
+    }
+    .testimonial-author {
+        font-weight: bold;
+        color: var(--primary-blue);
+    }
+    .newsletter {
+        background-color: var(--primary-blue);
+        color: white;
+        padding: 4rem 0;
+        text-align: center;
+        animation: fadeIn 1s ease-out;
+    }
+    .newsletter-form {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+    .newsletter-form input {
+        padding: 0.8rem;
+        border: none;
+        border-radius: 30px 0 0 30px;
+        width: 300px;
+        outline: none;
+    }
+    .newsletter-form button {
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        cursor: pointer;
+        border-radius: 0 30px 30px 0;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .newsletter-form button:hover {
+        background-color: #c0392b;
+        transform: translateX(2px);
+    }
+    footer {
+        background-color: var(--dark-gray);
+        color: white;
+        padding: 4rem 0 2rem;
+        animation: fadeIn 1s ease-out;
+    }
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    .footer-section h3 {
+        margin-bottom: 1rem;
+        color: var(--primary-blue);
+    }
+    .footer-section a {
+        color: var(--light-gray);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.5rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .footer-section a:hover {
+        color: white;
+        transform: translateX(5px);
+    }
+    .social-icons {
+        display: flex;
+        gap: 1rem;
+    }
+    .social-icons a {
+        color: white;
+        font-size: 1.5rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .social-icons a:hover {
+        color: var(--primary-blue);
+        transform: scale(1.1);
+    }
+    .menu-icon {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    @media (max-width: 768px) {
+        .header-content {
+            flex-wrap: wrap;
+        }
+        .logo {
+            order: 1;
+        }
+        .menu-icon {
+            display: block;
+            order: 2;
+        }
+        .nav-menu {
+            flex-direction: column;
+            width: 100%;
+            display: none;
+            order: 4;
+        }
+        .nav-menu.active {
+            display: flex;
+        }
+        .search-bar {
+            order: 3;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        .cart-icon {
+            order: 2;
+        }
+        .hero-content h1 {
+            font-size: 2rem;
+        }
+        .hero-content p {
+            font-size: 1rem;
+        }
+        .cta-button {
+            display: block;
+            margin: 1rem auto;
+        }
+        .featured-products {
+            grid-template-columns: 1fr;
+        }
+        .testimonial-container {
+            flex-direction: column;
+            align-items: center;
+        }
+        .newsletter-form {
+            flex-direction: column;
+            align-items: center;
+        }
+        .newsletter-form input,
+        .newsletter-form button {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+        }
+        .footer-content {
+            flex-direction: column;
+        }
+    }
+</style>
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">OKV Digital Store</div>
+            <div class="menu-icon">☰</div>
+            <nav class="nav-menu">
+                <a href="/">Home</a>
+                <a href="/products">Products</a>
+                <a href="/about">About Us</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact">Contact Us</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+            <div class="cart-icon">🛒</div>
+        </div>
+    </div>
+</header>
+
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Elevate Your Digital Experience</h1>
+            <p>Discover a world of premium digital products to enhance your life and work.</p>
+            <a href="/products" class="cta-button">Shop Now</a>
+            <a href="/collections" class="cta-button">Explore Collections</a>
+        </div>
+    </div>
+</section>
+
+<main class="main-content">
+    <div class="container">
+        <h2>Featured Products</h2>
+        <div class="featured-products">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI-powered ebook cover design" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">AI Writing Assistant Pro</h3>
+                    <p class="product-category">Software</p>
+                    <p class="product-price">$49.99/month</p>
+                    <a href="/products/ai-writing-assistant-pro" class="buy-now-button">Buy Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1586892477838-2b96e85e0f96?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="3D rendered productivity app interface" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Quantum Productivity Suite</h3>
+                    <p class="product-category">Software Bundle</p>
+                    <p class="product-price">$79.99/year</p>
+                    <a href="/products/quantum-productivity-suite" class="buy-now-button">Buy Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Virtual reality business meeting" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">VR Collaboration Platform</h3>
+                    <p class="product-category">Enterprise Solution</p>
+                    <p class="product-price">$199.99/month</p>
+                    <a href="/products/vr-collaboration-platform" class="buy-now-button">Buy Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Futuristic podcast studio setup" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Future Tech Insights</h3>
+                    <p class="product-category">Premium Podcast</p>
+                    <p class="product-price">$14.99/month</p>
+                    <a href="/products/future-tech-insights" class="buy-now-button">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<section class="testimonials">
+    <div class="container">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p class="testimonial-text">"The AI Writing Assistant Pro has revolutionized my content creation process. It's like having a team of expert writers at my fingertips!"</p>
+                <p class="testimonial-author">- Alex Chen, Content Creator</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">"Quantum Productivity Suite has transformed how our team operates. The AI-driven insights have boosted our efficiency by 300%!"</p>
+                <p class="testimonial-author">- Sarah Johnson, CEO</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">"The VR Collaboration Platform has made remote work feel truly immersive. It's the closest thing to being in the office, minus the commute!"</p>
+                <p class="testimonial-author">- Michael Torres, Project Manager</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="newsletter">
+    <div class="container">
+        <h2>Stay Ahead of the Digital Curve</h2>
+        <p>Subscribe to our newsletter for exclusive offers, cutting-edge product updates, and expert digital insights.</p>
+        <form class="newsletter-form" action="/subscribe" method="GET">
+            <input type="email" name="email" placeholder="Enter your email address" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="/about">About Us</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/faq">FAQ</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@okvdigitalstore.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com/okvdigitalstore" target="_blank" title="Facebook">📘</a>
+                    <a href="https://twitter.com/okvdigitalstore" target="_blank" title="Twitter">🐦</a>
+                    <a href="https://instagram.com/okvdigitalstore" target="_blank" title="Instagram">📷</a>
+                    <a href="https://linkedin.com/company/okvdigitalstore" target="_blank" title="LinkedIn">💼</a>
+                </div>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem;">© 2023 OKV Digital Store. All rights reserved. Pioneering the future of digital products.</p>
+    </div>
+</footer>
+
+<script>
+    document.querySelector('.menu-icon').addEventListener('click', function() {
+        document.querySelector('.nav-menu').classList.toggle('active');
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Lazy loading images
+    document.addEventListener("DOMContentLoaded", function() {
+        var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+        if ("IntersectionObserver" in window) {
+            let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        let lazyImage = entry.target;
+                        lazyImage.src = lazyImage.dataset.src;
+                        lazyImage.classList.remove("lazy");
+                        lazyImageObserver.unobserve(lazyImage);
+                    }
+                });
+            });
+
+            lazyImages.forEach(function(lazyImage) {
+                lazyImageObserver.observe(lazyImage);
+            });
+        }
+    });
+
+    // Add animation to products on scroll
+    const animateOnScroll = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    };
+
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver(animateOnScroll, options);
+    const products = document.querySelectorAll('.product-card');
+    products.forEach(product => observer.observe(product));
+
+    // Add pulse animation to CTA buttons
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    ctaButtons.forEach(button => {
+        button.addEventListener('mouseover', () => {
+            button.style.animation = 'pulse 0.5s infinite';
+        });
+        button.addEventListener('mouseout', () => {
+            button.style.animation = 'none';
+        });
+    });
+</script>
+</body>
+</html>

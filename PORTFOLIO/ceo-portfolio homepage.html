@@ -1,0 +1,627 @@
+<html><head><base href="https://okvtechnology.example.com/ceo-portfolio">
+<title>John Smith - CEO Portfolio | OKV Technology</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+
+  nav ul li {
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #f0f0f0;
+  }
+
+  .menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+  }
+
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #0066cc;
+  }
+
+  .owner-profile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .owner-image {
+    flex: 1 1 300px;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .owner-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .owner-info {
+    flex: 1 1 500px;
+  }
+
+  .owner-info h2 {
+    font-size: 32px;
+    color: #0066cc;
+    margin-bottom: 20px;
+  }
+
+  .owner-info p {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .achievements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .achievement-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .achievement-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .achievement-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #0066cc;
+  }
+
+  .achievement-card p {
+    margin-bottom: 20px;
+  }
+
+  .achievement-card .date {
+    font-style: italic;
+    color: #666;
+  }
+
+  .books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .book {
+    width: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .book:hover {
+    transform: translateY(-5px);
+  }
+
+  .book img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+
+  .book-info {
+    padding: 20px;
+  }
+
+  .book-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0066cc;
+  }
+
+  .book-info p {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .testimonial {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .testimonial p {
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-author {
+    font-weight: 700;
+    color: #0066cc;
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .project-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .project-info {
+    padding: 20px;
+  }
+
+  .project-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #0066cc;
+  }
+
+  .project-info p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+
+  .project-link {
+    display: inline-block;
+    background-color: #0066cc;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .project-link:hover {
+    background-color: #004c99;
+  }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .skill-tag {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  .social-links {
+    margin-top: 20px;
+  }
+
+  .social-links a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+
+  .social-links a:hover {
+    color: #0066cc;
+  }
+
+  @media (max-width: 768px) {
+    .header-content {
+      position: relative;
+    }
+
+    .menu-icon {
+      display: block;
+    }
+
+    nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #0066cc;
+      padding: 20px;
+    }
+
+    nav.active {
+      display: block;
+    }
+
+    nav ul {
+      flex-direction: column;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+    }
+
+    .hero {
+      height: auto;
+      padding: 100px 0;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+    }
+
+    .hero p {
+      font-size: 18px;
+    }
+
+    .section-title {
+      font-size: 28px;
+    }
+
+    .owner-profile {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .owner-image {
+      margin-bottom: 30px;
+    }
+
+    .achievement-card, .book, .testimonial, .project-card {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 28px;
+    }
+
+    .hero p {
+      font-size: 16px;
+    }
+
+    .section-title {
+      font-size: 24px;
+    }
+
+    .owner-info h2 {
+      font-size: 28px;
+    }
+
+    .owner-info p {
+      font-size: 16px;
+    }
+
+    .achievement-card h3 {
+      font-size: 20px;
+    }
+
+    .book-info h3 {
+      font-size: 16px;
+    }
+
+    .project-info h3 {
+      font-size: 18px;
+    }
+
+    .skill-tag {
+      font-size: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">OKV Technology</div>
+        <div class="menu-icon">&#9776;</div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>John Smith</h1>
+      <p>Visionary Leader & CEO of OKV Technology</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="owner-profile">
+        <div class="owner-image">
+          <img src="https://thispersondoesnotexist.com/" alt="John Smith - CEO of OKV Technology" width="300" height="300">
+        </div>
+        <div class="owner-info">
+          <h2>John Smith</h2>
+          <p>John Smith is the visionary founder and CEO of OKV Technology, a pioneering force in the tech industry. With over two decades of experience in software development and business leadership, John has steered OKV Technology to become a global leader in AI, blockchain, and IoT solutions.</p>
+          <p>A computer science graduate from MIT, John's passion for technology and innovation has been the driving force behind OKV's groundbreaking projects and consistent growth. His forward-thinking approach and ability to anticipate market trends have positioned OKV Technology at the forefront of the digital revolution.</p>
+          <p>John is also a respected thought leader in the tech community, frequently speaking at international conferences and contributing to leading technology publications. His commitment to fostering innovation and nurturing young talent has made OKV Technology a hotbed for cutting-edge ideas and solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Career Achievements</h2>
+      <div class="achievements">
+        <div class="achievement-card">
+          <h3>Tech Innovator of the Year</h3>
+          <p>Recognized for groundbreaking contributions to AI and blockchain integration in enterprise solutions.</p>
+          <span class="date">2022</span>
+        </div>
+        <div class="achievement-card">
+          <h3>Forbes 30 Under 30</h3>
+          <p>Named one of the most influential young entrepreneurs in the technology sector.</p>
+          <span class="date">2015</span>
+        </div>
+        <div class="achievement-card">
+          <h3>OKV Technology IPO</h3>
+          <p>Successfully led the company to its initial public offering, valuing the company at $10 billion.</p>
+          <span class="date">2020</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Key Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="AI-Driven Supply Chain Optimization" width="300" height="200">
+          <div class="project-info">
+            <h3>AI-Driven Supply Chain Optimization</h3>
+            <p>Revolutionized supply chain management for Fortune 500 companies using advanced AI algorithms.</p>
+            <a href="/projects/ai-supply-chain" class="project-link">Learn More</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Blockchain-Based Voting System" width="300" height="200">
+          <div class="project-info">
+            <h3>Blockchain-Based Voting System</h3>
+            <p>Developed a secure and transparent voting system using blockchain technology, piloted in several countries.</p>
+            <a href="/projects/blockchain-voting" class="project-link">Learn More</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Smart City Infrastructure" width="300" height="200">
+          <div class="project-info">
+            <h3>Smart City Infrastructure</h3>
+            <p>Led the development of IoT-based smart city solutions, improving urban living in major metropolitan areas.</p>
+            <a href="/projects/smart-city" class="project-link">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Skills & Expertise</h2>
+      <div class="skills">
+        <span class="skill-tag">Artificial Intelligence</span>
+        <span class="skill-tag">Blockchain</span>
+        <span class="skill-tag">IoT</span>
+        <span class="skill-tag">Big Data Analytics</span>
+        <span class="skill-tag">Cloud Computing</span>
+        <span class="skill-tag">Strategic Leadership</span>
+        <span class="skill-tag">Innovation Management</span>
+        <span class="skill-tag">Digital Transformation</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Published Books</h2>
+      <div class="books">
+        <div class="book">
+          <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80" alt="The Future of Tech" width="250" height="350">
+          <div class="book-info">
+            <h3>The Future of Tech</h3>
+            <p>An exploration of emerging technologies and their impact on society.</p>
+          </div>
+        </div>
+        <div class="book">
+          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Digital Transformation Handbook" width="250" height="350">
+          <div class="book-info">
+            <h3>Digital Transformation Handbook</h3>
+            <p>A comprehensive guide for businesses navigating the digital age.</p>
+          </div>
+        </div>
+        <div class="book">
+          <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="AI Revolution" width="250" height="350">
+          <div class="book-info">
+            <h3>AI Revolution</h3>
+            <p>Insights into the transformative power of artificial intelligence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Testimonials</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <p>"John's visionary leadership has transformed OKV Technology into a powerhouse of innovation. His insights have been invaluable to our industry."</p>
+          <span class="testimonial-author">- Sarah Lee, CEO of TechGiant</span>
+        </div>
+        <div class="testimonial">
+          <p>"Working with John has been an incredible journey. His passion for technology and ability to inspire others is unmatched."</p>
+          <span class="testimonial-author">- Michael Chen, CTO of InnovateNow</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 OKV Technology. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://twitter.com/johnsmith" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com/in/johnsmith" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://medium.com/@johnsmith" target="_blank"><i class="fab fa-medium"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuIcon = document.querySelector('.menu-icon');
+      const nav = document.querySelector('nav');
+
+      menuIcon.addEventListener('click', function() {
+        nav.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

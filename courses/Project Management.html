@@ -1,0 +1,467 @@
+<html><head><base href="https://okvtechnology.example.com/courses/Project%20Management"><title>Project Management Course - OKV Technology</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f9;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+
+  nav ul li {
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #0066cc;
+  }
+
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+  }
+
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .course-details {
+    background-color: #fff;
+    padding: 50px 0;
+  }
+
+  .course-overview {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .overview-text {
+    flex: 1;
+    padding-right: 40px;
+  }
+
+  .overview-stats {
+    flex: 0 0 300px;
+    background-color: #f4f7f9;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .stat-item {
+    margin-bottom: 15px;
+  }
+
+  .stat-item strong {
+    display: block;
+    font-size: 18px;
+    color: #0066cc;
+  }
+
+  .curriculum {
+    margin-top: 40px;
+  }
+
+  .curriculum h2 {
+    margin-bottom: 20px;
+  }
+
+  .module {
+    background-color: #f4f7f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .module h3 {
+    color: #0066cc;
+    margin-bottom: 10px;
+  }
+
+  .enroll-section {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  .enroll-btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #0066cc;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .enroll-btn:hover {
+    background-color: #f4f7f9;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    flex: 1;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    min-width: 200px;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .footer-section ul {
+    list-style-type: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section ul li a:hover {
+    color: #0066cc;
+  }
+
+  .social-icons a {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #0066cc;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  @media screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    nav {
+      display: none;
+      width: 100%;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav.active {
+      display: block;
+    }
+
+    nav ul {
+      flex-direction: column;
+    }
+
+    nav ul li {
+      margin: 0;
+      text-align: center;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 10px;
+    }
+
+    .course-overview {
+      flex-direction: column;
+    }
+
+    .overview-text {
+      padding-right: 0;
+      margin-bottom: 30px;
+    }
+
+    .overview-stats {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .hero h1 {
+      font-size: 28px;
+    }
+
+    .hero p {
+      font-size: 16px;
+    }
+
+    .enroll-btn {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    .footer-section {
+      flex-basis: 100%;
+      margin-right: 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">OKV Technology</a>
+        <div class="menu-toggle">&#9776;</div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Project Management Course</h1>
+      <p>Master the art of leading successful projects in the tech industry</p>
+    </div>
+  </section>
+
+  <section class="course-details">
+    <div class="container">
+      <div class="course-overview">
+        <div class="overview-text">
+          <h2>Course Overview</h2>
+          <p>Our Project Management course is designed to equip you with the essential skills and knowledge needed to successfully lead and manage projects in the fast-paced tech industry. This comprehensive program covers traditional and agile project management methodologies, with a focus on their application in technology-driven environments.</p>
+          <p>Throughout this course, you'll learn how to initiate, plan, execute, monitor, and close projects effectively. You'll gain hands-on experience with industry-standard tools and techniques, and develop the leadership skills necessary to guide cross-functional teams to project success. Whether you're an aspiring project manager or a professional looking to enhance your project management skills, this course will prepare you for the challenges of managing complex tech projects.</p>
+        </div>
+        <div class="overview-stats">
+          <div class="stat-item">
+            <strong>Duration</strong>
+            10 weeks
+          </div>
+          <div class="stat-item">
+            <strong>Skill Level</strong>
+            Beginner to Intermediate
+          </div>
+          <div class="stat-item">
+            <strong>Prerequisites</strong>
+            Basic understanding of business processes
+          </div>
+          <div class="stat-item">
+            <strong>Certificate</strong>
+            OKV Technology Project Management Certification
+          </div>
+        </div>
+      </div>
+
+      <div class="curriculum">
+        <h2>Course Curriculum</h2>
+        <div class="module">
+          <h3>Module 1: Introduction to Project Management</h3>
+          <ul>
+            <li>Overview of project management concepts and methodologies</li>
+            <li>The project life cycle and project management processes</li>
+            <li>Role of the project manager and key stakeholders</li>
+            <li>Project management in the context of technology and software development</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 2: Project Initiation and Planning</h3>
+          <ul>
+            <li>Developing project charters and scope statements</li>
+            <li>Stakeholder analysis and management</li>
+            <li>Creating work breakdown structures (WBS)</li>
+            <li>Time and cost estimation techniques</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 3: Agile Project Management</h3>
+          <ul>
+            <li>Agile principles and methodologies (Scrum, Kanban, XP)</li>
+            <li>Sprint planning and backlog management</li>
+            <li>Agile estimation and velocity tracking</li>
+            <li>Scaling agile for larger projects</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 4: Risk Management and Quality Assurance</h3>
+          <ul>
+            <li>Identifying and assessing project risks</li>
+            <li>Developing risk response strategies</li>
+            <li>Quality planning and control in tech projects</li>
+            <li>Implementing continuous improvement processes</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 5: Project Execution, Monitoring, and Control</h3>
+          <ul>
+            <li>Leading and managing project teams</li>
+            <li>Communication strategies for project success</li>
+            <li>Performance tracking and earned value management</li>
+            <li>Change management and scope control</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="enroll-section">
+    <div class="container">
+      <h2>Ready to Lead Successful Tech Projects?</h2>
+      <p>Enroll now and become a skilled project manager!</p>
+      <a href="/enroll/project-management" class="enroll-btn">Enroll Now</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>OKV Technology is a leading provider of cutting-edge tech education, empowering individuals to excel in the digital world.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b22252d240b24203d3f2e2823252427242c3265282426">[email&#160;protected]</a></p>
+          <p>Phone: +1 (555) 123-4567</p>
+          <p>Address: 123 Tech Street, Silicon Valley, CA 94000</p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://facebook.com/okvtechnology" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/okvtechnology" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/company/okvtechnology" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://instagram.com/okvtechnology" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 OKV Technology. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('nav').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

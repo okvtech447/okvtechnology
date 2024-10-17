@@ -1,0 +1,417 @@
+<html><head><base href="https://okvtechnology.example.com/services/software%20solutions/explore%20more">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore More Software Solutions - OKV Technology</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+  :root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-bg: #ecf0f1;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-left: 20px;
+  }
+
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--secondary-color);
+  }
+
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+    background-size: cover;
+    background-position: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 60px;
+    padding: 2rem 0;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: var(--accent-color);
+  }
+
+  .solutions {
+    padding: 4rem 0;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .solution-card {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .solution-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .solution-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+
+  .solution-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .features {
+    background-color: var(--light-bg);
+    padding: 4rem 0;
+  }
+
+  .features-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-right: 1rem;
+  }
+
+  .cta {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  .cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+
+  footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+
+    .hero-content p {
+      font-size: 1rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+    }
+
+    .cta p {
+      font-size: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo">OKV Technology</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Explore Our Comprehensive Software Solutions</h1>
+      <p>Discover how our innovative technologies can elevate your business to new heights.</p>
+      <a href="#solutions" class="btn">View All Solutions</a>
+    </div>
+  </section>
+
+  <section id="solutions" class="solutions">
+    <div class="container">
+      <h2 class="section-title">Our Comprehensive Software Solutions</h2>
+      <div class="solutions-grid">
+        <div class="solution-card">
+          <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Enterprise Resource Planning (ERP)" width="300" height="200">
+          <h3>Enterprise Resource Planning (ERP)</h3>
+          <p>Streamline your business processes with our comprehensive ERP solutions.</p>
+          <a href="/services/erp" class="btn">Learn More</a>
+        </div>
+        <div class="solution-card">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Customer Relationship Management (CRM)" width="300" height="200">
+          <h3>Customer Relationship Management (CRM)</h3>
+          <p>Enhance customer interactions and drive sales with our powerful CRM systems.</p>
+          <a href="/services/crm" class="btn">Learn More</a>
+        </div>
+        <div class="solution-card">
+          <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1706&q=80" alt="Artificial Intelligence & Machine Learning" width="300" height="200">
+          <h3>Artificial Intelligence & Machine Learning</h3>
+          <p>Leverage the power of AI and ML to gain valuable insights and automate processes.</p>
+          <a href="/services/ai-ml" class="btn">Learn More</a>
+        </div>
+        <div class="solution-card">
+          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Internet of Things (IoT)" width="300" height="200">
+          <h3>Internet of Things (IoT)</h3>
+          <p>Connect and control your devices with our innovative IoT solutions.</p>
+          <a href="/services/iot" class="btn">Learn More</a>
+        </div>
+        <div class="solution-card">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1776&q=80" alt="Blockchain Technology" width="300" height="200">
+          <h3>Blockchain Technology</h3>
+          <p>Secure your transactions and data with our advanced blockchain solutions.</p>
+          <a href="/services/blockchain" class="btn">Learn More</a>
+        </div>
+        <div class="solution-card">
+          <img src="https://images.unsplash.com/photo-1484083020704-10c682b2c8a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="E-commerce Solutions" width="300" height="200">
+          <h3>E-commerce Solutions</h3>
+          <p>Build and scale your online business with our robust e-commerce platforms.</p>
+          <a href="/services/ecommerce" class="btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Why Choose Our Solutions?</h2>
+      <div class="features-list">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <div>
+            <h3>Customizable</h3>
+            <p>Tailor-made solutions to fit your unique business needs.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div>
+            <h3>Secure</h3>
+            <p>Advanced security measures to protect your data and systems.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div>
+            <h3>Scalable</h3>
+            <p>Grow your business with solutions that scale effortlessly.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <div>
+            <h3>24/7 Support</h3>
+            <p>Round-the-clock assistance to ensure smooth operations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Transform Your Business?</h2>
+      <p>Let's discuss how our software solutions can help you achieve your goals.</p>
+      <a href="/contact" class="btn">Schedule a Consultation</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 OKV Technology. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+  <script>
+    // Mobile menu toggle
+    const createMobileMenu = () => {
+      const nav = document.querySelector('nav');
+      const mobileMenuBtn = document.createElement('button');
+      mobileMenuBtn.innerHTML = '☰';
+      mobileMenuBtn.classList.add('mobile-menu-btn');
+      nav.appendChild(mobileMenuBtn);
+
+      const navLinks = document.querySelector('.nav-links');
+      mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+
+      // Add styles for mobile menu
+      const style = document.createElement('style');
+      style.textContent = `
+        @media screen and (max-width: 768px) {
+          .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+          }
+          .nav-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 0;
+          }
+          .nav-links.show {
+            display: flex;
+          }
+          .nav-links li {
+            margin: 0.5rem 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    };
+
+    createMobileMenu();
+  </script>
+</body>
+</html>

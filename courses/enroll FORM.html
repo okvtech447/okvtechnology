@@ -1,0 +1,284 @@
+<html><head><base href="https://okvtechnology.example.com/enroll/website-development"><title>Course Enrollment - OKV Technology</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f9;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+  }
+
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .enrollment-form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 12 12'%3E%3Cpath d='M10.293 3.293 6 7.586 1.707 3.293A1 1 0 0 0 .293 4.707l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 1 0-1.414-1.414z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+
+  .form-group textarea {
+    height: 100px;
+    resize: vertical;
+  }
+
+  .photo-upload {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .photo-upload input[type="file"] {
+    display: none;
+  }
+
+  .photo-upload label {
+    background-color: #f0f0f0;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .photo-name {
+    font-size: 14px;
+    color: #666;
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .submit-btn {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+
+  .submit-btn:hover {
+    background-color: #0052a3;
+  }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+
+    .hero {
+      height: 180px;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+    }
+
+    .enrollment-form {
+      padding: 20px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .hero {
+      height: 150px;
+    }
+
+    .hero h1 {
+      font-size: 24px;
+    }
+
+    .enrollment-form {
+      padding: 15px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-size: 14px;
+    }
+
+    .submit-btn {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">OKV Technology</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Course Enrollment</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <form class="enrollment-form" action="/submit-enrollment" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="full-name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="course">Select Course</label>
+          <select id="course" name="course" required>
+            <option value="">Choose a course</option>
+            <option value="web-development">Website Development</option>
+            <option value="mobile-app">Mobile App Development</option>
+            <option value="data-science">Data Science and Analytics</option>
+            <option value="cybersecurity">Cybersecurity</option>
+            <option value="ai-ml">Artificial Intelligence and Machine Learning</option>
+            <option value="cloud-computing">Cloud Computing</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="lesson-format">Preferred Lesson Format</label>
+          <select id="lesson-format" name="lesson-format" required>
+            <option value="">Choose a format</option>
+            <option value="online-live">Online Live Classes</option>
+            <option value="online-self-paced">Online Self-Paced</option>
+            <option value="in-person">In-Person Classes</option>
+            <option value="hybrid">Hybrid (Online + In-Person)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="start-date">Preferred Start Date</label>
+          <input type="date" id="start-date" name="start-date" required>
+        </div>
+        <div class="form-group">
+          <label for="photo">Upload Passport Photo</label>
+          <div class="photo-upload">
+            <label for="photo">Choose File</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+            <span class="photo-name" id="photo-name">No file chosen</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="comments">Additional Comments (Optional)</label>
+          <textarea id="comments" name="comments"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit Enrollment</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('photo').addEventListener('change', function(e) {
+      var fileName = e.target.files[0].name;
+      document.getElementById('photo-name').textContent = fileName;
+    });
+  </script>
+</body>
+</html>

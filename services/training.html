@@ -1,0 +1,539 @@
+<html><head><title>Education Services - OKV Technology</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f9;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+
+  nav ul li {
+    margin-left: 30px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #0066cc;
+  }
+
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+  }
+
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-heading {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #0066cc;
+  }
+
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .course-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .course-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .course-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .course-content {
+    padding: 20px;
+  }
+
+  .course-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #0066cc;
+  }
+
+  .course-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .course-details {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .enroll-btn {
+    display: inline-block;
+    background-color: #0066cc;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+
+  .enroll-btn:hover {
+    background-color: #0052a3;
+  }
+
+  .features {
+    background-color: #fff;
+    padding: 80px 0;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  .feature-card {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .feature-icon {
+    font-size: 48px;
+    color: #0066cc;
+    margin-bottom: 20px;
+  }
+
+  .feature-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #0066cc;
+  }
+
+  .feature-description {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .cta {
+    background-color: #0066cc;
+    color: #fff;
+    text-align: center;
+    padding: 80px 0;
+  }
+
+  .cta h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .cta p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #0066cc;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-btn:hover {
+    background-color: #f0f0f0;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    flex: 1;
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .footer-section ul {
+    list-style-type: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section ul li a:hover {
+    color: #0066cc;
+  }
+
+  .social-icons a {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #0066cc;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  @media screen and (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    nav ul {
+      margin-top: 20px;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    .hero {
+      height: 300px;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+    }
+
+    .hero p {
+      font-size: 16px;
+    }
+
+    .section-heading {
+      font-size: 28px;
+    }
+
+    .cta h2 {
+      font-size: 28px;
+    }
+
+    .cta p {
+      font-size: 16px;
+    }
+  }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Education Services</h1>
+      <p>Empowering individuals and organizations with cutting-edge technology skills</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">Our Courses</h2>
+      <div class="courses-grid">
+        <div class="course-card">
+          <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+          <div class="course-content">
+            <h3 class="course-title">Website Development</h3>
+            <p class="course-description">Learn to create responsive and dynamic websites using the latest web technologies.</p>
+            <p class="course-details"><strong>Duration:</strong> 12 weeks</p>
+            <p class="course-details"><strong>Prerequisites:</strong> Basic HTML and CSS knowledge</p>
+            <a href="courses/website-development.html" class="enroll-btn">View Details & Enroll</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1506&q=80');"></div>
+          <div class="course-content">
+            <h3 class="course-title">Software Development</h3>
+            <p class="course-description">Master the art of creating robust and scalable software applications.</p>
+            <p class="course-details"><strong>Duration:</strong> 16 weeks</p>
+            <p class="course-details"><strong>Prerequisites:</strong> Basic programming knowledge</p>
+            <a href="courses/website-development.html" class="enroll-btn">View Details & Enroll</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');"></div>
+          <div class="course-content">
+            <h3 class="course-title">Graphics Design</h3>
+            <p class="course-description">Unleash your creativity and learn industry-standard design tools and techniques.</p>
+            <p class="course-details"><strong>Duration:</strong> 8 weeks</p>
+            <p class="course-details"><strong>Prerequisites:</strong> None</p>
+            <a href="courses/graphics-design.html" class="enroll-btn">View Details & Enroll</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1574717025058-2f8737d2e2b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+          <div class="course-content">
+            <h3 class="course-title">Video Editing</h3>
+            <p class="course-description">Learn to create stunning videos with professional editing techniques and tools.</p>
+            <p class="course-details"><strong>Duration:</strong> 10 weeks</p>
+            <p class="course-details"><strong>Prerequisites:</strong> Basic computer skills</p>
+            <a href="courses/video-editing.html" class="enroll-btn">View Details & Enroll</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+          <div class="course-content">
+            <h3 class="course-title">MS Suite Packages</h3>
+            <p class="course-description">Master essential Microsoft Office tools for enhanced productivity in the workplace.</p>
+            <p class="course-details"><strong>Duration:</strong> 6 weeks</p>
+            <p class="course-details"><strong>Prerequisites:</strong> Basic computer skills</p>
+            <a href="courses/ms-suite.html" class="enroll-btn">View Details & Enroll</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+          <div class="course-content">
+            <h3 class="course-title">Ethical Hacking</h3>
+            <p class="course-description">Learn to identify and exploit vulnerabilities in computer systems to improve cybersecurity.</p>
+            <p class="course-details"><strong>Duration:</strong> 14 weeks</p>
+            <p class="course-details"><strong>Prerequisites:</strong> Basic networking and programming knowledge</p>
+            <a href="courses/etical-hacking.html" class="enroll-btn">View Details & Enroll</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1587440871875-191322ee64b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');"></div>
+          <div class="course-content">
+            <h3 class="course-title">UI & UX Design</h3>
+            <p class="course-description">Master the art of creating intuitive and visually appealing user interfaces and experiences.</p>
+            <p class="course-details"><strong>Duration:</strong> 10 weeks</p>
+            <p class="course-details"><strong>Prerequisites:</strong> Basic design skills</p>
+            <a href="courses/ui & ux design.html" class="enroll-btn">View Details & Enroll</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+          <div class="course-content">
+            <h3 class="course-title">Data Analysis</h3>
+            <p class="course-description">Learn to extract insights from complex datasets using statistical methods and visualization techniques.</p>
+            <p class="course-details"><strong>Duration:</strong> 12 weeks</p>
+            <p class="course-details"><strong>Prerequisites:</strong> Basic statistics and spreadsheet knowledge</p>
+            <a href="courses/data-analysi.html" class="enroll-btn">View Details & Enroll</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1334&q=80');"></div>
+          <div class="course-content">
+            <h3 class="course-title">Computer Networking</h3>
+            <p class="course-description">Gain a comprehensive understanding of network protocols, topologies, and troubleshooting techniques.</p>
+            <p class="course-details"><strong>Duration:</strong> 10 weeks</p>
+            <p class="course-details"><strong>Prerequisites:</strong> Basic computer knowledge</p>
+            <a href="courses/computer-networking" class="enroll-btn">View Details & Enroll</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1544383835-bda2bc66a55d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1336&q=80');"></div>
+          <div class="course-content">
+            <h3 class="course-title">Database Management</h3>
+            <p class="course-description">Learn to design, implement, and manage relational databases for efficient data storage and retrieval.</p>
+            <p class="course-details"><strong>Duration:</strong> 8 weeks</p>
+            <p class="course-details"><strong>Prerequisites:</strong> Basic SQL knowledge</p>
+            <a href="/courses/database-management" class="enroll-btn">View Details & Enroll</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2 class="section-heading">Why Choose Our Education Services</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3 class="feature-title">Industry-Relevant Curriculum</h3>
+          <p class="feature-description">Our courses are designed in collaboration with industry experts to ensure you learn the most in-demand skills.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-users"></i></div>
+          <h3 class="feature-title">Expert Instructors</h3>
+          <p class="feature-description">Learn from experienced professionals who bring real-world knowledge and insights to the classroom.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-project-diagram"></i></div>
+          <h3 class="feature-title">Hands-On Projects</h3>
+          <p class="feature-description">Apply your skills to real-world projects and build a portfolio that showcases your abilities to potential employers.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+          <h3 class="feature-title">Industry Certifications</h3>
+          <p class="feature-description">Prepare for and earn recognized certifications that validate your skills and boost your career prospects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Advance Your Tech Career?</h2>
+      <p>Join our cutting-edge education programs and unlock your potential in the world of technology.</p>
+      <a href="/contact" class="cta-btn">Get Started Today</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>OKV Technology is a leading provider of innovative tech solutions and education services, empowering individuals and businesses to thrive in the digital age.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fb92959d94bb94908d8f9e9893959497949c82d5989496">[email&#160;protected]</a></p>
+          <p>Phone: (123) 456-7890</p>
+          <p>Address: 123 Tech Street, Innovation City, TC 12345</p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 OKV Technology. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Add any necessary JavaScript here
+  </script>
+</body>
+</html>

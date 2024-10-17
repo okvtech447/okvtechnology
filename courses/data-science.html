@@ -1,0 +1,501 @@
+<html><head><base href="https://okvtechnology.example.com/courses/data-science"><title>Data Science Course - OKV Technology</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f9;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+
+  nav ul li {
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #0066cc;
+  }
+
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1527474305487-b87b222841cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+  }
+
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .course-details {
+    background-color: #fff;
+    padding: 50px 0;
+  }
+
+  .course-overview {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .overview-text {
+    flex: 1;
+    padding-right: 40px;
+  }
+
+  .overview-stats {
+    flex: 0 0 300px;
+    background-color: #f4f7f9;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .stat-item {
+    margin-bottom: 15px;
+  }
+
+  .stat-item strong {
+    display: block;
+    font-size: 18px;
+    color: #0066cc;
+  }
+
+  .curriculum {
+    margin-top: 40px;
+  }
+
+  .curriculum h2 {
+    margin-bottom: 20px;
+  }
+
+  .module {
+    background-color: #f4f7f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .module h3 {
+    color: #0066cc;
+    margin-bottom: 10px;
+  }
+
+  .enroll-section {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  .enroll-btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #0066cc;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .enroll-btn:hover {
+    background-color: #f4f7f9;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    flex: 1;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    min-width: 200px;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .footer-section ul {
+    list-style-type: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section ul li a:hover {
+    color: #0066cc;
+  }
+
+  .social-icons a {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #0066cc;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  @media screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    nav {
+      display: none;
+      width: 100%;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav.active {
+      display: block;
+    }
+
+    nav ul {
+      flex-direction: column;
+    }
+
+    nav ul li {
+      margin: 0;
+      text-align: center;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 10px;
+    }
+
+    .hero {
+      height: 300px;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+    }
+
+    .hero p {
+      font-size: 16px;
+    }
+
+    .course-overview {
+      flex-direction: column;
+    }
+
+    .overview-text {
+      padding-right: 0;
+      margin-bottom: 30px;
+    }
+
+    .overview-stats {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .hero {
+      height: 250px;
+    }
+
+    .hero h1 {
+      font-size: 24px;
+    }
+
+    .hero p {
+      font-size: 14px;
+    }
+
+    .enroll-btn {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    .footer-section {
+      flex-basis: 100%;
+      margin-right: 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">OKV Technology</a>
+        <div class="menu-toggle">&#9776;</div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Data Science Course</h1>
+      <p>Master the art of turning data into actionable insights</p>
+    </div>
+  </section>
+
+  <section class="course-details">
+    <div class="container">
+      <div class="course-overview">
+        <div class="overview-text">
+          <h2>Course Overview</h2>
+          <p>Our Data Science course is designed to transform you into a skilled data scientist, capable of extracting valuable insights from complex datasets and driving data-informed decision-making. This comprehensive program covers all aspects of the data science pipeline, from data collection and preprocessing to advanced machine learning techniques and data visualization.</p>
+          <p>Throughout the course, you'll work on real-world projects, giving you hands-on experience with industry-standard tools and technologies. You'll learn to use Python, R, SQL, and various data science libraries to solve complex problems and create predictive models. By the end of the course, you'll have a robust portfolio showcasing your ability to tackle real-world data challenges.</p>
+        </div>
+        <div class="overview-stats">
+          <div class="stat-item">
+            <strong>Duration</strong>
+            16 weeks
+          </div>
+          <div class="stat-item">
+            <strong>Skill Level</strong>
+            Intermediate to Advanced
+          </div>
+          <div class="stat-item">
+            <strong>Prerequisites</strong>
+            Basic programming knowledge, statistics fundamentals
+          </div>
+          <div class="stat-item">
+            <strong>Certificate</strong>
+            Upon completion
+          </div>
+        </div>
+      </div>
+
+      <div class="curriculum">
+        <h2>Course Curriculum</h2>
+        <div class="module">
+          <h3>Module 1: Foundations of Data Science</h3>
+          <ul>
+            <li>Introduction to data science and its applications</li>
+            <li>Python programming for data science</li>
+            <li>Data structures and algorithms</li>
+            <li>Statistics and probability for data science</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 2: Data Collection and Preprocessing</h3>
+          <ul>
+            <li>Data acquisition techniques (APIs, web scraping)</li>
+            <li>Data cleaning and preprocessing</li>
+            <li>Handling missing data and outliers</li>
+            <li>Feature engineering and selection</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 3: Exploratory Data Analysis and Visualization</h3>
+          <ul>
+            <li>Statistical data analysis</li>
+            <li>Data visualization techniques</li>
+            <li>Exploratory data analysis with Python and R</li>
+            <li>Creating interactive dashboards</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 4: Machine Learning Fundamentals</h3>
+          <ul>
+            <li>Supervised and unsupervised learning</li>
+            <li>Classification and regression algorithms</li>
+            <li>Model evaluation and validation techniques</li>
+            <li>Ensemble methods</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 5: Advanced Machine Learning and Deep Learning</h3>
+          <ul>
+            <li>Neural networks and deep learning</li>
+            <li>Natural Language Processing (NLP)</li>
+            <li>Computer Vision</li>
+            <li>Time series analysis and forecasting</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 6: Big Data and Cloud Computing</h3>
+          <ul>
+            <li>Introduction to big data technologies (Hadoop, Spark)</li>
+            <li>Cloud platforms for data science (AWS, Google Cloud)</li>
+            <li>Distributed computing and parallel processing</li>
+            <li>Scalable machine learning</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 7: Data Science in Practice</h3>
+          <ul>
+            <li>End-to-end data science projects</li>
+            <li>Ethical considerations in data science</li>
+            <li>Communicating insights to stakeholders</li>
+            <li>Data science best practices and workflows</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="enroll-section">
+    <div class="container">
+      <h2>Ready to Become a Data Scientist?</h2>
+      <p>Enroll now and start your journey into the exciting world of data science!</p>
+      <a href="/enroll/data-science" class="enroll-btn">Enroll Now</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>OKV Technology is a leading provider of cutting-edge tech education, empowering individuals to excel in the digital world.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b8d1d6ded7f8d7d3ceccdddbd0d6d7d4d7dfc196dbd7d5">[email&#160;protected]</a></p>
+          <p>Phone: +1 (555) 123-4567</p>
+          <p>Address: 123 Tech Street, Silicon Valley, CA 94000</p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 OKV Technology. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('nav').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,494 @@
+<html><head><base href="https://okvtechnology.example.com/services/tech-solutions"><title>Tech Solutions - OKV Technology</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+
+  nav ul li {
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #0066cc;
+  }
+
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 70px;
+  }
+
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 20px;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-heading {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #0066cc;
+  }
+
+  .tech-solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .solution-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .solution-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .solution-icon {
+    font-size: 48px;
+    color: #0066cc;
+    margin-bottom: 20px;
+  }
+
+  .solution-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #0066cc;
+  }
+
+  .solution-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: #0066cc;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #0052a3;
+  }
+
+  .get-started-button {
+    display: block;
+    width: 200px;
+    margin: 40px auto 0;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #00cc66;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .get-started-button:hover {
+    background-color: #00b359;
+    transform: translateY(-3px);
+  }
+
+  .benefits-section {
+    background-color: #e9ecef;
+    padding: 80px 0;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  .benefit-item {
+    text-align: center;
+  }
+
+  .benefit-icon {
+    font-size: 36px;
+    color: #0066cc;
+    margin-bottom: 15px;
+  }
+
+  .benefit-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #0066cc;
+  }
+
+  .case-studies-section {
+    padding: 80px 0;
+  }
+
+  .case-study-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+  }
+
+  .case-study-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .case-study-content {
+    padding: 20px;
+  }
+
+  .case-study-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #0066cc;
+  }
+
+  .case-study-content p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+
+  footer {
+    background-color: #333;
+    color: #ffffff;
+    padding: 40px 0;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    flex: 1;
+    margin-right: 30px;
+    margin-bottom: 20px;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .footer-section ul {
+    list-style-type: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-section ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section ul li a:hover {
+    color: #0066cc;
+  }
+
+  .social-icons {
+    display: flex;
+    margin-top: 15px;
+  }
+
+  .social-icons a {
+    color: #ffffff;
+    font-size: 20px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #0066cc;
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: #0066cc;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .container {
+      padding: 0 30px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+    }
+
+    .hero p {
+      font-size: 16px;
+    }
+
+    .section-heading {
+      font-size: 28px;
+    }
+
+    .solution-card h3 {
+      font-size: 22px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .mobile-menu-toggle {
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+
+    nav {
+      display: none;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    nav.active {
+      display: block;
+    }
+
+    nav ul {
+      flex-direction: column;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+    }
+
+    .hero {
+      height: 300px;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+    }
+
+    .hero p {
+      font-size: 14px;
+    }
+
+    .section-heading {
+      font-size: 24px;
+    }
+
+    .tech-solutions-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .case-study-image {
+      height: 150px;
+    }
+
+    .footer-section {
+      flex-basis: 100%;
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .container {
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 24px;
+    }
+
+    .hero p {
+      font-size: 13px;
+    }
+
+    .section-heading {
+      font-size: 22px;
+    }
+
+    .solution-card h3 {
+      font-size: 20px;
+    }
+
+    .get-started-button {
+      width: 100%;
+    }
+  }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Innovative Tech Solutions</h1>
+      <p>Empowering your business with cutting-edge technology and expert support</p>
+      <a href="#get-started" class="cta-button">Learn More</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">Our Tech Solutions</h2>
+      <div class="tech-solutions-grid">
+        <div class="solution-card">
+          <div class="solution-icon"><i class="fas fa-cloud"></i></div>
+          <h3>Cloud Services</h3>
+          <p>Scalable and secure cloud solutions to optimize your business operations and enhance flexibility.</p>
+          <a href="/services/tech-solutions/cloud" class="cta-button">Learn More</a>
+        </div>
+        <div class="solution-card">
+          <div class="solution-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Cybersecurity</h3>
+          <p>Comprehensive security measures to protect your digital assets and sensitive information.</p>
+          <a href="/services/tech-solutions/cybersecurity" class="cta-button">Learn More</a>
+        </div>
+        <div class="solution-card">
+          <div class="solution-icon"><i class="fas fa-network-wired"></i></div>
+          <h3>Network Infrastructure</h3>
+          <p>Robust and efficient network solutions to keep your business connected and productive.</p>
+          <a href="/services/tech-solutions/network" class="cta-button">Learn More</a>
+        </div>
+        <div class="solution-card">
+          <div class="solution-icon"><i class="fas fa-robot"></i></div>
+          <h3>AI & Machine Learning</h3>
+          <p>Harness the power of artificial intelligence to drive innovation and automate processes.</p>
+          <a href="/services/tech-solutions/ai-ml" class="cta-button">Learn More</a>
+        </div>
+        <div class="solution-card">
+          <div class="solution-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Mobile Solutions</h3>
+          <p>Custom mobile applications and strategies to enhance mobility and user engagement.</p>
+          <a href="/services/tech-solutions/mobile" class="cta-button">Learn More</a>
+        </div>
+        <div class="solution-card">
+          <div class="solution-icon"><i class="fas fa-database"></i></div>
+          <h3>Data Analytics</h3>
+          <p>Transform raw data into actionable insights to drive informed business decisions.</p>
+          <a href="/services/tech-solutions/data-analytics" class="cta-button">Learn More</a>
+        </div>
+      </div>
+      <button id="get-started" class="get-started-button">Get Started</button>
+    </div>
+  </section>
+
+  <section class="benefits-section">
+    <div class="container">
+      <h2 class="section-heading">Benefits of Our Tech Solutions</h2>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Increased Efficiency</h3>
+          <p>Streamline operations and boost productivity with our optimized tech solutions.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-lock"></i></div>
+          <h3>Enhanced Security</h3>
+          <p>Protect your business from cyber threats with our advanced security measures.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-dollar-sign"></i></div>
+          <h3>Cost Savings</h3>
+          <p>Reduce IT expenses and maximize ROI with our efficient technology implementations.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-expand-arrows-alt"></

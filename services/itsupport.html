@@ -1,0 +1,339 @@
+<html><head><base href="https://okvtechnology.example.com/services/it-support"><title>IT Support Services - OKV Technology</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+
+  nav ul li {
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #f0f0f0;
+  }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding-top: 80px;
+  }
+
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .hero-content p {
+    font-size: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .services {
+    padding: 80px 0;
+  }
+
+  .services h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .service-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .service-icon {
+    font-size: 48px;
+    color: #0066cc;
+    margin-bottom: 20px;
+  }
+
+  .cta {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .cta h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: #fff;
+    color: #0066cc;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px);
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  .social-icons {
+    margin-top: 20px;
+  }
+
+  .social-icons a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #0066cc;
+  }
+
+  @media screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    nav {
+      position: fixed;
+      top: 80px;
+      left: -100%;
+      width: 100%;
+      height: calc(100vh - 80px);
+      background-color: #0066cc;
+      transition: left 0.3s ease;
+    }
+
+    nav.active {
+      left: 0;
+    }
+
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
+    }
+
+    nav ul li {
+      margin: 20px 0;
+    }
+
+    .hero-content h1 {
+      font-size: 36px;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta h2 {
+      font-size: 28px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .hero-content h1 {
+      font-size: 28px;
+    }
+
+    .hero-content p {
+      font-size: 16px;
+    }
+
+    .cta h2 {
+      font-size: 24px;
+    }
+  }
+</style>
+</head>
+<body>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <h1>IT Support Services</h1>
+      <p>Reliable, responsive, and expert IT support for your business</p>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="container">
+      <h2>Our IT Support Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-desktop"></i></div>
+          <h3>24/7 Helpdesk Support</h3>
+          <p>Round-the-clock assistance for all your IT issues, ensuring minimal downtime for your business.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+          <h3>Network Management</h3>
+          <p>Comprehensive network solutions including setup, maintenance, and security to keep your business connected.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Cybersecurity</h3>
+          <p>Advanced security measures to protect your data and systems from cyber threats and vulnerabilities.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-cloud"></i></div>
+          <h3>Cloud Services</h3>
+          <p>Seamless cloud integration and management for improved scalability and accessibility.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-sync"></i></div>
+          <h3>Data Backup & Recovery</h3>
+          <p>Robust backup solutions and swift data recovery services to safeguard your critical information.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-cogs"></i></div>
+          <h3>IT Infrastructure Management</h3>
+          <p>Comprehensive management of your entire IT infrastructure to ensure optimal performance and reliability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to streamline your IT operations?</h2>
+      <p>Contact us today for a free consultation and let us tailor an IT support package for your business needs.</p>
+      <a href="/contact" class="cta-button">Get Started</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 OKV Technology. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://facebook.com/okvtechnology" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/okvtechnology" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com/company/okvtechnology" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
+        nav.classList.remove('active');
+      }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

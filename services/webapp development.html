@@ -1,0 +1,528 @@
+<html><head><base href="https://okvtechnology.example.com/services/web-development"><title>Web Development Services - OKV Technology</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+
+  nav ul li {
+    margin-left: 30px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #0066cc;
+  }
+
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+  .hero {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1772&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+  }
+
+  .hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .hero-content p {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-heading {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #0066cc;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .service-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .service-icon {
+    font-size: 48px;
+    color: #0066cc;
+    margin-bottom: 20px;
+  }
+
+  .service-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #0066cc;
+  }
+
+  .service-card p {
+    font-size: 16px;
+    color: #666;
+  }
+
+  .cta-section {
+    background-color: #0066cc;
+    color: #fff;
+    text-align: center;
+    padding: 60px 0;
+  }
+
+  .cta-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: #fff;
+    color: #0066cc;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #f0f0f0;
+  }
+
+  .process-section {
+    background-color: #fff;
+  }
+
+  .process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+
+  .process-step {
+    text-align: center;
+    flex: 1 1 200px;
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+
+  .step-number {
+    background-color: #0066cc;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 auto 20px;
+  }
+
+  .process-step h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #0066cc;
+  }
+
+  .process-step p {
+    font-size: 14px;
+    color: #666;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .footer-section {
+    flex: 1 1 300px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .footer-section ul {
+    list-style-type: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .social-icons {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .social-icons a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 15px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    nav ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav ul.active {
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0;
+      text-align: center;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 10px 0;
+    }
+
+    .hero-content h1 {
+      font-size: 36px;
+    }
+
+    .hero-content p {
+      font-size: 16px;
+    }
+
+    .section-heading {
+      font-size: 28px;
+    }
+
+    .cta-section h2 {
+      font-size: 28px;
+    }
+
+    .process-steps {
+      flex-direction: column;
+    }
+
+    .process-step {
+      margin-bottom: 40px;
+    }
+
+    .footer-section {
+      flex: 1 1 100%;
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .hero-content h1 {
+      font-size: 28px;
+    }
+
+    .hero-content p {
+      font-size: 14px;
+    }
+
+    .section-heading {
+      font-size: 24px;
+    }
+
+    .cta-section h2 {
+      font-size: 24px;
+    }
+
+    .service-card {
+      padding: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+    }
+  }
+</style>
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+ 
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Web Development Services</h1>
+      <p>Crafting innovative and responsive web solutions to elevate your online presence</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">Our Web Development Expertise</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-desktop"></i></div>
+          <h3>Responsive Web Design</h3>
+          <p>Create visually stunning and mobile-friendly websites that adapt seamlessly to all devices.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+          <h3>E-commerce Solutions</h3>
+          <p>Build powerful online stores with secure payment gateways and intuitive user experiences.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-cogs"></i></div>
+          <h3>Custom Web Applications</h3>
+          <p>Develop tailor-made web applications to streamline your business processes and boost efficiency.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Web Analytics & SEO</h3>
+          <p>Optimize your website's performance and improve search engine rankings to drive more traffic.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-server"></i></div>
+          <h3>Content Management Systems</h3>
+          <p>Implement user-friendly CMS solutions for easy content updates and website management.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Web Security</h3>
+          <p>Ensure your website is protected against cyber threats with our robust security measures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Start Your Web Project?</h2>
+      <p>Let's collaborate to bring your vision to life!</p>
+      <a href="/contact" class="cta-button">Get in Touch</a>
+    </div>
+  </section>
+
+  <section class="section process-section">
+    <div class="container">
+      <h2 class="section-heading">Our Development Process</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3>Discovery</h3>
+          <p>We listen to your needs and analyze your requirements to create a comprehensive project plan.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3>Design</h3>
+          <p>Our designers create visually appealing mockups that align with your brand identity.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3>Development</h3>
+          <p>Our skilled developers bring the designs to life using the latest web technologies.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h3>Testing</h3>
+          <p>Rigorous quality assurance testing ensures your website functions flawlessly across all platforms.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <h3>Launch</h3>
+          <p>We deploy your website and provide ongoing support to ensure its success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About OKV Technology</h3>
+          <p>We are a leading tech solutions provider, dedicated to empowering businesses through innovative technologies.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="https://facebook.com/okvtechnology"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/okvtechnology"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/company/okvtechnology"><i class="fab fa-linkedin"></i></a>
+            <a href="https://instagram.com/okvtechnology"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu =document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+      const isClickInsideMenu = navMenu.contains(event.target);
+      const isClickOnToggle = menuToggle.contains(event.target);
+      if (!isClickInsideMenu && !isClickOnToggle && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+      }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Intersection Observer for fade-in effect
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.service-card, .process-step').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

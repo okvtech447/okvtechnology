@@ -1,0 +1,522 @@
+<html><head><base href="https://okvtechnology.example.com/services/mobile-app"><title>OKV Technology - Mobile App Development Services</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+
+  nav ul li {
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #0066cc;
+  }
+
+  .menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #0066cc;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .hero {
+    background-image: url('mobile-app-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    margin-top: 60px;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-content {
+    z-index: 1;
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .section {
+    padding: 60px 0;
+    background-color: #fff;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .section-heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #0066cc;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  .feature-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .feature-icon {
+    font-size: 48px;
+    color: #0066cc;
+    margin-bottom: 20px;
+  }
+
+  .feature-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #0066cc;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: #0066cc;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #0052a3;
+  }
+
+  .process-steps {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+
+  .process-step {
+    flex-basis: calc(25% - 20px);
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .process-step-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #0066cc;
+    color: #fff;
+    border-radius: 50%;
+    line-height: 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .footer-section {
+    flex: 1;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    min-width: 200px;
+  }
+
+  .footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .footer-section ul {
+    list-style-type: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .social-icons {
+    display: flex;
+  }
+
+  .social-icons a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 15px;
+  }
+
+  .newsletter-form {
+    display: flex;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+  }
+
+  .newsletter-form button {
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+
+    nav ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav ul.show {
+      display: block;
+    }
+
+    nav ul li {
+      margin: 0;
+      text-align: center;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    nav ul li:last-child a {
+      border-bottom: none;
+    }
+
+    .hero {
+      height: 50vh;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+
+    .section-heading {
+      font-size: 1.8rem;
+    }
+
+    .process-step {
+      flex-basis: calc(50% - 20px);
+    }
+
+    .footer-section {
+      flex-basis: 100%;
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+
+    .hero p {
+      font-size: 0.9rem;
+    }
+
+    .section-heading {
+      font-size: 1.5rem;
+    }
+
+    .process-step {
+      flex-basis: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">OKV Technology</a>
+        <div class="menu-icon" id="menuIcon">&#9776;</div>
+        <nav>
+          <ul id="navMenu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/training">Training</a></li>
+            <li><a href="/books">Our Books</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Mobile App Development Services</h1>
+      <p>Create powerful, user-friendly mobile applications that drive engagement and growth</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">Why Choose Our Mobile App Development Services?</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">&#128241;</div>
+          <h3 class="feature-title">Cross-Platform Development</h3>
+          <p>We develop apps for iOS, Android, and hybrid platforms to reach your entire audience.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128161;</div>
+          <h3 class="feature-title">Innovative Design</h3>
+          <p>Our team creates intuitive, visually appealing interfaces that users love.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128640;</div>
+          <h3 class="feature-title">Scalable Solutions</h3>
+          <p>We build apps that can grow with your business and handle increasing user demands.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128273;</div>
+          <h3 class="feature-title">Security-First Approach</h3>
+          <p>We implement robust security measures to protect user data and your business interests.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">Our Mobile App Development Process</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-number">1</div>
+          <h3>Discovery & Planning</h3>
+          <p>We analyze your requirements and create a comprehensive development strategy.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number">2</div>
+          <h3>Design & Prototyping</h3>
+          <p>Our designers create intuitive UI/UX designs and interactive prototypes.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number">3</div>
+          <h3>Development & Testing</h3>
+          <p>We develop your app using the latest technologies and perform rigorous testing.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number">4</div>
+          <h3>Deployment & Support</h3>
+          <p>We launch your app and provide ongoing maintenance and support services.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">Technologies We Use</h2>
+      <p style="text-align: center; margin-bottom: 30px;">We leverage the latest technologies and frameworks to deliver high-performance mobile applications:</p>
+      <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+        <div style="text-align: center; margin: 10px;">
+          <img src="react-native-logo.png" alt="React Native Logo" style="width: 100px; height: 100px;">
+          <p>React Native</p>
+        </div>
+        <div style="text-align: center; margin: 10px;">
+          <img src="flutter-logo.png" alt="Flutter Logo" style="width: 100px; height: 100px;">
+          <p>Flutter</p>
+        </div>
+        <div style="text-align: center; margin: 10px;">
+          <img src="swift-logo.png" alt="Swift Logo" style="width: 100px; height: 100px;">
+          <p>Swift</p>
+        </div>
+        <div style="text-align: center; margin: 10px;">
+          <img src="kotlin-logo.png" alt="Kotlin Logo" style="width: 100px; height: 100px;">
+          <p>Kotlin</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">Ready to Build Your Mobile App?</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+        Let's bring your mobile app idea to life. Our team of expert developers is ready to create a custom mobile solution that meets your unique business needs and exceeds user expectations.
+      </p>
+      <div style="text-align: center;">
+        <a href="/contact" class="cta-button">Get a Free Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/training">Training</a></li>
+            <li><a href="/books">Our Books</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="https://facebook.com/okvtechnology"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/okvtechnology"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/company/okvtechnology"><i class="fab fa-linkedin"></i></a>
+            <a href="https://instagram.com/okvtechnology"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email">
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuIcon = document.getElementById('menuIcon');
+      const navMenu = document.getElementById('navMenu');
+
+      menuIcon.addEventListener('click', function() {
+        navMenu.classList.toggle('show');
+      });
+    });
+  </script>
+</body>
+</html>

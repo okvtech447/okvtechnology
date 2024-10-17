@@ -1,0 +1,470 @@
+<html><head><base href="https://okvtechnology.example.com/services/education"><title>Education Services - OKV Technology</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+
+  nav ul li {
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #0066cc;
+  }
+
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+  }
+
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .search-filter-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: -50px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .search-filter-form {
+    display: flex;
+    gap: 20px;
+  }
+
+  .search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .category-select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .search-btn {
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  .search-btn:hover {
+    background-color: #0052a3;
+  }
+
+  .section {
+    padding: 80px 0;
+    background-color: #fff;
+  }
+
+  .section-heading {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #0066cc;
+  }
+
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .course-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .course-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .course-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .course-content {
+    padding: 20px;
+  }
+
+  .course-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #0066cc;
+  }
+
+  .course-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .enroll-btn {
+    display: inline-block;
+    background-color: #0066cc;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .enroll-btn:hover {
+    background-color: #0052a3;
+  }
+
+  .features {
+    background-color: #f9f9f9;
+    padding: 80px 0;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  .feature-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .feature-icon {
+    font-size: 48px;
+    color: #0066cc;
+    margin-bottom: 20px;
+  }
+
+  .feature-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #0066cc;
+  }
+
+  .feature-description {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .cta {
+    background-color: #0066cc;
+    color: #fff;
+    text-align: center;
+    padding: 80px 0;
+  }
+
+  .cta h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .cta p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #0066cc;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .cta-btn:hover {
+    background-color: #f0f0f0;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    flex: 1;
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .footer-section ul {
+    list-style-type: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section ul li a:hover {
+    color: #0066cc;
+  }
+
+  .social-icons a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #0066cc;
+  }
+
+  @media screen and (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    nav ul {
+      margin-top: 20px;
+    }
+
+    nav ul li {
+      margin-left: 0;
+      margin-right: 20px;
+    }
+
+    .hero {
+      height: 300px;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+    }
+
+    .hero p {
+      font-size: 16px;
+    }
+
+    .section-heading {
+      font-size: 28px;
+    }
+
+    .cta h2 {
+      font-size: 28px;
+    }
+
+    .cta p {
+      font-size: 16px;
+    }
+
+    .search-filter-form {
+      flex-direction: column;
+    }
+
+    .search-input,
+    .category-select,
+    .search-btn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">OKV Technology</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Education Services</h1>
+      <p>Empowering individuals and organizations with cutting-edge technology education</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="search-filter-container">
+      <form class="search-filter-form" id="searchFilterForm">
+        <input type="text" class="search-input" placeholder="Search courses..." id="searchInput">
+        <select class="category-select" id="categorySelect">
+          <option value="">All Categories</option>
+          <option value="web-development">Web Development</option>
+          <option value="artificial-intelligence">Artificial Intelligence</option>
+          <option value="cybersecurity">Cybersecurity</option>
+          <option value="data-science">Data Science</option>
+          <option value="cloud-computing">Cloud Computing</option>
+        </select>
+        <button type="submit" class="search-btn">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">Our Courses</h2>
+      <div class="courses-grid" id="coursesGrid">
+        <div class="course-card" data-category="web-development">
+          <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+          <div class="course-content">
+            <h3 class="course-title">Web Development Fundamentals</h3>
+            <p class="course-description">Learn the basics of HTML, CSS, and JavaScript to build responsive websites.</p>
+            <a href="/courses/web-development-fundamentals" class="enroll-btn">Enroll Now</a>
+          </div>
+        </div>
+        <div class="course-card" data-category="artificial-intelligence">
+          <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+          <div class="course-content">
+            <h3 class="course-title">Artificial Intelligence Essentials</h3>
+            <p class="course-description">Explore the fundamentals of AI, machine learning, and neural networks.</p>
+            <a href="/courses/ai-essentials" class="enroll-btn">Enroll Now</a>
+          </div>
+        </div>
+        <div class="course-card" data-category="cybersecurity">
+          <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+          <div class="course-content">
+            <h3 class="course-title">Cybersecurity Fundamentals</h3>
+            <p class="course-description">Learn essential cybersecurity concepts and best practices to protect digital assets.</p>
+            <a href="/courses/cybersecurity-fundamentals" class="enroll-btn">Enroll Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2 class="section-heading">Why Choose Our Education Services?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <h3 class="feature-title">Expert Instructors</h3>
+          <p class="feature-description">Learn from industry professionals with years of real-world experience.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3 class="feature-title">Hands-on Projects</h3>
+          <p class="feature-description">Apply your knowledge through practical, industry-relevant projects.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="

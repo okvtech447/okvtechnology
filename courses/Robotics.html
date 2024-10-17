@@ -1,0 +1,345 @@
+<html><head><base href="https://okvtechnology.example.com/courses/Robotics"><title>Robotics Course - OKV Technology</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ecf0f1;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+
+  nav ul li {
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #3498db;
+  }
+
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 60px;
+  }
+
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .course-details {
+    padding: 4rem 0;
+    background-color: #fff;
+  }
+
+  .course-overview {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+
+  .overview-text {
+    flex: 2;
+    padding-right: 2rem;
+  }
+
+  .overview-stats {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+
+  .stat-item {
+    margin-bottom: 1rem;
+  }
+
+  .stat-item strong {
+    display: block;
+    color: #2c3e50;
+  }
+
+  .curriculum {
+    margin-top: 3rem;
+  }
+
+  .module {
+    background-color: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+  }
+
+  .module h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+
+  .module ul {
+    list-style-type: none;
+    padding-left: 1rem;
+  }
+
+  .module ul li::before {
+    content: "•";
+    color: #3498db;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+
+  .enroll-section {
+    background-color: #3498db;
+    color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .enroll-btn {
+    display: inline-block;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .enroll-btn:hover {
+    background-color: #34495e;
+  }
+
+  footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .social-icons {
+    margin-top: 1rem;
+  }
+
+  .social-icons a {
+    color: #ecf0f1;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #3498db;
+  }
+
+  @media (max-width: 768px) {
+    .course-overview {
+      flex-direction: column;
+    }
+
+    .overview-text {
+      padding-right: 0;
+      margin-bottom: 2rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">OKV Technology</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Robotics Course</h1>
+      <p>Dive into the fascinating world of robotics and shape the future of automation</p>
+    </div>
+  </section>
+
+  <section class="course-details">
+    <div class="container">
+      <div class="course-overview">
+        <div class="overview-text">
+          <h2>Course Overview</h2>
+          <p>Our comprehensive Robotics course is designed to take you on an exciting journey through the rapidly evolving field of robotics. From the fundamental principles to cutting-edge applications, this course covers a wide range of topics to prepare you for a career in robotics engineering and research.</p>
+          <p>You'll gain hands-on experience with robot design, programming, and control systems. Our state-of-the-art robotics lab provides you with access to various robotic platforms, sensors, and actuators, allowing you to apply theoretical concepts to real-world scenarios.</p>
+          <p>Whether you're a beginner with a passion for robots or an experienced engineer looking to specialize in robotics, this course will equip you with the knowledge and skills needed to innovate in this dynamic field.</p>
+        </div>
+        <div class="overview-stats">
+          <div class="stat-item">
+            <strong>Duration:</strong> 16 weeks
+          </div>
+          <div class="stat-item">
+            <strong>Skill Level:</strong> Intermediate to Advanced
+          </div>
+          <div class="stat-item">
+            <strong>Prerequisites:</strong> Basic programming knowledge, fundamentals of physics and mathematics
+          </div>
+          <div class="stat-item">
+            <strong>Certificate:</strong> OKV Technology Robotics Specialist Certification
+          </div>
+        </div>
+      </div>
+
+      <div class="curriculum">
+        <h2>Course Curriculum</h2>
+        <div class="module">
+          <h3>Module 1: Introduction to Robotics</h3>
+          <ul>
+            <li>History and evolution of robotics</li>
+            <li>Types of robots and their applications</li>
+            <li>Basic components of a robotic system</li>
+            <li>Introduction to robot kinematics and dynamics</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 2: Robot Design and Mechanics</h3>
+          <ul>
+            <li>Mechanical design principles for robots</li>
+            <li>3D modeling and simulation of robotic systems</li>
+            <li>Actuators, sensors, and control systems</li>
+            <li>Robot end-effectors and manipulation</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 3: Robot Programming and Control</h3>
+          <ul>
+            <li>Programming languages for robotics (Python, C++, ROS)</li>
+            <li>Motion planning and trajectory generation</li>
+            <li>Feedback control systems</li>
+            <li>Real-time operating systems for robots</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 4: Computer Vision and Perception</h3>
+          <ul>
+            <li>Image processing and feature extraction</li>
+            <li>3D perception and depth sensing</li>
+            <li>Object detection and recognition</li>
+            <li>Simultaneous Localization and Mapping (SLAM)</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 5: Artificial Intelligence in Robotics</h3>
+          <ul>
+            <li>Machine learning for robot control</li>
+            <li>Reinforcement learning in robotics</li>
+            <li>Natural language processing for human-robot interaction</li>
+            <li>Swarm robotics and multi-agent systems</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 6: Advanced Topics and Applications</h3>
+          <ul>
+            <li>Industrial robotics and automation</li>
+            <li>Autonomous vehicles and drones</li>
+            <li>Medical and assistive robotics</li>
+            <li>Soft robotics and bio-inspired designs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="enroll-section">
+    <div class="container">
+      <h2>Ready to Build the Future with Robotics?</h2>
+      <p>Enroll now and start your journey into the exciting world of robotics!</p>
+      <a href="/enroll/robotics" class="enroll-btn">Enroll Now</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 OKV Technology. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://facebook.com/okvtechnology" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/okvtechnology" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com/company/okvtechnology" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://instagram.com/okvtechnology" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</body>
+</html>

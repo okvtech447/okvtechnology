@@ -1,0 +1,399 @@
+<html><head><base href="https://okvtechnology.example.com/services"><title>Our Services | OKV Technology</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+
+  nav ul li {
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #f0f0f0;
+  }
+
+  .menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+  }
+
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #0066cc;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .service-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .service-icon {
+    background-color: #0066cc;
+    color: #fff;
+    font-size: 48px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .service-content {
+    padding: 20px;
+  }
+
+  .service-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #0066cc;
+  }
+
+  .service-description {
+    margin-bottom: 20px;
+  }
+
+  .service-link {
+    display: inline-block;
+    background-color: #0066cc;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .service-link:hover {
+    background-color: #004c99;
+  }
+
+  .cta-section {
+    background-color: #0066cc;
+    color: #fff;
+    text-align: center;
+    padding: 60px 0;
+  }
+
+  .cta-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: #fff;
+    color: #0066cc;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #004c99;
+    color: #fff;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  .social-links {
+    margin-top: 20px;
+  }
+
+  .social-links a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+
+  .social-links a:hover {
+    color: #0066cc;
+  }
+
+  @media (max-width: 768px) {
+    .header-content {
+      position: relative;
+    }
+
+    .menu-icon {
+      display: block;
+    }
+
+    nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #0066cc;
+      padding: 20px;
+    }
+
+    nav.active {
+      display: block;
+    }
+
+    nav ul {
+      flex-direction: column;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+    }
+
+    .hero {
+      height: 40vh;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+    }
+
+    .section-title {
+      font-size: 28px;
+    }
+
+    .cta-title {
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 28px;
+    }
+
+    .section-title {
+      font-size: 24px;
+    }
+
+    .cta-title {
+      font-size: 24px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">OKV Technology</div>
+        <div class="menu-icon">&#9776;</div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/key%20projects">Key Projects</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Our Services</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Cutting-Edge Technology Solutions</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">AI Development</h3>
+            <p class="service-description">Leverage the power of artificial intelligence to transform your business processes and decision-making capabilities.</p>
+            <a href="/services/ai-development" class="service-link">Learn More</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-link"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Blockchain Solutions</h3>
+            <p class="service-description">Implement secure, transparent, and decentralized systems using cutting-edge blockchain technology.</p>
+            <a href="/services/blockchain-solutions" class="service-link">Learn More</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Mobile App Development</h3>
+            <p class="service-description">Create intuitive and powerful mobile applications for iOS and Android platforms.</p>
+            <a href="/services/mobile-app-development" class="service-link">Learn More</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Cloud Computing</h3>
+            <p class="service-description">Optimize your IT infrastructure with scalable, secure, and cost-effective cloud solutions.</p>
+            <a href="/services/cloud-computing" class="service-link">Learn More</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Cybersecurity</h3>
+            <p class="service-description">Protect your digital assets with advanced threat detection and prevention systems.</p>
+            <a href="/services/cybersecurity" class="service-link">Learn More</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-vr-cardboard"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">AR/VR Development</h3>
+            <p class="service-description">Create immersive experiences with cutting-edge augmented and virtual reality technologies.</p>
+            <a href="/services/ar-vr-development" class="service-link">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">Ready to Transform Your Business?</h2>
+      <a href="/contact" class="cta-button">Get in Touch</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 OKV Technology. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://twitter.com/okvtechnology" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com/company/okvtechnology" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/okvtechnology" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuIcon = document.querySelector('.menu-icon');
+      const nav = document.querySelector('nav');
+
+      menuIcon.addEventListener('click', function() {
+        nav.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

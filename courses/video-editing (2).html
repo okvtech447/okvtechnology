@@ -1,0 +1,551 @@
+<html><head><base href="https://okvtechnology.example.com/courses/video-editing">
+<title>Video Editing Course - OKV Technology</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f9;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+
+  nav ul li {
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #0066cc;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1574717025058-2f8737d2e2b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+  }
+
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-heading {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #0066cc;
+  }
+
+  .course-details {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .course-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .info-item {
+    flex-basis: calc(33.333% - 20px);
+    margin-bottom: 20px;
+  }
+
+  .info-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0066cc;
+  }
+
+  .info-item p {
+    font-size: 16px;
+  }
+
+  .course-description {
+    margin-bottom: 30px;
+  }
+
+  .course-syllabus {
+    margin-bottom: 30px;
+  }
+
+  .syllabus-item {
+    margin-bottom: 20px;
+  }
+
+  .syllabus-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #0066cc;
+  }
+
+  .syllabus-item ul {
+    padding-left: 20px;
+  }
+
+  .enroll-section {
+    background-color: #f0f5ff;
+    padding: 60px 0;
+    text-align: center;
+  }
+
+  .enroll-btn {
+    display: inline-block;
+    background-color: #0066cc;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+
+  .enroll-btn:hover {
+    background-color: #0052a3;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    flex: 1;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    min-width: 200px;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .footer-section ul {
+    list-style-type: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section ul li a:hover {
+    color: #0066cc;
+  }
+
+  .social-icons a {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #0066cc;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  @media screen and (max-width: 1024px) {
+    .container {
+      padding: 0 30px;
+    }
+    
+    .info-item {
+      flex-basis: calc(50% - 20px);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .menu-toggle {
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+
+    nav {
+      display: none;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    nav.active {
+      display: block;
+    }
+
+    nav ul {
+      flex-direction: column;
+    }
+
+    nav ul li {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+
+    .hero {
+      height: 300px;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+    }
+
+    .hero p {
+      font-size: 16px;
+    }
+
+    .section-heading {
+      font-size: 28px;
+    }
+
+    .info-item {
+      flex-basis: 100%;
+    }
+
+    .footer-section {
+      flex-basis: 100%;
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .container {
+      padding: 0 15px;
+    }
+
+    .hero {
+      height: 250px;
+    }
+
+    .hero h1 {
+      font-size: 24px;
+    }
+
+    .hero p {
+      font-size: 14px;
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .section-heading {
+      font-size: 24px;
+    }
+
+    .course-details {
+      padding: 20px;
+    }
+
+    .info-item h3 {
+      font-size: 16px;
+    }
+
+    .info-item p {
+      font-size: 14px;
+    }
+
+    .syllabus-item h3 {
+      font-size: 18px;
+    }
+
+    .enroll-btn {
+      padding: 12px 24px;
+      font-size: 16px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">OKV Technology</a>
+        <div class="menu-toggle">&#9776;</div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Video Editing Course</h1>
+      <p>Master the art of storytelling through video</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="course-details">
+        <div class="course-info">
+          <div class="info-item">
+            <h3>Duration</h3>
+            <p>10 weeks</p>
+          </div>
+          <div class="info-item">
+            <h3>Level</h3>
+            <p>Beginner to Intermediate</p>
+          </div>
+          <div class="info-item">
+            <h3>Prerequisites</h3>
+            <p>Basic computer skills and a passion for visual storytelling</p>
+          </div>
+        </div>
+
+        <div class="course-description">
+          <h2>Course Description</h2>
+          <p>Our Video Editing course is designed to take you from a complete beginner to a confident video editor. You'll learn industry-standard software, techniques for crafting compelling narratives, and how to create visually stunning videos for various platforms. Whether you're looking to start a career in video production or enhance your content creation skills, this course will provide you with the knowledge and hands-on experience you need to succeed.</p>
+        </div>
+
+        <div class="course-syllabus">
+          <h2>Course Syllabus</h2>
+          <div class="syllabus-item">
+            <h3>Week 1-2: Introduction to Video Editing</h3>
+            <ul>
+              <li>Understanding video formats and codecs</li>
+              <li>Introduction to editing software (Adobe Premiere Pro)</li>
+              <li>Basic editing techniques: cuts, transitions, and trimming</li>
+              <li>Organizing and managing your footage</li>
+            </ul>
+          </div>
+          <div class="syllabus-item">
+            <h3>Week 3-4: Advanced Editing Techniques</h3>
+            <ul>
+              <li>Color correction and grading</li>
+              <li>Working with audio: cleaning, mixing, and adding music</li>
+              <li>Creating titles and lower thirds</li>
+              <li>Keyframing and basic motion graphics</li>
+            </ul>
+          </div>
+          <div class="syllabus-item">
+            <h3>Week 5-6: Storytelling Through Editing</h3>
+            <ul>
+              <li>Narrative structure and pacing</li>
+              <li>Montage and parallel editing techniques</li>
+              <li>Creating emotion through editing choices</li>
+              <li>Working with dialogue and interview footage</li>
+            </ul>
+          </div>
+          <div class="syllabus-item">
+            <h3>Week 7-8: Visual Effects and Compositing</h3>
+            <ul>
+              <li>Introduction to Adobe After Effects</li>
+              <li>Creating simple animations and titles</li>
+              <li>Chroma keying and green screen techniques</li>
+              <li>Tracking and stabilization</li>
+            </ul>
+          </div>
+          <div class="syllabus-item">
+            <h3>Week 9-10: Final Projects and Workflow Optimization</h3>
+            <ul>
+              <li>Creating a short film or promotional video</li>
+              <li>Optimizing your editing workflow</li>
+              <li>Exporting for different platforms (web, mobile, broadcast)</li>
+              <li>Building your editing portfolio</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="enroll-section">
+    <div class="container">
+      <h2>Ready to Start Your Video Editing Journey?</h2>
+      <p>Enroll now and bring your stories to life through video!</p>
+      <a href="/enroll/video-editing" class="enroll-btn">Enroll Now</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>OKV Technology is a leading provider of innovative tech solutions and education services, empowering individuals and businesses to thrive in the digital age.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dbb2b5bdb49bb4b0adafbeb8b3b5b4b7b4bca2f5b8b4b6">[email&#160;protected]</a></p>
+          <p>Phone: (123) 456-7890</p>
+          <p>Address: 123 Tech Street, Innovation City, TC 12345</p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://facebook.com/okvtechnology"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/okvtechnology"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/company/okvtechnology"><i class="fab fa-linkedin"></i></a>
+            <a href="https://instagram.com/okvtechnology"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 OKV Technology. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('nav');
+
+      menuToggle.addEventListener('click', function() {
+        nav.classList.toggle('active');
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        const isClickInside = nav.contains(event.target) || menuToggle.contains(event.target);
+        if (!isClickInside && nav.classList.contains('active')) {
+          nav.classList.remove('active');
+        }
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      // Responsive video embeds
+      const videoContainers = document.querySelectorAll('.video-container');
+      videoContainers.forEach(container => {
+        const iframe = container.querySelector('iframe');
+        const aspectRatio = iframe.height / iframe.width;
+        container.style.paddingBottom = aspectRatio * 100 + '%';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<html><head><base href="https://okvtechnology.example.com/student-dashboard"><title>Student Dashboard - OKV Technology</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f9;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  nav ul {
+    display: flex;
+    list-style-type: none;
+  }
+
+  nav ul li {
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #0066cc;
+  }
+
+  .dashboard {
+    display: flex;
+    margin-top: 80px;
+  }
+
+  .sidebar {
+    width: 250px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .main-content {
+    flex: 1;
+    margin-left: 20px;
+  }
+
+  .welcome-banner {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .course-progress {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+
+  .progress-bar {
+    background-color: #e0e0e0;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .progress {
+    background-color: #4CAF50;
+    height: 100%;
+    width: 35%;
+    transition: width 0.5s ease;
+  }
+
+  .upcoming-classes {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .class-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .class-item:last-child {
+    border-bottom: none;
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: #0066cc;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #0052a3;
+  }
+
+  @media screen and (max-width: 768px) {
+    .dashboard {
+      flex-direction: column;
+    }
+
+    .sidebar {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .main-content {
+      margin-left: 0;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .header-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    nav ul {
+      margin-top: 10px;
+    }
+
+    nav ul li {
+      margin-left: 0;
+      margin-right: 15px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">OKV Technology</a>
+        <nav>
+          <ul>
+            <li><a href="/student-dashboard">Dashboard</a></li>
+            <li><a href="/courses">My Courses</a></li>
+            <li><a href="/resources">Resources</a></li>
+            <li><a href="/profile">Profile</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="dashboard">
+      <aside class="sidebar">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="/assignments">Assignments</a></li>
+          <li><a href="/grades">Grades</a></li>
+          <li><a href="/discussion">Discussion Forum</a></li>
+          <li><a href="/support">Support</a></li>
+        </ul>
+      </aside>
+      <main class="main-content">
+        <section class="welcome-banner">
+          <h1>Welcome back, Sarah!</h1>
+          <p>Ready to continue your journey in Website Development?</p>
+        </section>
+        <section class="course-progress">
+          <h2>Course Progress</h2>
+          <p>Website Development Fundamentals</p>
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+          <p>35% Complete</p>
+        </section>
+        <section class="upcoming-classes">
+          <h2>Upcoming Classes</h2>
+          <div class="class-item">
+            <div>
+              <h3>HTML & CSS Basics</h3>
+              <p>September 5, 2023 - 10:00 AM</p>
+            </div>
+            <a href="/join-class" class="btn">Join Class</a>
+          </div>
+          <div class="class-item">
+            <div>
+              <h3>JavaScript Fundamentals</h3>
+              <p>September 7, 2023 - 2:00 PM</p>
+            </div>
+            <a href="/join-class" class="btn">Join Class</a>
+          </div>
+          <div class="class-item">
+            <div>
+              <h3>Responsive Web Design</h3>
+              <p>September 10, 2023 - 11:00 AM</p>
+            </div>
+            <a href="/join-class" class="btn">Join Class</a>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // Simulate progress increase
+    let progress = 35;
+    setInterval(() => {
+      if (progress < 100) {
+        progress += 1;
+        document.querySelector('.progress').style.width = progress + '%';
+        document.querySelector('.course-progress p:last-child').textContent = progress + '% Complete';
+      }
+    }, 3000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,553 @@
+<html><head><base href="https://okvtechnology.example.com/Training">
+<title>Training Programs - OKV Technology</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f9;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ecf0f1;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+
+  nav ul li {
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #3498db;
+  }
+
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 60px;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .search-bar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .search-bar input {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+  }
+
+  .search-bar button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+
+  .training-intro, .free-training {
+    padding: 4rem 0;
+    background-color: #fff;
+  }
+
+  .training-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .training-card {
+    background-color: #f4f7f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .training-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .training-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .training-card-content {
+    padding: 1.5rem;
+  }
+
+  .training-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+  }
+
+  .btn:hover {
+    background-color: #2980b9;
+  }
+
+  .cta-section {
+    background-color: #3498db;
+    color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta-section .btn {
+    background-color: #fff;
+    color: #3498db;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+  }
+
+  .cta-section .btn:hover {
+    background-color: #f4f7f9;
+  }
+
+  .testimonials {
+    padding: 4rem 0;
+    background-color: #f4f7f9;
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .testimonial-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+
+  footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .social-icons {
+    margin-top: 1rem;
+  }
+
+  .social-icons a {
+    color: #ecf0f1;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #3498db;
+  }
+
+  .free-training {
+    background-color: #ecf0f1;
+  }
+
+  .free-training h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .container {
+      padding: 0 15px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .cta-section h2 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    nav ul {
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 5px 10px 5px 0;
+    }
+
+    .hero {
+      height: 300px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .search-bar input {
+      width: 200px;
+    }
+
+    .training-grid, .testimonial-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-section h2 {
+      font-size: 1.8rem;
+    }
+
+    .cta-section .btn {
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+
+    .search-bar {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .search-bar input {
+      width: 100%;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    .search-bar button {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .training-card h3 {
+      font-size: 1.3rem;
+    }
+
+    .cta-section h2 {
+      font-size: 1.5rem;
+    }
+
+    .testimonial-card {
+      padding: 1.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">OKV Technology</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about%20us">About</a></li>
+            <li><a href="/our%20services">Services</a></li>
+            <li><a href="/Training">Training</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Training Programs</h1>
+      <p>Empower your team with cutting-edge tech skills</p>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for courses...">
+        <button onclick="searchCourses()">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="training-intro">
+    <div class="container">
+      <h2>Our Training Programs</h2>
+      <p>At OKV Technology, we offer a wide range of training programs designed to equip your team with the latest skills and knowledge in the tech industry. Our expert-led courses cover various domains and are tailored to meet the needs of beginners, intermediate learners, and advanced professionals.</p>
+      
+      <div class="training-grid">
+        <div class="training-card">
+          <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Web Development Training">
+          <div class="training-card-content">
+            <h3>Web Development</h3>
+            <p>Master the art of creating responsive and dynamic websites using the latest technologies and frameworks.</p>
+            <a href="/training/web-development" class="btn">Learn More</a>
+          </div>
+        </div>
+        
+        <div class="training-card">
+          <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cybersecurity Training">
+          <div class="training-card-content">
+            <h3>Cybersecurity</h3>
+            <p>Learn to protect digital assets and systems from cyber threats with our comprehensive security training.</p>
+            <a href="/training/cybersecurity" class="btn">Learn More</a>
+          </div>
+        </div>
+        
+        <div class="training-card">
+          <img src="https://images.unsplash.com/photo-1495592822108-9e6261896da8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Data Science Training">
+          <div class="training-card-content">
+            <h3>Data Science</h3>
+            <p>Dive into the world of data analytics, machine learning, and AI to drive data-informed decision making.</p>
+            <a href="/training/data-science" class="btn">Learn More</a>
+          </div>
+        </div>
+        
+        <div class="training-card">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cloud Computing Training">
+          <div class="training-card-content">
+            <h3>Cloud Computing</h3>
+            <p>Explore cloud technologies and learn to design, deploy, and manage scalable cloud infrastructures.</p>
+            <a href="/training/cloud-computing" class="btn">Learn More</a>
+          </div>
+        </div>
+
+        <div class="training-card">
+          <img src="https://images.unsplash.com/photo-1603732551658-5fabbafa84eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mobile App Development Training">
+          <div class="training-card-content">
+            <h3>Mobile App Development</h3>
+            <p>Learn to create cutting-edge mobile applications for iOS and Android platforms using the latest frameworks and tools.</p>
+            <a href="/training/mobile-app-development" class="btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Upgrade Your Skills?</h2>
+      <p>Join our training programs and stay ahead in the fast-paced tech world.</p>
+      <a href="/contact" class="btn">Enroll Now</a>
+    </div>
+  </section>
+
+  <section class="free-training">
+    <div class="container">
+      <h2>Free Training Resources</h2>
+      <p>We believe in making quality education accessible to everyone. Explore our free training resources to kickstart your learning journey.</p>
+      
+      <div class="training-grid">
+        <div class="training-card">
+          <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Intro to Programming">
+          <div class="training-card-content">
+            <h3>Intro to Programming</h3>
+            <p>Get started with the basics of programming and learn fundamental concepts applicable to any language.</p>
+            <a href="/free-training/intro-to-programming" class="btn">Start Learning</a>
+          </div>
+        </div>
+        
+        <div class="training-card">
+          <img src="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Web Design Fundamentals">
+          <div class="training-card-content">
+            <h3>Web Design Fundamentals</h3>
+            <p>Learn the basics of HTML, CSS, and responsive design to create stunning websites.</p>
+            <a href="/free-training/web-design-fundamentals" class="btn">Start Learning</a>
+          </div>
+        </div>
+        
+        <div class="training-card">
+          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cybersecurity Basics">
+          <div class="training-card-content">
+            <h3>Cybersecurity Basics</h3>
+            <p>Understand the fundamentals of cybersecurity and learn how to protect yourself online.</p>
+            <a href="/free-training/cybersecurity-basics" class="btn">Start Learning</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Start Your Learning Journey Today!</h2>
+      <p>Access our free resources and take the first step towards your tech career.</p>
+      <a href="/free-training" class="btn">Explore Free Courses</a>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Our Trainees Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Sarah Johnson">
+          <h4>Sarah Johnson</h4>
+          <p>"The web development course was fantastic! The instructors were knowledgeable and the hands-on projects really helped solidify my learning."</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Michael Chen">
+          <h4>Michael Chen</h4>
+          <p>"The cybersecurity training opened my eyes to the importance of digital security. I now feel confident in implementing robust security measures."</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Emily Rodriguez">
+          <h4>Emily Rodriguez</h4>
+          <p>"The data science program was challenging but incredibly rewarding. It's given me the skills to pursue an exciting new career path."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 OKV Technology. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://facebook.com/okvtechnology" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/okvtechnology" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com/company/okvtechnology" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://instagram.com/okvtechnology" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function searchCourses() {
+      const searchTerm = document.querySelector('.search-bar input').value.toLowerCase();
+      const courses = document.querySelectorAll('.training-card');
+      
+      courses.forEach(course => {
+        const courseTitle = course.querySelector('h3').textContent.toLowerCase();
+        const courseDescription = course.querySelector('p').textContent.toLowerCase();
+        
+        if (courseTitle.includes(searchTerm) || courseDescription.includes(searchTerm)) {
+          course.style.display = 'block';
+        } else {
+          course.style.display = 'none';
+        }
+      });
+    }
+
+    // Add event listener for mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('header');
+      const nav = document.querySelector('nav');
+      
+      header.addEventListener('click', function(e) {
+        if (e.target.closest('.logo') || e.target.closest('nav')) {
+          nav.classList.toggle('active');
+        }
+      });
+    });
+  </script>
+</body></html>

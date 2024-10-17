@@ -1,0 +1,467 @@
+<html><head><base href="https://okvtechnology.example.com/courses/Business%20Analytics"><title>Business Analytics Course - OKV Technology</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f9;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+
+  nav ul li {
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #0066cc;
+  }
+
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+  }
+
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .course-details {
+    background-color: #fff;
+    padding: 50px 0;
+  }
+
+  .course-overview {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .overview-text {
+    flex: 1;
+    padding-right: 40px;
+  }
+
+  .overview-stats {
+    flex: 0 0 300px;
+    background-color: #f4f7f9;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .stat-item {
+    margin-bottom: 15px;
+  }
+
+  .stat-item strong {
+    display: block;
+    font-size: 18px;
+    color: #0066cc;
+  }
+
+  .curriculum {
+    margin-top: 40px;
+  }
+
+  .curriculum h2 {
+    margin-bottom: 20px;
+  }
+
+  .module {
+    background-color: #f4f7f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .module h3 {
+    color: #0066cc;
+    margin-bottom: 10px;
+  }
+
+  .enroll-section {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  .enroll-btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #0066cc;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .enroll-btn:hover {
+    background-color: #f4f7f9;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    flex: 1;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    min-width: 200px;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .footer-section ul {
+    list-style-type: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section ul li a:hover {
+    color: #0066cc;
+  }
+
+  .social-icons a {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #0066cc;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  @media screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    nav {
+      display: none;
+      width: 100%;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav.active {
+      display: block;
+    }
+
+    nav ul {
+      flex-direction: column;
+    }
+
+    nav ul li {
+      margin: 0;
+      text-align: center;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 10px;
+    }
+
+    .course-overview {
+      flex-direction: column;
+    }
+
+    .overview-text {
+      padding-right: 0;
+      margin-bottom: 30px;
+    }
+
+    .overview-stats {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .hero h1 {
+      font-size: 28px;
+    }
+
+    .hero p {
+      font-size: 16px;
+    }
+
+    .enroll-btn {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    .footer-section {
+      flex-basis: 100%;
+      margin-right: 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">OKV Technology</a>
+        <div class="menu-toggle">&#9776;</div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Business Analytics Course</h1>
+      <p>Unlock the power of data to drive business decisions</p>
+    </div>
+  </section>
+
+  <section class="course-details">
+    <div class="container">
+      <div class="course-overview">
+        <div class="overview-text">
+          <h2>Course Overview</h2>
+          <p>Our Business Analytics course is designed to equip you with the essential skills and knowledge needed to leverage data for informed decision-making in today's data-driven business world. This comprehensive program covers various aspects of business analytics, from data collection and analysis to visualization and interpretation.</p>
+          <p>Throughout this course, you'll learn how to use cutting-edge analytics tools and techniques to extract meaningful insights from complex datasets. You'll develop skills in statistical analysis, data mining, predictive modeling, and data visualization. Whether you're a business professional looking to enhance your analytical skills or an aspiring data analyst, this course will provide you with the tools and knowledge to drive data-informed strategies and create value for your organization.</p>
+        </div>
+        <div class="overview-stats">
+          <div class="stat-item">
+            <strong>Duration</strong>
+            10 weeks
+          </div>
+          <div class="stat-item">
+            <strong>Skill Level</strong>
+            Intermediate
+          </div>
+          <div class="stat-item">
+            <strong>Prerequisites</strong>
+            Basic understanding of statistics and business concepts
+          </div>
+          <div class="stat-item">
+            <strong>Certificate</strong>
+            OKV Technology Business Analytics Specialist Certification
+          </div>
+        </div>
+      </div>
+
+      <div class="curriculum">
+        <h2>Course Curriculum</h2>
+        <div class="module">
+          <h3>Module 1: Introduction to Business Analytics</h3>
+          <ul>
+            <li>Understanding the role of analytics in business</li>
+            <li>Types of analytics: descriptive, predictive, and prescriptive</li>
+            <li>The analytics process and lifecycle</li>
+            <li>Ethical considerations in business analytics</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 2: Data Collection and Preparation</h3>
+          <ul>
+            <li>Data sources and collection methods</li>
+            <li>Data quality assessment and cleaning</li>
+            <li>Data integration and transformation</li>
+            <li>Introduction to SQL for data manipulation</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 3: Statistical Analysis and Data Mining</h3>
+          <ul>
+            <li>Descriptive statistics and exploratory data analysis</li>
+            <li>Probability distributions and hypothesis testing</li>
+            <li>Regression analysis: linear and logistic regression</li>
+            <li>Clustering and classification techniques</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 4: Predictive Analytics and Machine Learning</h3>
+          <ul>
+            <li>Introduction to machine learning concepts</li>
+            <li>Supervised and unsupervised learning algorithms</li>
+            <li>Time series analysis and forecasting</li>
+            <li>Model evaluation and selection</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 5: Data Visualization and Storytelling</h3>
+          <ul>
+            <li>Principles of effective data visualization</li>
+            <li>Creating interactive dashboards and reports</li>
+            <li>Tools for data visualization (Tableau, Power BI)</li>
+            <li>Communicating insights to stakeholders</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="enroll-section">
+    <div class="container">
+      <h2>Ready to Become a Business Analytics Expert?</h2>
+      <p>Enroll now and transform your organization with data-driven insights!</p>
+      <a href="/enroll/business-analytics" class="enroll-btn">Enroll Now</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>OKV Technology is a leading provider of cutting-edge tech education, empowering individuals to excel in the digital world.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="660f08000926090d101203050e08090a09011f4805090b">[email&#160;protected]</a></p>
+          <p>Phone: +1 (555) 123-4567</p>
+          <p>Address: 123 Tech Street, Silicon Valley, CA 94000</p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://facebook.com/okvtechnology" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/okvtechnology" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/company/okvtechnology" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://instagram.com/okvtechnology" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 OKV Technology. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('nav').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

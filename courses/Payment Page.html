@@ -1,0 +1,215 @@
+<html><head><base href="https://okvtechnology.example.com/enroll/website-development/%20Payment%20Page"><title>Payment Instructions - Website Development Course - OKV Technology</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f9;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  .payment-instructions {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 100px;
+  }
+
+  h1 {
+    font-size: 28px;
+    color: #0066cc;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .course-details {
+    background-color: #e9f5ff;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+
+  .course-details h2 {
+    font-size: 20px;
+    color: #0066cc;
+    margin-bottom: 10px;
+  }
+
+  .course-details p {
+    margin-bottom: 5px;
+  }
+
+  .instructions {
+    margin-bottom: 30px;
+  }
+
+  .instructions h2 {
+    font-size: 22px;
+    color: #0066cc;
+    margin-bottom: 15px;
+  }
+
+  .instructions ol {
+    padding-left: 20px;
+  }
+
+  .instructions li {
+    margin-bottom: 10px;
+  }
+
+  .payment-btn {
+    display: block;
+    width: 100%;
+    background-color: #0066cc;
+    color: #fff;
+    text-align: center;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .payment-btn:hover {
+    background-color: #0052a3;
+  }
+
+  .secure-payment {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+  }
+
+  .secure-payment i {
+    color: #4CAF50;
+    margin-right: 5px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+
+    .payment-instructions {
+      padding: 30px;
+      margin-top: 80px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    .course-details h2, .instructions h2 {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .payment-instructions {
+      padding: 20px;
+      margin-top: 70px;
+    }
+
+    h1 {
+      font-size: 22px;
+    }
+
+    .course-details, .instructions {
+      padding: 15px;
+    }
+
+    .course-details h2, .instructions h2 {
+      font-size: 16px;
+    }
+
+    .payment-btn {
+      font-size: 16px;
+      padding: 12px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">OKV Technology</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="payment-instructions">
+      <h1>Payment Instructions for Website Development Course</h1>
+
+      <div class="course-details">
+        <h2>Course Details</h2>
+        <p><strong>Course:</strong> Website Development</p>
+        <p><strong>Duration:</strong> 12 weeks</p>
+        <p><strong>Start Date:</strong> September 1, 2023</p>
+        <p><strong>Price:</strong> $999</p>
+      </div>
+
+      <div class="instructions">
+        <h2>How to Pay</h2>
+        <ol>
+          <li>Click the "Proceed to Payment" button below.</li>
+          <li>You will be redirected to our secure payment platform, PayTech.</li>
+          <li>Select your preferred payment method (credit card, debit card, or PayTech balance).</li>
+          <li>Enter your payment details and confirm the transaction.</li>
+          <li>Once your payment is processed, you'll receive a confirmation email with your course enrollment details.</li>
+        </ol>
+      </div>
+
+      <a href="https://paytech.example.com/okv-technology/website-development-course" class="payment-btn">Proceed to Payment</a>
+
+      <p class="secure-payment"><i class="fas fa-lock"></i> Your payment will be securely processed by PayTech.</p>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

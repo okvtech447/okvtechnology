@@ -1,0 +1,469 @@
+<html><head><base href="https://okvtechnology.example.com/courses/website-development"><title>Website Development Course - OKV Technology</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f9;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+
+  nav ul li {
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #0066cc;
+  }
+
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+  }
+
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-heading {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #0066cc;
+  }
+
+  .course-details {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .course-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .info-item {
+    flex-basis: calc(33.333% - 20px);
+    margin-bottom: 20px;
+  }
+
+  .info-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0066cc;
+  }
+
+  .info-item p {
+    font-size: 16px;
+    color: #666;
+  }
+
+  .course-description {
+    margin-bottom: 30px;
+  }
+
+  .course-syllabus {
+    margin-bottom: 30px;
+  }
+
+  .syllabus-item {
+    margin-bottom: 20px;
+  }
+
+  .syllabus-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #0066cc;
+  }
+
+  .syllabus-item ul {
+    padding-left: 20px;
+  }
+
+  .enroll-section {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .enroll-btn {
+    display: inline-block;
+    background-color: #0066cc;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+
+  .enroll-btn:hover {
+    background-color: #0052a3;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    flex: 1;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    min-width: 200px;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .footer-section ul {
+    list-style-type: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section ul li a:hover {
+    color: #0066cc;
+  }
+
+  .social-icons a {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #0066cc;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+    }
+
+    nav ul {
+      margin-top: 20px;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    .hero {
+      height: 300px;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+    }
+
+    .hero p {
+      font-size: 16px;
+    }
+
+    .section-heading {
+      font-size: 28px;
+    }
+
+    .info-item {
+      flex-basis: 100%;
+    }
+
+    .course-details {
+      padding: 20px;
+    }
+
+    .syllabus-item h3 {
+      font-size: 18px;
+    }
+
+    .footer-section {
+      flex-basis: 100%;
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 20px;
+    }
+
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 5px;
+    }
+
+    .hero {
+      height: 250px;
+    }
+
+    .hero h1 {
+      font-size: 24px;
+    }
+
+    .hero p {
+      font-size: 14px;
+    }
+
+    .section-heading {
+      font-size: 24px;
+    }
+
+    .enroll-btn {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+  }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">OKV Technology</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Website Development Course</h1>
+      <p>Master the art of creating stunning and functional websites</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="course-details">
+        <div class="course-info">
+          <div class="info-item">
+            <h3>Duration</h3>
+            <p>12 weeks</p>
+          </div>
+          <div class="info-item">
+            <h3>Level</h3>
+            <p>Beginner to Intermediate</p>
+          </div>
+          <div class="info-item">
+            <h3>Prerequisites</h3>
+            <p>Basic HTML and CSS knowledge</p>
+          </div>
+        </div>
+        <div class="course-description">
+          <h2>Course Description</h2>
+          <p>Our Website Development course is designed to take you from a beginner to a confident web developer. You'll learn the latest technologies and best practices in web development, enabling you to create responsive, dynamic, and visually appealing websites. This hands-on course covers front-end and back-end development, giving you a comprehensive understanding of the entire web development process.</p>
+        </div>
+        <div class="course-syllabus">
+          <h2>Course Syllabus</h2>
+          <div class="syllabus-item">
+            <h3>Module 1: HTML5 and CSS3 Fundamentals</h3>
+            <ul>
+              <li>Introduction to HTML5 structure and semantics</li>
+              <li>CSS3 styling and layout techniques</li>
+              <li>Responsive design principles</li>
+              <li>CSS Flexbox and Grid systems</li>
+            </ul>
+          </div>
+          <div class="syllabus-item">
+            <h3>Module 2: JavaScript and DOM Manipulation</h3>
+            <ul>
+              <li>JavaScript syntax and core concepts</li>
+              <li>DOM manipulation and event handling</li>
+              <li>AJAX and fetching data from APIs</li>
+              <li>ES6+ features and modern JavaScript</li>
+            </ul>
+          </div>
+          <div class="syllabus-item">
+            <h3>Module 3: Front-end Frameworks</h3>
+            <ul>
+              <li>Introduction to React.js</li>
+              <li>State management and component lifecycle</li>
+              <li>Building single-page applications</li>
+              <li>Redux for state management</li>
+            </ul>
+          </div>
+          <div class="syllabus-item">
+            <h3>Module 4: Back-end Development with Node.js</h3>
+            <ul>
+              <li>Node.js fundamentals and NPM</li>
+              <li>Express.js framework for server-side development</li>
+              <li>RESTful API design and implementation</li>
+              <li>Database integration with MongoDB</li>
+            </ul>
+          </div>
+          <div class="syllabus-item">
+            <h3>Module 5: Full-stack Project</h3>
+            <ul>
+              <li>Planning and designing a full-stack web application</li>
+              <li>Implementing front-end and back-end features</li>
+              <li>User authentication and authorization</li>
+              <li>Deployment and hosting on cloud platforms</li>
+            </ul>
+          </div>
+        </div>
+        <div class="enroll-section">
+          <a href="/enroll/website-development" class="enroll-btn">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>OKV Technology is a leading provider of innovative tech solutions and education services, empowering individuals and businesses to thrive in the digital age.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9bf2f5fdf4dbf4f0edeffef8f3f5f4f7f4fce2b5f8f4f6">[email&#160;protected]</a></p>
+          <p>Phone: (123) 456-7890</p>
+          <p>Address: 123 Tech Street, Innovation City, TC 12345</p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 OKV Technology. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

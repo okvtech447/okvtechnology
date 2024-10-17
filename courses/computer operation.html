@@ -1,0 +1,350 @@
+<html><head><base href="https://okvtechnology.example.com/courses/computer%20operation"><title>Computer Operation Course - OKV Technology</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+
+  nav ul li {
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    opacity: 0.8;
+  }
+
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 60px;
+  }
+
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .course-details {
+    padding: 4rem 0;
+    background-color: white;
+  }
+
+  .course-overview {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+
+  .overview-text {
+    flex: 2;
+    padding-right: 2rem;
+  }
+
+  .overview-stats {
+    flex: 1;
+    background-color: #f1f3f5;
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+
+  .stat-item {
+    margin-bottom: 1rem;
+  }
+
+  .stat-item strong {
+    display: block;
+    color: #4CAF50;
+  }
+
+  .curriculum {
+    margin-top: 3rem;
+  }
+
+  .module {
+    background-color: #f1f3f5;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .module:hover {
+    transform: translateY(-5px);
+  }
+
+  .module h3 {
+    color: #4CAF50;
+    margin-bottom: 1rem;
+  }
+
+  .module ul {
+    list-style-type: none;
+    padding-left: 1rem;
+  }
+
+  .module ul li::before {
+    content: "✓";
+    color: #4CAF50;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+
+  .enroll-section {
+    background-color: #4CAF50;
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .enroll-btn {
+    display: inline-block;
+    background-color: white;
+    color: #4CAF50;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .enroll-btn:hover {
+    background-color: #45a049;
+    color: white;
+  }
+
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .social-icons {
+    margin-top: 1rem;
+  }
+
+  .social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #4CAF50;
+  }
+
+  @media (max-width: 768px) {
+    .course-overview {
+      flex-direction: column;
+    }
+
+    .overview-text {
+      padding-right: 0;
+      margin-bottom: 2rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">OKV Technology</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Computer Operation Course</h1>
+      <p>Master the essentials of computer operation and boost your digital literacy</p>
+    </div>
+  </section>
+
+  <section class="course-details">
+    <div class="container">
+      <div class="course-overview">
+        <div class="overview-text">
+          <h2>Course Overview</h2>
+          <p>Our Computer Operation course is designed to provide a solid foundation in using computers effectively. Whether you're a complete beginner or looking to enhance your existing skills, this course will guide you through the essential aspects of computer operation, from basic hardware understanding to software applications and internet usage.</p>
+          <p>You'll gain hands-on experience with common operating systems, learn to navigate file systems, use productivity software, and understand basic troubleshooting techniques. By the end of this course, you'll have the confidence to use computers efficiently in both personal and professional settings.</p>
+        </div>
+        <div class="overview-stats">
+          <div class="stat-item">
+            <strong>Duration:</strong> 8 weeks
+          </div>
+          <div class="stat-item">
+            <strong>Skill Level:</strong> Beginner to Intermediate
+          </div>
+          <div class="stat-item">
+            <strong>Prerequisites:</strong> None
+          </div>
+          <div class="stat-item">
+            <strong>Certificate:</strong> OKV Technology Computer Operation Proficiency
+          </div>
+        </div>
+      </div>
+
+      <div class="curriculum">
+        <h2>Course Curriculum</h2>
+        <div class="module">
+          <h3>Module 1: Introduction to Computers</h3>
+          <ul>
+            <li>Understanding computer hardware components</li>
+            <li>Introduction to operating systems (Windows, macOS, Linux)</li>
+            <li>Basic computer terminology</li>
+            <li>Setting up and customizing your computer</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 2: File Management and Organization</h3>
+          <ul>
+            <li>Navigating file systems and folder structures</li>
+            <li>Creating, moving, and deleting files and folders</li>
+            <li>File compression and archiving</li>
+            <li>Cloud storage and synchronization</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 3: Productivity Software</h3>
+          <ul>
+            <li>Word processing with Microsoft Word or Google Docs</li>
+            <li>Spreadsheets with Microsoft Excel or Google Sheets</li>
+            <li>Creating presentations with PowerPoint or Google Slides</li>
+            <li>Introduction to email clients and management</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 4: Internet and Web Browsing</h3>
+          <ul>
+            <li>Understanding web browsers and their features</li>
+            <li>Effective web searching techniques</li>
+            <li>Online security and privacy best practices</li>
+            <li>Introduction to social media platforms</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 5: Basic Troubleshooting and Maintenance</h3>
+          <ul>
+            <li>Identifying common computer problems</li>
+            <li>Updating software and drivers</li>
+            <li>Malware protection and removal</li>
+            <li>Basic system maintenance tasks</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Module 6: Digital Citizenship and Ethics</h3>
+          <ul>
+            <li>Understanding digital footprints</li>
+            <li>Responsible use of technology</li>
+            <li>Copyright and fair use in the digital world</li>
+            <li>Ergonomics and health considerations for computer users</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="enroll-section">
+    <div class="container">
+      <h2>Ready to Enhance Your Computer Skills?</h2>
+      <p>Enroll now and start your journey to becoming a confident computer user!</p>
+      <a href="/enroll/computer-operation" class="enroll-btn">Enroll Now</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 OKV Technology. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://facebook.com/okvtechnology" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/okvtechnology" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com/company/okvtechnology" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://instagram.com/okvtechnology" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</body>
+</html>
