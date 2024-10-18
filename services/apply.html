@@ -1,0 +1,362 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f9;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  .application-form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 100px;
+  }
+
+  h1 {
+    font-size: 28px;
+    color: #0066cc;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="file"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  input[type="file"] {
+    padding: 5px;
+  }
+
+  textarea {
+    height: 120px;
+  }
+
+  .submit-btn {
+    display: block;
+    width: 100%;
+    background-color: #0066cc;
+    color: #fff;
+    text-align: center;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background-color: #0052a3;
+  }
+
+  .privacy-notice {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+  }
+
+  .photo-preview {
+    max-width: 200px;
+    max-height: 200px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: none;
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 20px;
+  }
+
+  .radio-option {
+    display: flex;
+    align-items: center;
+  }
+
+  .radio-option input[type="radio"] {
+    margin-right: 5px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+
+    .application-form {
+      padding: 30px;
+      margin-top: 80px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .application-form {
+      padding: 20px;
+      margin-top: 70px;
+    }
+
+    h1 {
+      font-size: 22px;
+    }
+
+    .submit-btn {
+      font-size: 16px;
+      padding: 12px 20px;
+    }
+
+    .logo {
+      font-size: 20px;
+    }
+
+    .header-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .radio-group {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .application-form {
+      padding: 15px;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="file"],
+    select,
+    textarea {
+      font-size: 14px;
+      padding: 8px;
+    }
+
+    .submit-btn {
+      font-size: 14px;
+      padding: 10px 15px;
+    }
+
+    .privacy-notice {
+      font-size: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">OKV Technology</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <form class="application-form" action="/enroll/website-development/submit" method="POST" enctype="multipart/form-data">
+      <h1>Application Form for Website Development Course</h1>
+
+      <div class="form-group">
+        <label for="passport-photo">Passport Photo</label>
+        <input type="file" id="passport-photo" name="passport-photo" accept="image/*" required>
+        <img id="photo-preview" class="photo-preview" alt="Passport photo preview">
+      </div>
+
+      <div class="form-group">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="full-name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Sex</label>
+        <div class="radio-group">
+          <div class="radio-option">
+            <input type="radio" id="male" name="sex" value="male" required>
+            <label for="male">Male</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="female" name="sex" value="female" required>
+            <label for="female">Female</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="other" name="sex" value="other" required>
+            <label for="other">Other</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="education">Highest Level of Education</label>
+        <select id="education" name="education" required>
+          <option value="">Select your highest education level</option>
+          <option value="high-school">High School</option>
+          <option value="associate">Associate Degree</option>
+          <option value="bachelor">Bachelor's Degree</option>
+          <option value="master">Master's Degree</option>
+          <option value="phd">Ph.D. or Doctorate</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="experience">Prior Programming Experience</label>
+        <select id="experience" name="experience" required>
+          <option value="">Select your experience level</option>
+          <option value="none">No Experience</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="preferred-course">Preferred Course</label>
+        <select id="preferred-course" name="preferred-course" required>
+          <option value="">Select your preferred course</option>
+          <option value="front-end">Front-end Development</option>
+          <option value="back-end">Back-end Development</option>
+          <option value="full-stack">Full-stack Development</option>
+          <option value="mobile">Mobile App Development</option>
+          <option value="data-science">Data Science and Machine Learning</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="preferred-mode">Preferred Learning Mode</label>
+        <select id="preferred-mode" name="preferred-mode" required>
+          <option value="">Select your preferred learning mode</option>
+          <option value="online">Online (Self-paced)</option>
+          <option value="live-online">Live Online Classes</option>
+          <option value="in-person">In-person Classes</option>
+          <option value="hybrid">Hybrid (Online + In-person)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="motivation">Why do you want to join this course? (Max 500 characters)</label>
+        <textarea id="motivation" name="motivation" maxlength="500" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Application</button>
+
+      <p class="privacy-notice">By submitting this form, you agree to our <a href="/privacy-policy">Privacy Policy</a> and <a href="/terms-of-service">Terms of Service</a>.</p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('passport-photo').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      const preview = document.getElementById('photo-preview');
+      
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          preview.src = e.target.result;
+          preview.style.display = 'block';
+        }
+        reader.readAsDataURL(file);
+      } else {
+        preview.src = '';
+        preview.style.display = 'none';
+      }
+    });
+
+    document.querySelector('.application-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Here you would typically send the form data to a server
+      // For this example, we'll just simulate a successful submission
+      alert('Application submitted successfully! We will contact you soon.');
+      window.location.href = 'https://okvtechnology.example.com/enroll/website-development/application-confirmation';
+    });
+  </script>
+</body>
+</html>
