@@ -30,8 +30,7 @@
         width: 100%;
         top: 0;
         z-index: 1000;
-        transition: all 0.5s ease;
-        margin-top: 15px;
+        transition: all 0.3s ease;
       }
     
       header.scrolled {
@@ -134,8 +133,41 @@
     border-radius: 10px;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-top: 15px;
   }
+
+  .whatsapp_float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+    }
+    .whatsapp-icon {
+      margin-top: 16px;
+    }
+
+    /* for mobile */
+    @media screen and (max-width: 767px){
+      .whatsapp-icon {
+        margin-top: 10px;
+      }
+      .whatsapp_float {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 10px;
+        font-size: 22px;
+      }
+    }
 
   .hero-slide.active .hero-content {
     opacity: 1;
@@ -176,7 +208,7 @@
   }
 
   .hero-slider {
-    animation: slide 20s infinite;
+    animation: slide 15s infinite;
   }
 
   /* The rest of the CSS remains unchanged */
