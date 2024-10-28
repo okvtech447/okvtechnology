@@ -432,73 +432,7 @@
     </div>
   </footer>
 
-  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
   <script>
-    // Search functionality
-    document.querySelector('.search-bar button').addEventListener('click', function(e) {
-      e.preventDefault();
-      const searchTerm = document.querySelector('.search-bar input').value.toLowerCase();
-      const serviceCards = document.querySelectorAll('.service-card');
-      
-      serviceCards.forEach(card => {
-        const cardText = card.textContent.toLowerCase();
-        if (cardText.includes(searchTerm)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-
-    // Mobile menu toggle
-    const createMobileMenu = () => {
-      const nav = document.querySelector('nav');
-      const mobileMenuBtn = document.createElement('button');
-      mobileMenuBtn.innerHTML = '☰';
-      mobileMenuBtn.classList.add('mobile-menu-btn');
-      nav.appendChild(mobileMenuBtn);
-
-      const navLinks = document.querySelector('.nav-links');
-      mobileMenuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
-      });
-
-      // Add styles for mobile menu
-      const style = document.createElement('style');
-      style.textContent = `
-        @media screen and (max-width: 768px) {
-          .mobile-menu-btn {
-            display: block;
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 1.5rem;
-            cursor: pointer;
-          }
-          .nav-links {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background-color: var(--primary-color);
-            flex-direction: column;
-            align-items: center;
-            padding: 1rem 0;
-          }
-          .nav-links.show {
-            display: flex;
-          }
-          .nav-links li {
-            margin: 0.5rem 0;
-          }
-        }
-      `;
-      document.head.appendChild(style);
-    };
-
-    createMobileMenu();
-  </script><script>
     document.addEventListener('DOMContentLoaded', (event) => {
       const menuToggle = document.querySelector('.menu-toggle');
       const navMenu = document.querySelector('nav ul');
