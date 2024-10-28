@@ -31,8 +31,8 @@
   }
 
   header {
-    background-color: var(--primary-color);
-    color: #fff;
+    background-color:rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
@@ -40,7 +40,11 @@
     z-index: 1000;
   }
 
-  nav {
+  header.scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,26 +53,35 @@
   .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #0066cc;
   }
 
-  .nav-links {
-    list-style: none;
+  nav ul {
+    list-style-type: none;
     display: flex;
   }
 
-  .nav-links li {
+  nav ul li {
     margin-left: 20px;
+ 
   }
 
-  .nav-links a {
-    color: #fff;
+  nav ul li a {
+    color:#0066cc;
     text-decoration: none;
     transition: color 0.3s ease;
   }
 
-  .nav-links a:hover {
-    color: var(--secondary-color);
+  nav ul li a:hover {
+    color: #ddd;
   }
+
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
 
   .hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
@@ -240,9 +253,31 @@
   }
 
   @media screen and (max-width: 768px) {
-    .nav-links {
-      display: none;
+    .menu-toggle {
+      display: block;
     }
+
+    nav ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color:rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+    }
+
+    nav ul.show {
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+      color: #0066cc;
+    }
+
 
     .hero-content h1 {
       font-size: 2rem;
@@ -283,9 +318,23 @@
     }
   }
 </style>
-
-
-  <section class="hero">
+<header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">OKV Technology</div>
+        <div class="menu-toggle">&#9776;</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+<section class="hero">
     <div class="hero-content">
       <h1>Innovative Software Solutions</h1>
       <p>Empowering businesses with cutting-edge technology to solve complex challenges and drive growth.</p>
@@ -449,6 +498,31 @@
     };
 
     createMobileMenu();
+  </script><script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMenu = document.querySelector('nav ul');
+
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (event) => {
+        const isClickInside = navMenu.contains(event.target) || menuToggle.contains(event.target);
+        if (!isClickInside && navMenu.classList.contains('show')) {
+          navMenu.classList.remove('show');
+        }
+      });
+
+      // Adjust menu on window resize
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+          navMenu.classList.remove('show');
+        }
+      });
+    });
   </script>
+
 </body>
 </html>
