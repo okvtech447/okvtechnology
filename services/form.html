@@ -256,6 +256,38 @@
     .hero h1 {
       font-size: 28px;
     }
+    .whatsapp_float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+    }
+    .whatsapp-icon {
+      margin-top: 16px;
+    }
+
+    /* for mobile */
+    @media screen and (max-width: 767px){
+      .whatsapp-icon {
+        margin-top: 10px;
+      }
+      .whatsapp_float {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 10px;
+        font-size: 22px;
+      }
+    }
+
 
     .contact-section {
       padding: 60px 0;
@@ -268,6 +300,8 @@
   }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -360,8 +394,8 @@
         </div>
         <div class="contact-info">
           <h3>Contact Information</h3>
-          <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Innovation City, TC 12345</p>
-          <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+          <p><i class="fas fa-map-marker-alt"></i> No:11. Embassy Island, Ado-Ekiti</p>
+          <p><i class="fas fa-phone"></i> +2348104141138</p>
           <p><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a1c8cfc7cee1cecad7d5c4c2c9cfcecdcec6d88fc2cecc">[email&#160;protected]</a></p>
           <p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 5:00 PM</p>
           <div class="map">
@@ -373,11 +407,12 @@
   </section>
 
   <footer>
+     <a href="https:/wa.me/+2348104141138"  target="_blank" class="whatsapp_float"><i class="fa-brands fa-whatsapp whatsapp-icon"></i></a>
+
     <div class="container">
-      <p>&copy; 2023 OKV Technology. All rights reserved.</p>
+      <p>&copy; 2024 OKV Technology. All rights reserved.</p>
       
   </footer>
-
   script>
     document.addEventListener('DOMContentLoaded', (event) => {
       const menuToggle = document.querySelector('.menu-toggle');
@@ -403,5 +438,6 @@
       });
     });
   </script>
-</body>
+  </body>
+
 </html>
