@@ -1,4 +1,4 @@
-<html><head><base href="https://okvtechnology.example.com/free-training">
+<html><head><base href="https://free-training">
 <title>Free Training Resources - OKV Technology</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
@@ -33,6 +33,38 @@
     top: 0;
     z-index: 1000;
   }
+  .whatsapp_float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+    }
+    .whatsapp-icon {
+      margin-top: 16px;
+    }
+
+    /* for mobile */
+    @media screen and (max-width: 767px){
+      .whatsapp-icon {
+        margin-top: 10px;
+      }
+      .whatsapp_float {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 10px;
+        font-size: 22px;
+      }
+    }
+
 
   .header-content {
     display: flex;
@@ -329,6 +361,7 @@
     }
   }
 </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <header>
@@ -432,6 +465,7 @@
   </section>
 
   <footer>
+    <a href="https:/wa.me/country_code_and_your_phone_number"  target="_blank" class="whatsapp_float"><i class="fa-brands fa-whatsapp whatsapp-icon"></i></a>
     <div class="container">
       <p>&copy; 2023 OKV Technology. All rights reserved.</p>
       <div class="social-icons">
