@@ -24,81 +24,56 @@
       }
     
       header {
-        background-color: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(10px);
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 1000;
-        transition: all 0.3s ease;
-      }
-    
-      header.scrolled {
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-    
-      .header-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 0;
-        margin-top: 5px;
-      }
-    
-      .logo {
-        font-size: 24px;
-        font-weight: 600;
-        color: #0066cc;
-        text-decoration: none;
-        transition: transform 0.3s ease;
-      }
-    
-      .logo:hover {
-        transform: scale(1.05);
-      }
-    
-      nav ul {
-        list-style-type: none;
-        padding: 0;
-        display: flex;
-      }
-    
-      nav ul li {
-        margin-left: 30px;
-      }
-    
-      nav ul li a {
-        text-decoration: none;
-        color: #333;
-        font-weight: 400;
-        transition: color 0.3s ease;
-        position: relative;
-      }
-    
-      nav ul li a::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -5px;
-        left: 0;
-        background-color: #0066cc;
-        transition: width 0.3s ease;
-      }
-    
-      nav ul li a:hover::after {
-        width: 100%;
-      }
-    
-      .mobile-menu-toggle {
-        display: none;
-        background: none;
-        border: none;
-        font-size: 24px;
-        color: #0066cc;
-        cursor: pointer;
-      }
-    
+  background-color:rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+header.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0066cc;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+
+}
+
+nav ul li a {
+  color:#0066cc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ddd;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
       .hero {
     height: 60vh; /* Reduced height */
     position: relative;
@@ -788,34 +763,31 @@
       }
     
       @media screen and (max-width: 768px) {
-        .mobile-menu-toggle {
-          display: block;
-        }
-        
-        nav {
-          position: fixed;
-          top: 70px;
-          left: -100%;
-          width: 100%;
-          height: calc(100vh - 70px);
-          background-color: rgba(255, 255, 255, 0.95);
-          transition: left 0.3s ease;
-        }
-        
-        nav.active {
-          left: 0;
-        }
-        
-        nav ul {
-          flex-direction: column;
-          align-items: center;
-          padding-top: 50px;
-        }
-        
-        nav ul li {
-          margin: 20px 0;
-        }
-        
+    .menu-toggle {
+      display: block;
+    }
+
+    nav ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color:rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+    }
+
+    nav ul.show {
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+      color: #0066cc;
+    }
+
         .hero h1 {
           font-size: 28px;
         }
@@ -877,20 +849,15 @@
       <header>
         <div class="container">
           <div class="header-content">
-            <a href="/" class="logo">OKV Technology</a>
-            <button class="mobile-menu-toggle">
-              <i class="fas fa-bars"></i>
-            </button>
+            <div class="logo">OKV Technology</div>
+            <div class="menu-toggle">&#9776;</div>
             <nav>
-              <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="services/training.html">Training</a></li>
-              
-              </ul>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
             </nav>
           </div>
         </div>
@@ -1170,24 +1137,31 @@
         <i class="fas fa-chevron-up"></i>
       </button>
     
-      <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Mobile menu toggle
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const nav = document.querySelector('nav');
+      <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+          const menuToggle = document.querySelector('.menu-toggle');
+          const navMenu = document.querySelector('nav ul');
     
-        mobileMenuToggle.addEventListener('click', () => {
-          nav.classList.toggle('active');
-        });
+          menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+          });
     
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-              behavior: 'smooth'
-            });
+          // Close menu when clicking outside
+          document.addEventListener('click', (event) => {
+            const isClickInside = navMenu.contains(event.target) || menuToggle.contains(event.target);
+            if (!isClickInside && navMenu.classList.contains('show')) {
+              navMenu.classList.remove('show');
+            }
+          });
+    
+          // Adjust menu on window resize
+          window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+              navMenu.classList.remove('show');
+            }
           });
         });
+     
     
         // Header scroll effect
         const header = document.querySelector('header');
