@@ -3,926 +3,843 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OKV PATHFINDER - Your Guidance Ecosystem</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+    <title>OKV PATHFINDER | Discover Your Future</title>
     <style>
-        /* Modern Design Variables */
+        /* --- General Styling --- */
         :root {
-            --primary-blue: #2c7be5; /* Strong Blue */
-            --primary-dark-blue: #1c5d9e;
-            --secondary-accent: #00c7e5; /* Cyan/Aqua */
-            --gradient-start: #e9f0ff; /* Very Light Blue */
-            --gradient-end: #ffffff; /* White */
-            --text-color-dark: #344767;
-            --text-color-light: #67748e;
-            --card-bg: #fff;
-            --shadow-strong: 0 10px 30px rgba(0, 0, 0, 0.05);
-            --border-radius-large: 16px;
-            --border-radius-small: 8px;
+            --color-primary: #0077ff; /* Blue */
+            --color-secondary: #00bfff; /* Sky Blue */
+            --color-accent: #ff4500; /* Orange-Red for highlights */
+            --color-text: #333;
+            --color-bg-light: #ffffff;
+            --color-bg-dark: #f0f4f8;
+            --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        /* General Reset and Typography */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background: linear-gradient(145deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            color: var(--text-color-dark);
-            line-height: 1.6;
+            /* Blue/White Gradient Background */
+            background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-dark) 50%, #e6f0ff 100%);
             min-height: 100vh;
+            color: var(--color-text);
+            line-height: 1.6;
             padding-bottom: 50px;
         }
 
-        /* Header and Title */
-        .header {
-            text-align: center;
-            padding: 50px 20px 30px;
-            background: var(--card-bg);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header & Branding --- */
+        header {
+            background: var(--color-bg-light);
+            padding: 20px 0;
+            box-shadow: var(--shadow-light);
             margin-bottom: 30px;
         }
 
-        .header h1 {
-            font-size: 2.8em;
-            color: var(--primary-dark-blue);
-            margin-bottom: 8px;
-            font-weight: 800;
-        }
-
-        .header h1 span {
-            color: var(--secondary-accent);
-        }
-
-        .header h3 {
-            font-size: 1.1em;
-            color: var(--text-color-light);
-            font-style: italic;
-            margin-top: 5px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Layout Grid and Container */
-        .container-wrapper {
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
         }
 
-        @media (min-width: 992px) {
-            .container-wrapper {
-                grid-template-columns: 3fr 1fr; /* Main Content (3/4) and Sidebar (1/4) */
-            }
+        h1.logo {
+            font-size: 2em;
+            color: var(--color-primary);
+            font-weight: 700;
         }
 
-        /* Tabs Navigation */
-        .tabs-nav {
+        .tagline {
+            font-style: italic;
+            color: var(--color-text-light);
+            font-size: 1em;
+            margin-top: 5px;
+        }
+
+        /* --- Navigation Tabs --- */
+        .tabs {
             display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 25px;
-            background: var(--card-bg);
-            border-radius: var(--border-radius-large);
-            box-shadow: var(--shadow-strong);
-            padding: 10px;
+            background: var(--color-primary);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            margin-bottom: 30px;
         }
 
         .tab-button {
-            flex: 1;
+            flex-grow: 1;
             padding: 15px 10px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: var(--text-color-light);
-            font-weight: 600;
-            font-size: 0.95em;
-            transition: all 0.3s ease;
-            border-bottom: 3px solid transparent;
             text-align: center;
-            white-space: nowrap;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-
-        .tab-button:hover {
-            color: var(--primary-blue);
-            background-color: var(--gradient-start);
-            border-radius: var(--border-radius-small);
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.1s;
         }
 
         .tab-button.active {
-            color: var(--primary-blue);
-            border-bottom-color: var(--primary-blue);
-            font-weight: 700;
-            background-color: var(--gradient-start);
-            border-radius: var(--border-radius-small);
+            background: var(--color-bg-light);
+            color: var(--color-primary);
+            box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.2);
         }
 
-        /* Main Tab Content */
+        /* --- Main Content Section --- */
         .tab-content {
-            background: var(--card-bg);
+            background: var(--color-bg-light);
             padding: 30px;
-            border-radius: var(--border-radius-large);
-            box-shadow: var(--shadow-strong);
-            min-height: 500px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
         }
 
-        .tab-content h3 {
+        .tab-content h2 {
             font-size: 2em;
-            margin-bottom: 25px;
-            color: var(--primary-dark-blue);
-            border-bottom: 2px solid var(--gradient-start);
-            padding-bottom: 15px;
-            font-weight: 700;
-        }
-
-        /* Quiz Styling */
-        .quiz-question {
-            margin-bottom: 20px;
-            padding: 20px;
-            border: 1px solid #e0e9f0;
-            border-radius: var(--border-radius-small);
-            background-color: #f7f9fc;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        
-        .quiz-question:hover {
-            border-color: var(--secondary-accent);
-            box-shadow: 0 0 15px rgba(44, 123, 229, 0.1);
-        }
-
-        .quiz-question label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 12px;
-            font-size: 1.15em;
-            color: var(--primary-dark-blue);
-        }
-
-        .quiz-options div {
-            margin-bottom: 10px;
-        }
-
-        .quiz-options input[type="radio"] {
-            margin-right: 12px;
-            accent-color: var(--primary-blue);
-            transform: scale(1.1);
-        }
-        
-        .quiz-options label {
-            font-weight: normal;
-            cursor: pointer;
-            color: var(--text-color-dark);
-        }
-
-        .submit-btn {
-            display: inline-block;
-            padding: 15px 30px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-accent));
-            color: white;
-            border: none;
-            border-radius: var(--border-radius-small);
-            cursor: pointer;
-            font-size: 1.15em;
-            font-weight: 700;
-            box-shadow: 0 4px 10px rgba(44, 123, 229, 0.3);
-            transition: all 0.3s ease;
-            margin-top: 25px;
-        }
-
-        .submit-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(44, 123, 229, 0.4);
-        }
-
-        /* Result Card */
-        .result-card {
-            border: 3px solid var(--primary-blue);
-            border-radius: var(--border-radius-large);
-            padding: 35px;
-            margin-top: 30px;
-            background: linear-gradient(135deg, #f0f7ff, #ffffff);
-            box-shadow: 0 10px 30px rgba(44, 123, 229, 0.1);
-            display: none; 
-        }
-
-        .result-card h4 {
-            font-size: 2em;
-            color: var(--primary-dark-blue);
-            margin-bottom: 20px;
-            border-bottom: 3px solid var(--secondary-accent);
+            color: var(--color-primary);
+            border-bottom: 3px solid var(--color-secondary);
             padding-bottom: 10px;
-        }
-
-        .result-item {
-            margin-bottom: 15px;
-            font-size: 1.05em;
-        }
-
-        .result-item strong {
-            display: block;
-            color: var(--primary-blue);
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-
-        .action-buttons {
-            margin-top: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .action-buttons button, .action-buttons a {
-            padding: 14px 25px;
-            border-radius: var(--border-radius-small);
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            text-align: center;
-            flex-grow: 1;
-            min-width: 200px;
-            font-size: 1em;
-        }
-
-        .btn-download {
-            background-color: var(--primary-blue);
-            color: white;
-            border: none;
-        }
-
-        .btn-download:hover {
-            background-color: var(--primary-dark-blue);
-        }
-
-        .btn-community {
-            background-color: var(--secondary-accent);
-            color: white;
-            border: 2px solid var(--secondary-accent);
-        }
-
-        .btn-community:hover {
-            background-color: #009aa8;
-        }
-
-        .btn-retake {
-            background-color: #f0f3f6;
-            color: var(--text-color-light);
-            border: 1px solid #d4dce3;
-        }
-
-        .btn-retake:hover {
-            background-color: #e0e9f0;
-            color: var(--text-color-dark);
-        }
-
-        /* Other Tabs Styling */
-        .other-tab-content {
-            padding: 20px 0;
-        }
-
-        .other-tab-content h4 {
-            font-size: 1.6em;
-            color: var(--primary-dark-blue);
-            margin-top: 25px;
-            margin-bottom: 15px;
-            border-left: 5px solid var(--secondary-accent);
-            padding-left: 10px;
-        }
-
-        .resource-list li, .monetize-list li {
-            background: #f7f9fc;
-            padding: 18px;
-            margin-bottom: 12px;
-            border-radius: var(--border-radius-small);
-            border: 1px solid #e0e9f0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
-        }
-        
-        .monetize-list strong {
-            color: var(--primary-blue);
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-        .resource-list a {
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .growth-steps {
-            list-style: none;
-            padding: 0;
-            counter-reset: step-counter;
-        }
-
-        .growth-steps li {
-            counter-increment: step-counter;
-            padding: 20px;
-            background: #fff;
-            border-radius: var(--border-radius-large);
-            box-shadow: var(--shadow-strong);
             margin-bottom: 20px;
-            position: relative;
-            padding-left: 70px; /* Space for the number */
-            transition: transform 0.3s;
+            font-weight: 600;
         }
 
-        .growth-steps li:hover {
-            transform: translateY(-5px);
-        }
-
-        .growth-steps li::before {
-            content: "0" counter(step-counter);
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.8em;
-            font-weight: 800;
-            color: var(--secondary-accent);
-            opacity: 0.6;
-            line-height: 1;
-        }
-
-        .growth-steps li strong {
-            display: block;
-            font-size: 1.3em;
-            color: var(--primary-blue);
-            margin-bottom: 5px;
-        }
-        
-        /* --- ADVERTISEMENT SPACES --- */
-        .sidebar {
+        /* --- Forms (Quizzes) Styling --- */
+        .quiz-form {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
 
-        .ad-space {
-            background-color: #fff3e0; /* Light Orange/Yellow background */
-            border: 1px solid #ffcc80; /* Orange border */
-            border-radius: var(--border-radius-large);
+        .quiz-question {
+            background: var(--color-bg-dark);
             padding: 20px;
-            text-align: center;
-            color: #e65100; /* Dark Orange text */
+            border-radius: 10px;
+            border-left: 5px solid var(--color-primary);
+        }
+
+        .quiz-question label {
+            display: block;
             font-weight: 600;
-            min-height: 150px;
-            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.1);
-        }
-
-        .ad-space h5 {
-            font-size: 1.2em;
             margin-bottom: 10px;
-            color: #d84315;
+            font-size: 1.1em;
         }
-        
-        .ad-banner-top {
+
+        .options-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .options-group label {
+            cursor: pointer;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            transition: all 0.2s;
+            font-weight: 400;
             text-align: center;
-            margin: 20px auto;
-            max-width: 900px;
+            flex-grow: 1;
+            min-width: 120px;
+        }
+
+        .options-group input[type="radio"] {
+            display: none;
+        }
+
+        .options-group input[type="radio"]:checked + label {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* --- Buttons --- */
+        .btn-submit {
+            background: var(--color-accent);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            align-self: flex-start;
+            box-shadow: 0 4px 8px rgba(255, 69, 0, 0.4);
+        }
+
+        .btn-submit:hover {
+            background: #cc3700;
+            transform: translateY(-2px);
+        }
+
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            margin-top: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+            text-decoration: none;
+            cursor: pointer;
+            border: 2px solid;
+            margin-right: 10px;
+        }
+
+        .btn-download {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
         }
         
-        .ad-banner-top .ad-space {
-            min-height: 90px;
-            padding: 10px;
+        .btn-community {
+            background: white;
+            color: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+        
+        .btn-retake {
+            background: #6c757d;
+            color: white;
+            border-color: #6c757d;
         }
 
-        /* Responsive Adjustments */
+        /* --- Result Section --- */
+        .result-container {
+            border: 3px solid var(--color-primary);
+            padding: 30px;
+            border-radius: 15px;
+            background: #eaf3ff;
+            margin-top: 20px;
+            display: none; /* Hidden by default */
+        }
+
+        .result-container h3 {
+            font-size: 1.8em;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+        }
+
+        .result-item {
+            padding: 10px 0;
+            border-bottom: 1px dashed #c0c0c0;
+        }
+        
+        .result-item strong {
+            color: var(--color-accent);
+            margin-right: 5px;
+            font-weight: 700;
+        }
+
+        .result-actions {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        /* --- Monetize Grid --- */
+        .monetize-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .monetize-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .monetize-card h4 {
+            color: var(--color-accent);
+            margin-bottom: 10px;
+            font-size: 1.3em;
+            border-bottom: 2px solid #ffefe0;
+            padding-bottom: 5px;
+        }
+        
+        .monetize-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .monetize-card li {
+            margin-bottom: 8px;
+            padding-left: 10px;
+            border-left: 3px solid var(--color-secondary);
+        }
+
+        /* --- Resources List --- */
+        .resource-list li {
+            background: #f0f8ff;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 5px solid var(--color-primary);
+        }
+
+        .resource-list li a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* --- Ads Placeholder --- */
+        .ad-space {
+            text-align: center;
+            background: #fff0f0;
+            border: 1px dashed var(--color-accent);
+            padding: 15px;
+            margin: 20px 0;
+            color: var(--color-accent);
+            font-size: 0.9em;
+            font-weight: 600;
+            border-radius: 8px;
+        }
+
+        /* --- Utility & Responsiveness --- */
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.2em;
+            .tabs {
+                flex-direction: column;
             }
-
             .tab-button {
-                font-size: 0.8em;
-                padding: 10px 5px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             }
-
             .tab-content {
-                padding: 20px;
+                padding: 15px;
             }
-
-            .action-buttons {
+            .options-group {
                 flex-direction: column;
             }
-
-            .action-buttons button, .action-buttons a {
-                min-width: 100%;
+            .options-group label {
+                min-width: unset;
             }
-            
-            .growth-steps li {
-                padding-left: 60px;
-            }
-            
-            .growth-steps li::before {
-                font-size: 1.6em;
-                left: 15px;
-            }
-        }
-        @media (max-width: 500px) {
-            .tabs-nav {
-                flex-direction: column;
-            }
-            .tab-button {
-                border-bottom: none !important;
-                border-top: 1px solid #eee;
-            }
-            .tab-button:first-child {
-                border-top: none;
+            .monetize-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <h1>OKV <span>PATHFINDER</span></h1>
-        <h3>by OKV TECHNOLOGY</h3>
-        <h3>💡 "Discover your right skill or career — and start building your future today."</h3>
-    </header>
-    
-    <div class="ad-banner-top">
-        <div class="ad-space">
-            <h5>ADVERTISEMENT: Start your FREE 7-Day Course Trial!</h5>
-            <p>Learn Web Design essentials with our partner platform. Click here to enroll.</p>
+    <header>
+        <div class="header-content">
+            <div>
+                <h1 class="logo">🌐 OKV PATHFINDER</h1>
+                <p class="tagline">“Discover your right skill or career — and start building your future today.”</p>
+            </div>
+            <div class="ad-space" style="width: 150px; height: 50px; padding: 10px;">
+                AD SPACE
+            </div>
         </div>
-    </div>
-    
-    <div class="container-wrapper">
+    </header>
+
+    <div class="container">
         
-        <main class="main-content">
-            
-            <nav class="tabs-nav" id="tabs-nav">
-                <button class="tab-button active" data-tab="skill-finder">Skill Finder</button>
-                <button class="tab-button" data-tab="career-finder">Career Path Finder</button>
-                <button class="tab-button" data-tab="monetize">Monetize</button>
-                <button class="tab-button" data-tab="resources">Resources</button>
-                <button class="tab-button" data-tab="growth-plan">Growth Plan</button>
-            </nav>
+        <nav class="tabs" id="tab-nav">
+            <button class="tab-button active" data-tab="skill">⿡ Skill Finder</button>
+            <button class="tab-button" data-tab="career">⿢ Career Path Finder</button>
+            <button class="tab-button" data-tab="monetize">⿣ Monetize My Skill</button>
+            <button class="tab-button" data-tab="resources">⿤ Free Resources</button>
+            <button class="tab-button" data-tab="growth">⿥ Growth Plan</button>
+        </nav>
 
-            <div id="tab-content-container">
+        <main id="tab-content-container">
 
-                <div class="tab-content" id="skill-finder">
-                    <h3>Skill Finder: Discover Your Skill</h3>
-                    <div class="quiz-section" id="skill-quiz-section">
-                        <form id="skill-quiz-form">
-                            
-                            <div class="quiz-question">
-                                <label>1. What kind of work do you enjoy?</label>
-                                <div class="quiz-options">
-                                    <div><input type="radio" name="skill_q1" value="creative" required> Creative (Design, Art, Media)</div>
-                                    <div><input type="radio" name="skill_q1" value="technical" required> Technical (Fixing, Building, Logic)</div>
-                                    <div><input type="radio" name="skill_q1" value="business" required> Business (Sales, Planning, Strategy)</div>
-                                    <div><input type="radio" name="skill_q1" value="people" required> People-oriented (Service, Teaching, Talking)</div>
-                                </div>
-                            </div>
+            <section id="skill" class="tab-content">
+                <h2>⿡ Skill Finder</h2>
+                <div class="ad-space">AD SPACE (Banner)</div>
 
-                            <div class="quiz-question">
-                                <label>2. What tools do you have?</label>
-                                <div class="quiz-options">
-                                    <div><input type="radio" name="skill_q2" value="laptop" required> Laptop/PC</div>
-                                    <div><input type="radio" name="skill_q2" value="phone" required> Smartphone only</div>
-                                    <div><input type="radio" name="skill_q2" value="physical" required> Physical tools (e.g., wrench, sewing machine)</div>
-                                    <div><input type="radio" name="skill_q2" value="none" required> None / Willing to acquire</div>
-                                </div>
-                            </div>
-
-                            <div class="quiz-question">
-                                <label>3. Do you prefer physical or computer-based work?</label>
-                                <div class="quiz-options">
-                                    <div><input type="radio" name="skill_q3" value="computer" required> Computer-based (Digital/Online)</div>
-                                    <div><input type="radio" name="skill_q3" value="physical" required> Physical (Handwork/Vocational)</div>
-                                    <div><input type="radio" name="skill_q3" value="mix" required> A mix of both</div>
-                                </div>
-                            </div>
-
-                            <div class="quiz-question">
-                                <label>4. How much time can you commit weekly?</label>
-                                <div class="quiz-options">
-                                    <div><input type="radio" name="skill_q4" value="low" required> 1-5 hours (Hobbyist)</div>
-                                    <div><input type="radio" name="skill_q4" value="medium" required> 5-15 hours (Part-time learner)</div>
-                                    <div><input type="radio" name="skill_q4" value="high" required> 15+ hours (Serious learner)</div>
-                                </div>
-                            </div>
-
-                            <div class="quiz-question">
-                                <label>5. What’s your main reason for learning a skill?</label>
-                                <div class="quiz-options">
-                                    <div><input type="radio" name="skill_q5" value="earn" required> Earn money / Get a job</div>
-                                    <div><input type="radio" name="skill_q5" value="business" required> Build a personal business/brand</div>
-                                    <div><input type="radio" name="skill_q5" value="improve" required> Improve existing skills for promotion</div>
-                                    <div><input type="radio" name="skill_q5" value="hobby" required> Hobby or personal interest</div>
-                                </div>
-                            </div>
-                            
-                            <button type="submit" class="submit-btn">Get My Skill Recommendation ✅</button>
-                        </form>
-                    </div>
-
-                    <div class="result-card" id="skill-result-card">
-                        <h4>✅ Recommended Skill: <span id="skill-name"></span></h4>
-                        
-                        <div class="result-item"><strong>Category:</strong> <span id="skill-category"></span></div>
-                        <div class="result-item"><strong>Learn From:</strong> <span id="skill-learn"></span></div>
-                        <div class="result-item"><strong>Duration:</strong> <span id="skill-duration"></span></div>
-                        <div class="result-item"><strong>Tools:</strong> <span id="skill-tools"></span></div>
-                        <div class="result-item"><strong>Growth Path:</strong> <span id="skill-growth"></span></div>
-                        <div class="result-item"><strong>💰 How to Earn:</strong> <span id="skill-earn"></span></div>
-
-                        <div class="action-buttons">
-                            <button class="btn-download" onclick="downloadReport('skill')">Download My Skill Report 📥</button>
-                            <a href="https://okvtechnology.com/community" target="_blank" class="btn-community">Join OKV Technology Community 🤝</a>
-                            <button class="btn-retake" onclick="resetQuiz('skill')">🔁 Retake Quiz</button>
+                <form id="skill-quiz-form" class="quiz-form">
+                    <div class="quiz-question">
+                        <label>1. What kind of work do you enjoy?</label>
+                        <div class="options-group" data-name="enjoyment">
+                            <input type="radio" id="s1_creative" name="q1_enjoyment" value="Creative"><label for="s1_creative">Creative</label>
+                            <input type="radio" id="s1_technical" name="q1_enjoyment" value="Technical"><label for="s1_technical">Technical</label>
+                            <input type="radio" id="s1_business" name="q1_enjoyment" value="Business"><label for="s1_business">Business</label>
+                            <input type="radio" id="s1_people" name="q1_enjoyment" value="People-oriented"><label for="s1_people">People-oriented</label>
                         </div>
                     </div>
-                </div>
 
-                <div class="tab-content" id="career-finder" style="display:none;">
-                    <h3>⿢ Career Path Finder: Choose Your Profession</h3>
-                    <div class="quiz-section" id="career-quiz-section">
-                        <form id="career-quiz-form">
-                            
-                            <div class="quiz-question">
-                                <label>1. What subjects do you enjoy most?</label>
-                                <div class="quiz-options">
-                                    <div><input type="radio" name="career_q1" value="science" required> Science (Biology, Chemistry, Physics)</div>
-                                    <div><input type="radio" name="career_q1" value="math_logic" required> Math & Logic (Economics, IT, Programming)</div>
-                                    <div><input type="radio" name="career_q1" value="humanities" required> Humanities (History, Literature, Law)</div>
-                                    <div><input type="radio" name="career_q1" value="arts" required> Arts & Media (Creative Writing, Design, Music)</div>
-                                </div>
-                            </div>
-
-                            <div class="quiz-question">
-                                <label>2. Do you prefer solving problems, helping people, creating ideas, or leading teams?</label>
-                                <div class="quiz-options">
-                                    <div><input type="radio" name="career_q2" value="solve" required> Solving complex problems</div>
-                                    <div><input type="radio" name="career_q2" value="help" required> Helping people/patients</div>
-                                    <div><input type="radio" name="career_q2" value="create" required> Creating original ideas/content</div>
-                                    <div><input type="radio" name="career_q2" value="lead" required> Leading or managing teams/projects</div>
-                                </div>
-                            </div>
-
-                            <div class="quiz-question">
-                                <label>3. Are you more theoretical or practical?</label>
-                                <div class="quiz-options">
-                                    <div><input type="radio" name="career_q3" value="theoretical" required> Theoretical (Research, Policy, Analysis)</div>
-                                    <div><input type="radio" name="career_q3" value="practical" required> Practical (Hands-on, Fieldwork, Implementation)</div>
-                                </div>
-                            </div>
-
-                            <div class="quiz-question">
-                                <label>4. What motivates you most?</label>
-                                <div class="quiz-options">
-                                    <div><input type="radio" name="career_q4" value="impact" required> Social Impact/Change</div>
-                                    <div><input type="radio" name="career_q4" value="prestige" required> Prestige/Authority</div>
-                                    <div><input type="radio" name="career_q4" value="money" required> High financial reward</div>
-                                    <div><input type="radio" name="career_q4" value="discovery" required> Discovery/Innovation</div>
-                                </div>
-                            </div>
-
-                            <div class="quiz-question">
-                                <label>5. What type of work environment do you dream of?</label>
-                                <div class="quiz-options">
-                                    <div><input type="radio" name="career_q5" value="office" required> Traditional Office/Corporate Setting</div>
-                                    <div><input type="radio" name="career_q5" value="field" required> Fieldwork/Outdoors/Site Visits</div>
-                                    <div><input type="radio" name="career_q5" value="lab" required> Lab/Hospital/Controlled Environment</div>
-                                    <div><input type="radio" name="career_q5" value="creative" required> Creative Studio/Home Office/Flexible Space</div>
-                                </div>
-                            </div>
-                            
-                            <button type="submit" class="submit-btn">Get My Career Recommendation ✅</button>
-                        </form>
-                    </div>
-
-                    <div class="result-card" id="career-result-card">
-                        <h4>✅ Recommended Career: <span id="career-name"></span></h4>
-                        
-                        <div class="result-item"><strong>Category:</strong> <span id="career-category"></span></div>
-                        <div class="result-item"><strong>Core Subjects:</strong> <span id="career-subjects"></span></div>
-                        <div class="result-item"><strong>Study Path:</strong> <span id="career-path"></span></div>
-                        <div class="result-item"><strong>Key Skills:</strong> <span id="career-skills"></span></div>
-                        <div class="result-item"><strong>💡 Career Growth:</strong> <span id="career-growth"></span></div>
-
-                        <div class="action-buttons">
-                            <button class="btn-download" onclick="downloadReport('career')">Download My Career Report 📥</button>
-                            <a href="https://okvtechnology.com/community" target="_blank" class="btn-community">Join OKV Technology Community 🤝</a>
-                            <button class="btn-retake" onclick="resetQuiz('career')">🔁 Retake Quiz</button>
+                    <div class="quiz-question">
+                        <label>2. What tools do you have?</label>
+                        <div class="options-group" data-name="tools">
+                            <input type="radio" id="s2_phone" name="q2_tools" value="Phone"><label for="s2_phone">Phone Only</label>
+                            <input type="radio" id="s2_laptop" name="q2_tools" value="Laptop"><label for="s2_laptop">Laptop/PC</label>
+                            <input type="radio" id="s2_physical" name="q2_tools" value="Physical Tools"><label for="s2_physical">Physical Tools</label>
+                            <input type="radio" id="s2_none" name="q2_tools" value="None"><label for="s2_none">None</label>
                         </div>
                     </div>
-                </div>
+                    
+                    <div class="quiz-question">
+                        <label>3. Do you prefer physical or computer-based work?</label>
+                        <div class="options-group" data-name="work_type">
+                            <input type="radio" id="s3_physical" name="q3_type" value="Physical"><label for="s3_physical">Physical (Handwork)</label>
+                            <input type="radio" id="s3_computer" name="q3_type" value="Computer-based"><label for="s3_computer">Computer-based (Digital)</label>
+                            <input type="radio" id="s3_both" name="q3_type" value="Both"><label for="s3_both">Both/Flexible</label>
+                        </div>
+                    </div>
 
-                <div class="tab-content" id="monetize" style="display:none;">
-                    <h3>⿣ Monetize My Skill: Start Earning</h3>
-                    <div class="other-tab-content">
-                        <p>Turn your newly acquired skill into a reliable source of income using these strategies:</p>
-                        
-                        <h4>Online Platforms & Digital Marketing</h4>
-                        <ul class="monetize-list">
-                            <li><strong>Freelance Marketplaces:</strong> Offer your digital skills (e.g., Video Editing, Web Design) on platforms like <a href="https://www.fiverr.com" target="_blank">Fiverr</a> and <a href="https://www.upwork.com" target="_blank">Upwork</a>.</li>
-                            <li><strong>Social Media Brand:</strong> Use <a href="https://www.instagram.com" target="_blank">Instagram</a>, TikTok, and YouTube to showcase your work (e.g., Fashion Designs, Graphics Portfolio) and attract clients.</li>
-                            <li><strong>WhatsApp Marketing:</strong> Leverage local networks on WhatsApp and Telegram to offer services directly and gather referrals.</li>
+                    <div class="quiz-question">
+                        <label>4. How much time can you commit weekly?</label>
+                        <div class="options-group" data-name="time">
+                            <input type="radio" id="s4_low" name="q4_time" value="Low"><label for="s4_low">0-5 hours (Hobby)</label>
+                            <input type="radio" id="s4_medium" name="q4_medium" value="Medium"><label for="s4_medium">6-15 hours (Part-time)</label>
+                            <input type="radio" id="s4_high" name="q4_high" value="High"><label for="s4_high">15+ hours (Serious)</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <label>5. What’s your main reason for learning a skill?</label>
+                        <div class="options-group" data-name="reason">
+                            <input type="radio" id="s5_earn" name="q5_reason" value="Earn"><label for="s5_earn">Earn Money Quickly</label>
+                            <input type="radio" id="s5_business" name="q5_business" value="Build Business"><label for="s5_business">Build a Long-term Business</label>
+                            <input type="radio" id="s5_improve" name="q5_improve" value="Improve"><label for="s5_improve">Improve Current Job</label>
+                            <input type="radio" id="s5_hobby" name="q5_hobby" value="Hobby"><label for="s5_hobby">Personal Interest</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Find My Perfect Skill! ✨</button>
+                </form>
+
+                <div id="skill-result" class="result-container">
+                    <h3>✅ Recommended Skill: <span id="s-name"></span></h3>
+                    <div class="result-item"><strong>Category:</strong> <span id="s-category"></span></div>
+                    <div class="result-item"><strong>Learn From:</strong> <span id="s-learn"></span></div>
+                    <div class="result-item"><strong>Duration:</strong> <span id="s-duration"></span></div>
+                    <div class="result-item"><strong>Tools:</strong> <span id="s-tools"></span></div>
+                    <div class="result-item"><strong>Growth Path:</strong> <span id="s-growth"></span></div>
+                    <div class="result-item" style="background: #fff8e1; padding: 10px; border-radius: 5px;"><strong>💰 How to Earn:</strong> <span id="s-earn"></span></div>
+
+                    <div class="result-actions">
+                        <a id="s-download-btn" class="action-button btn-download">[Download My Skill Report 📥]</a>
+                        <a href="https://okvtechnology.com/community" target="_blank" class="action-button btn-community">[Join OKV Community 🤝]</a>
+                        <button class="action-button btn-retake" onclick="resetQuiz('skill')">🔁 Retake Quiz</button>
+                        <button class="action-button btn-community" style="background: #00bcd4; border-color: #00bcd4; color: white;" onclick="emailReport()">📧 Email My Report</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="career" class="tab-content" style="display:none;">
+                <h2>⿢ Career Path Finder</h2>
+                <div class="ad-space">AD SPACE (Banner)</div>
+
+                <form id="career-quiz-form" class="quiz-form">
+                    <div class="quiz-question">
+                        <label>1. What subjects do you enjoy most?</label>
+                        <div class="options-group" data-name="subjects">
+                            <input type="radio" id="c1_science" name="cq1_subjects" value="Science"><label for="c1_science">Science (Bio, Chem, Phys)</label>
+                            <input type="radio" id="c1_arts" name="cq1_subjects" value="Arts"><label for="c1_arts">Arts (Lit, Hist, Govt)</label>
+                            <input type="radio" id="c1_commercial" name="cq1_subjects" value="Commercial"><label for="c1_commercial">Commercial (Math, Econs, Acct)</label>
+                            <input type="radio" id="c1_tech" name="cq1_subjects" value="Tech"><label for="c1_tech">Technology/IT</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <label>2. Do you prefer solving problems, helping people, creating ideas, or leading teams?</label>
+                        <div class="options-group" data-name="preference">
+                            <input type="radio" id="c2_problems" name="cq2_preference" value="Solving Problems"><label for="c2_problems">Solving Problems</label>
+                            <input type="radio" id="c2_helping" name="cq2_preference" value="Helping People"><label for="c2_helping">Helping People</label>
+                            <input type="radio" id="c2_creating" name="cq2_preference" value="Creating Ideas"><label for="c2_creating">Creating Ideas</label>
+                            <input type="radio" id="c2_leading" name="cq2_preference" value="Leading Teams"><label for="c2_leading">Leading Teams</label>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <label>3. Are you more theoretical or practical?</label>
+                        <div class="options-group" data-name="style">
+                            <input type="radio" id="c3_theoretical" name="cq3_style" value="Theoretical"><label for="c3_theoretical">Theoretical (Research/Strategy)</label>
+                            <input type="radio" id="c3_practical" name="cq3_style" value="Practical"><label for="c3_practical">Practical (Execution/Fieldwork)</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <label>4. What motivates you most?</label>
+                        <div class="options-group" data-name="motivation">
+                            <input type="radio" id="c4_impact" name="cq4_motivation" value="Impact"><label for="c4_impact">Societal Impact</label>
+                            <input type="radio" id="c4_money" name="cq4_money" value="Money/Prestige"><label for="c4_money">Money/Prestige</label>
+                            <input type="radio" id="c4_discovery" name="cq4_discovery" value="Discovery"><label for="c4_discovery">Discovery/Innovation</label>
+                            <input type="radio" id="c4_service" name="cq4_service" value="Service"><label for="c4_service">Service/Caring</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <label>5. What type of work environment do you dream of?</label>
+                        <div class="options-group" data-name="environment">
+                            <input type="radio" id="c5_office" name="cq5_environment" value="Office"><label for="c5_office">Corporate Office</label>
+                            <input type="radio" id="c5_field" name="cq5_field" value="Field"><label for="c5_field">Field/Outdoor</label>
+                            <input type="radio" id="c5_lab" name="cq5_lab" value="Lab"><label for="c5_lab">Lab/Clinical/Academic</label>
+                            <input type="radio" id="c5_creative" name="cq5_creative" value="Creative Space"><label for="c5_creative">Studio/Creative Space</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Find My Perfect Career! 🎓</button>
+                </form>
+
+                <div id="career-result" class="result-container">
+                    <h3>✅ Recommended Career: <span id="c-name"></span></h3>
+                    <div class="result-item"><strong>Category:</strong> <span id="c-category"></span></div>
+                    <div class="result-item"><strong>Core Subjects:</strong> <span id="c-subjects"></span></div>
+                    <div class="result-item"><strong>Study Path:</strong> <span id="c-path"></span></div>
+                    <div class="result-item"><strong>Key Skills:</strong> <span id="c-keyskills"></span></div>
+                    <div class="result-item" style="background: #fff8e1; padding: 10px; border-radius: 5px;"><strong>💡 Career Growth:</strong> <span id="c-growth"></span></div>
+
+                    <div class="result-actions">
+                        <a id="c-download-btn" class="action-button btn-download">[Download My Career Report 📥]</a>
+                        <a href="https://okvtechnology.com/community" target="_blank" class="action-button btn-community">[Join OKV Community 🤝]</a>
+                        <button class="action-button btn-retake" onclick="resetQuiz('career')">🔁 Retake Quiz</button>
+                        <button class="action-button btn-community" style="background: #00bcd4; border-color: #00bcd4; color: white;" onclick="emailReport()">📧 Email My Report</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="monetize" class="tab-content" style="display:none;">
+                <h2>⿣ Monetize My Skill</h2>
+                <p>Guides on how to start making money from your chosen skill. Turn your knowledge into income!</p>
+                <div class="ad-space">AD SPACE (Monetize)</div>
+                <hr style="margin: 20px 0;">
+
+                <div class="monetize-grid">
+                    <div class="monetize-card">
+                        <h4>Online Platforms & Freelancing</h4>
+                        <ul>
+                            <li><strong>Fiverr/Upwork:</strong> Best for digital services (Design, Writing, Editing). Start with low prices to build reviews.</li>
+                            <li><strong>Instagram/TikTok:</strong> Essential for visual skills (Fashion, Photography). Use a strong visual portfolio.</li>
+                            <li><strong>Online Course Creation:</strong> Package your skill into a teachable format (Udemy, Skillshare, or your own site).</li>
                         </ul>
-
+                    </div>
+                    <div class="monetize-card">
                         <h4>Offline & Local Paths</h4>
-                        <ul class="monetize-list">
-                            <li><strong>Local Services:</strong> For handwork skills (Plumbing, Tailoring), start by offering services to friends, family, and local businesses to build your portfolio.</li>
-                            <li><strong>Workshops & Training:</strong> Once proficient, organize small, paid workshops to teach others your skill.</li>
-                            <li><strong>Referral System:</strong> Offer discounts or incentives to clients who successfully refer new customers to you.</li>
+                        <ul>
+                            <li><strong>Local Services:</strong> Directly offer handwork (Plumbing, Auto Repair, Tailoring) within your community and rely on **referrals**.</li>
+                            <li><strong>Workshops & Training:</strong> Teach small, in-person classes or conduct private tutoring sessions.</li>
+                            <li><strong>Local Contracts:</strong> Register your business for small government or commercial repair/maintenance contracts.</li>
+                        </ul>
+                    </div>
+                    <div class="monetize-card">
+                        <h4>Strategic Selling & Pricing</h4>
+                        <ul>
+                            <li><strong>Define Your Niche:</strong> Be the best at one specific thing (e.g., "Webflow Expert for NGOs").</li>
+                            <li><strong>Package Services:</strong> Don't sell time, sell solutions. Bundle services (e.g., website + 3 months maintenance) for a premium price.</li>
+                            <li><strong>Value-Based Pricing:</strong> Price your work based on the value you deliver to the client, not just the hours you spend.</li>
                         </ul>
                     </div>
                 </div>
+            </section>
 
-                <div class="tab-content" id="resources" style="display:none;">
-                    <h3>⿤ Free Learning Resources: Central Library</h3>
-                    <div class="other-tab-content">
-                        <p>Start your learning journey without breaking the bank! Here are the best free platforms and materials:</p>
-                        
-                        <h4>Top Free Learning Platforms</h4>
-                        <ul class="resource-list">
-                            <li>🌐 <a href="https://learndigital.withgoogle.com/digitalgarage" target="_blank">Google Digital Garage</a>: Excellent free courses, especially for Digital Marketing and Business.</li>
-                            <li>🎓 <a href="https://www.coursera.org/collections/free-online-courses" target="_blank">Coursera & Udemy</a>: Search their free course filters for university-level introductions to Tech, Business, and Data.</li>
-                            <li>📱 **YouTube Playlists**: Search for "complete course" or "full tutorial" on any skill. E.g., "Full Python Programming Course YouTube".</li>
-                            <li>🧰 **Apprenticeship Directories**: Local government or NGO websites often list vocational training and apprenticeship opportunities.</li>
-                        </ul>
+            <section id="resources" class="tab-content" style="display:none;">
+                <h2>⿤ Free Learning Resources</h2>
+                <p>A central library of high-quality, free platforms and materials to kickstart your learning journey.</p>
+                <div class="ad-space">AD SPACE (Resources)</div>
+                <hr style="margin: 20px 0;">
 
-                        <h4>Essential Free Materials</h4>
-                        <ul class="resource-list">
-                            <li>📘 **Free eBooks & PDFs**: Many universities and organizations offer free introductory textbooks or guides on their websites (e.g., MIT OpenCourseWare).</li>
-                            <li>📰 **Online Articles & Blogs**: Websites like Medium, freeCodeCamp, and industry-specific blogs offer in-depth, high-quality knowledge.</li>
-                        </ul>
-                    </div>
+                <ul class="resource-list">
+                    <li>Google Digital Garage (Digital Marketing, Business) <a href="https://learndigital.withgoogle.com/" target="_blank">Visit Site 🌐</a></li>
+                    <li>Coursera / edX (Free Audit Tracks for Academic Courses) <a href="https://www.coursera.org/" target="_blank">Explore Courses 🎓</a></li>
+                    <li>FreeCodeCamp (Coding/Tech Skills) <a href="https://www.freecodecamp.org/" target="_blank">Start Learning 💻</a></li>
+                    <li>Khan Academy (Math, Science, Humanities) <a href="https://www.khanacademy.org/" target="_blank">Access Lessons 📚</a></li>
+                    <li>YouTube Playlists (Practical Tutorials for nearly *every* skill, digital or handwork). <a href="https://www.youtube.com/" target="_blank">Go to YouTube 📱</a></li>
+                </ul>
+            </section>
+            
+            <section id="growth" class="tab-content" style="display:none;">
+                <h2>⿥ Growth Plan</h2>
+                <p>A personal roadmap generator that outlines the essential steps to master your skill or career and achieve long-term success.</p>
+                <div class="ad-space">AD SPACE (Growth)</div>
+                <hr style="margin: 20px 0;">
+
+                <div class="info-section">
+                    <h3 style="color: var(--color-primary); font-size: 1.5em; margin-bottom: 15px;">Your 6-Step Personal Roadmap</h3>
+                    <ol style="padding-left: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>Learn:</strong> Dedicate time to formal learning (courses, apprenticeships, university). Get certified if possible.</li>
+                        <li style="margin-bottom: 10px;"><strong>Practice:</strong> Apply knowledge through **personal projects** or pro-bono work to bridge the gap between theory and reality.</li>
+                        <li style="margin-bottom: 10px;"><strong>Showcase:</strong> Build a visible portfolio (website, social media, or physical book) to prove competence.</li>
+                        <li style="margin-bottom: 10px;"><strong>Earn:</strong> Start offering your skills for money. This is the ultimate validation of market value.</li>
+                        <li style="margin-bottom: 10px;"><strong>Scale:</strong> Optimize your processes, raise prices, or hire an assistant/team to handle increased demand.</li>
+                        <li style="margin-bottom: 10px;"><strong>Mentor Others:</strong> Teach what you know. This solidifies your expertise and creates a passive income stream.</li>
+                    </ol>
                 </div>
+            </section>
 
-                <div class="tab-content" id="growth-plan" style="display:none;">
-                    <h3>⿥ Growth Plan: Your Personal Roadmap</h3>
-                    <div class="other-tab-content">
-                        <p>The journey from learner to leader is a six-step process. Follow this roadmap to master your skill and maximize your impact:</p>
-                        
-                        <ul class="growth-steps">
-                            <li>
-                                <strong>1. Learn:</strong>
-                                Focus on foundational knowledge. Use free resources, courses, or an apprenticeship. Goal: Understand the basics.
-                            </li>
-                            <li>
-                                <strong>2. Practice:</strong>
-                                Work on dummy projects. Deliberate practice is key. Mistakes are part of the process. Goal: Build core competence.
-                            </li>
-                            <li>
-                                <strong>3. Showcase (Portfolio):</strong>
-                                Create a public portfolio (e.g., Instagram, simple website, GitHub) of your best work. This is your professional passport. Goal: Attract first clients.
-                            </li>
-                            <li>
-                                <strong>4. Earn:</strong>
-                                Start taking on paid projects, no matter how small. Focus on delivery, customer service, and getting referrals. Goal: Achieve financial independence.
-                            </li>
-                            <li>
-                                <strong>5. Scale:</strong>
-                                Increase your prices, hire help, or automate processes. Build a brand instead of just being a freelancer. Goal: Achieve business stability.
-                            </li>
-                            <li>
-                                <strong>6. Mentor Others:</strong>
-                                Give back to the community by teaching or hiring new learners. This solidifies your expertise and builds your legacy. Goal: Become an industry leader.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
         </main>
-
-        <aside class="sidebar">
-            <div class="ad-space">
-                <h5>AD SPACE 2 (Vertical Banner)</h5>
-                <p>Promote your premium course here! Gain access to exclusive tutorials and mentorship.</p>
-                <p><em>[Affiliate Link Placeholder]</em></p>
-            </div>
-
-            <div class="ad-space">
-                <h5>AD SPACE 3 (Community Spotlight)</h5>
-                <p>Need a professional laptop or tool kit? Check out our recommended vendors for discounts!</p>
-                <p><em>[Sponsor Link Placeholder]</em></p>
-            </div>
-        </aside>
-
     </div>
+
+    <footer>
+        &copy; 2025 OKV Technology. All rights reserved. | <a href="mailto:support@okvtechnology.com" style="color: var(--color-primary); text-decoration: none;">Contact Support</a>
+    </footer>
 
     <script>
-        // --- DATA STRUCTURES (Skill & Career Recommendations) ---
-
-        const skillMap = {
-            // Q1: Work Enjoyment, Q2: Tools, Q3: Preference, Q4: Time, Q5: Reason
+        // --- DATA STRUCTURES (Simulated Database) ---
+        // result structure: [Skill, Category, Learn, Duration, Tools, Growth, Earn]
+        const SKILL_DATA = [
+            // High-priority matches (3+ inputs match)
+            { inputs: { enjoyment: "Creative", tools: "Laptop", type: "Computer-based", reason: ["Earn", "Build Business"] },
+                result: ["Graphic Design", "💻 Digital Skills", "Canva Pro, Adobe Tutorials, Online courses", "3-6 months", "Laptop, Design Software (Canva/Figma)", "Learn → Design for friends → Freelance on Fiverr → Start a design agency", "Freelance design, sell templates, create a print-on-demand store"] },
+            { inputs: { enjoyment: "Technical", tools: "Laptop", type: "Computer-based", reason: ["Earn", "Build Business"] },
+                result: ["Web Design (Front-end)", "💻 Digital Skills", "FreeCodeCamp, Udemy, YouTube", "4-9 months", "Laptop, Text Editor", "Learn HTML/CSS → Build portfolio → Freelance/Junior Dev job → Specialise (e.g., React)", "Freelance website projects (design/build), offer ongoing maintenance contracts"] },
+            { inputs: { enjoyment: "Technical", tools: "Physical Tools", type: "Physical", reason: ["Earn", "Build Business"] },
+                result: ["Plumbing/HVAC", "⚙ Technical/Handwork", "Local apprenticeship, Vocational school", "6-12 months", "Wrenches, Safety gear, Specialty Tools", "Apprentice → Get certified → Local contracts → Start a service company", "Residential repairs, commercial maintenance contracts"] },
+            { inputs: { enjoyment: "Creative", tools: "Physical Tools", type: "Physical", reason: ["Earn", "Build Business"] },
+                result: ["Tailoring/Fashion", "🎨 Creative Skills", "YouTube tutorials, local apprenticeship", "3-6 months", "Sewing machine, fabric, measuring tools", "Learn → Create sample designs → Start local tailoring/alterations → Build a brand", "Local tailoring services, custom design work, selling finished garments online"] },
+            { inputs: { enjoyment: "People-oriented", tools: ["Phone", "Laptop"], type: "Both", reason: ["Earn", "Build Business"] },
+                result: ["Digital Marketing", "💬 Business & Communication", "Google Digital Garage, HubSpot Academy", "2-5 months", "Phone/Laptop, Social Media Accounts", "Certify → Manage small business social media → Become a marketing strategist/agency owner", "Offer social media management, run paid ad campaigns for clients"] },
+            { inputs: { enjoyment: "Business", tools: "Laptop", type: "Computer-based", reason: ["Earn", "Build Business"] },
+                result: ["Copywriting/Content Writing", "💻 Digital Skills", "Online courses on persuasive writing, reading business books", "3-6 months", "Laptop, internet access", "Learn frameworks → Write for cheap to build portfolio → Charge high-ticket rates for sales pages/ads", "Freelance writing (websites, emails, ads), build an email list service"] },
             
-            // DIGITAL SKILLS (High Laptop/Computer preference)
-            'creative_laptop_computer_medium_earn': { name: 'Graphic Design', category: '💻 Digital Skills', learn: 'Udemy/Coursera, YouTube', duration: '3-6 months', tools: 'Laptop, design software (Canva/Adobe)', growth: 'Learn → Create portfolio → Freelance on Fiverr → Build agency', earn: 'Design social media posts, logos, flyers for SMEs.' },
-            'technical_laptop_computer_high_earn': { name: 'Web Development (Frontend)', category: '💻 Digital Skills', learn: 'freeCodeCamp, YouTube, Paid Courses', duration: '4-8 months', tools: 'Laptop, Internet, Code Editor', growth: 'Learn → Build 3 projects → Freelance/Job → Senior Developer', earn: 'Build simple business websites, fix bugs for small businesses.' },
-            'business_laptop_computer_medium_business': { name: 'Digital Marketing (Social Media)', category: '💻 Digital Skills', learn: 'Google Digital Garage, YouTube', duration: '2-4 months', tools: 'Phone, Laptop (optional), Social Media accounts', growth: 'Learn → Manage own social media → Client management → Start a consultancy', earn: 'Manage social media accounts for local businesses, run targeted ads.' },
-            'people_phone_computer_low_hobby': { name: 'Content Creation (Short Video)', category: '🎨 Creative Skills', learn: 'TikTok, YouTube Shorts guides', duration: '1-3 months (to start)', tools: 'Smartphone, editing apps (CapCut)', growth: 'Create → Build audience → Brand deals/Affiliate marketing', earn: 'Generate revenue through platform monetization (if eligible) and brand partnerships.' },
+            // Mid-priority/Specific matches (2-3 inputs match)
+            { inputs: { enjoyment: "Creative", tools: "Phone", type: "Computer-based", reason: ["Earn", "Hobby"] },
+                result: ["Video Editing (Mobile)", "💻 Digital Skills", "YouTube tutorials, Mobile editing app courses", "1-3 months", "Smartphone, CapCut/InShot app", "Practice editing short clips → Offer to small content creators → Start a niche editing service", "Edit short-form content (Reels/TikTok) for businesses or influencers"] },
+            { inputs: { enjoyment: "Business", tools: "Phone", type: ["Both", "Computer-based"], reason: "Earn" },
+                result: ["Sales & Negotiation", "💬 Business & Communication", "Online sales courses, role-playing, mentorship", "2-4 months", "Phone, CRM software (on phone/laptop)", "Practice cold calling → Sales job → Management role → Sales consulting", "Commission-based sales, teach negotiation workshops"] },
+            
+            // Low-priority/Fallback
+            { inputs: { enjoyment: "N/A" },
+                result: ["Personal Productivity", "❤ Personal Development", "Reading books, watching TED talks, Time Management courses", "1-2 months", "Notebook, Calendar App", "Improve focus → Apply techniques → Teach others/Consult", "Offer coaching or sell productivity templates/planners"] }
+        ];
 
-            // CREATIVE / HANDWORK SKILLS (High Physical preference)
-            'creative_physical_physical_medium_business': { name: 'Fashion Design/Tailoring', category: '🎨 Creative Skills', learn: 'Apprenticeship, YouTube tutorials', duration: '3-6 months', tools: 'Sewing machine, fabric, measuring tools', growth: 'Learn → Create samples → Start local tailoring → Build a brand', earn: 'Start local tailoring, promote designs on Instagram, create custom outfits.' },
-            'technical_physical_physical_high_earn': { name: 'Auto Repair/Mechanics', category: '⚙ Technical/Handwork', learn: 'Apprenticeship, Technical College', duration: '6-12 months', tools: 'Physical tools, workshop space (rented/owned)', growth: 'Apprentice → Start own small shop → Specialize (e.g., electrical)', earn: 'Offer mobile repair services, partner with taxi/delivery companies.' },
-            'creative_none_physical_medium_hobby': { name: 'Craft Making (Jewellery/Art)', category: '🎨 Creative Skills', learn: 'Online tutorials, local workshops', duration: '1-3 months', tools: 'Basic materials, small tools (low cost)', growth: 'Practice → Sell locally → Online store (Etsy/Instagram)', earn: 'Sell unique crafts at local markets, take custom orders online.' },
+        // result structure: [Career, Category, Subjects, Path, Skills, Growth]
+        const CAREER_DATA = [
+            // High-priority matches (3+ inputs match)
+            { inputs: { subjects: "Science", preference: "Solving Problems", style: "Practical", motivation: ["Impact", "Service"], environment: ["Lab", "Field"] },
+                result: ["Doctor/Surgeon", "🧬 Health & Medicine", "Biology, Chemistry, Physics", "MBBS/MD → Internship → Residency → Specialist Practice", "Empathy, Communication, Focus, Stress Management", "Specialist Doctor → Medical Director → Public Health Leader"] },
+            { inputs: { subjects: ["Tech", "Science"], preference: "Solving Problems", style: "Theoretical", motivation: ["Discovery", "Money/Prestige"], environment: "Office" },
+                result: ["Software Engineer", "💻 Tech & Engineering", "Math, Computer Science, Physics", "B.Sc. in Computer Science → Internships → Junior Dev → Senior Engineer", "Logic, Problem-Solving, Continuous Learning", "Tech Lead → Architect → Start-up Founder/CTO"] },
+            { inputs: { subjects: "Commercial", preference: ["Leading Teams", "Solving Problems"], style: ["Theoretical", "Practical"], motivation: ["Money/Prestige", "Impact"], environment: "Office" },
+                result: ["Financial Analyst", "💼 Business & Finance", "Accounting, Economics, Math", "B.Sc. Finance/Economics → CFA/Relevant Certifications → Junior Analyst → Portfolio Manager", "Attention to Detail, Data Interpretation, Communication", "Senior Analyst → Investment Banker → Chief Financial Officer (CFO)"] },
+            { inputs: { subjects: "Arts", preference: "Creating Ideas", style: "Theoretical", motivation: ["Impact", "Discovery"], environment: ["Creative Space", "Office"] },
+                result: ["Journalist / Content Creator", "🎨 Arts & Media", "Literature, Government, Media Studies", "B.A. in Mass Communication → Internship → Reporter/Writer → Editor/Producer", "Writing, Research, Critical Thinking, Objectivity", "Senior Editor → Media Director → Columnist/Author"] },
+            { inputs: { subjects: ["Arts", "Commercial"], preference: "Helping People", style: "Theoretical", motivation: "Service", environment: ["Office", "Creative Space"] },
+                result: ["Psychologist/Counselor", "🧭 Social & Community", "Psychology, Sociology, Law", "B.Sc. Psychology → Masters Degree → Licensing/Practice", "Empathy, Active Listening, Confidentiality, Analysis", "Clinical Specialist → Private Practice Owner → Academic Researcher"] },
+            
+            // Mid-priority/Specific matches (2-3 inputs match)
+            { inputs: { subjects: "Commercial", preference: "Leading Teams", style: "Practical", motivation: "Money/Prestige", environment: "Office" },
+                result: ["HR Manager", "💼 Business & Finance", "Management, Psychology, Law", "B.Sc. in Human Resources/Business → Relevant Certifications → HR Assistant → HR Manager", "Empathy, Negotiation, Organisational Skills", "HR Director → Chief Human Resources Officer (CHRO)"] },
+            { inputs: { subjects: ["Science", "Arts"], preference: "Solving Problems", style: "Practical", motivation: "Impact", environment: "Field" },
+                result: ["Environmental Scientist", "🌱 Agriculture & Environment", "Biology, Geography, Chemistry", "B.Sc. Environmental Science → Fieldwork/Internship → Consultant/Researcher", "Data Collection, Problem-Solving, Teamwork", "Senior Consultant → Government Policy Advisor → NGO Director"] },
 
-            // BUSINESS & PERSONAL DEVELOPMENT SKILLS (Mix/People-oriented)
-            'business_phone_mix_medium_earn': { name: 'Sales & Negotiation', category: '💬 Business & Communication', learn: 'Books, mentorship, online courses', duration: 'Ongoing', tools: 'Phone, strong communication skills', growth: 'Sales Rep → Sales Manager → Business Development Director', earn: 'Work on commission for businesses, sell products/services directly.' },
-            'people_none_mix_low_improve': { name: 'Time Management & Productivity', category: '❤ Personal Development', learn: 'Books, productivity apps, self-study', duration: 'Ongoing', tools: 'Planner/App, self-discipline', growth: 'Personal improvement → Team lead → Coaching/Consulting', earn: 'Not a direct skill for earning, but increases efficiency for all other earning methods.' },
-        };
+            // Low-priority/Fallback
+            { inputs: { subjects: "N/A" },
+                result: ["Academic Researcher", "📚 Education & Research", "Any strong academic subject", "Bachelors → Masters → PhD → Post-Doc", "Curiosity, Discipline, Writing", "Senior Researcher → University Lecturer → Department Head"] }
+        ];
 
-        const careerMap = {
-            // Q1: Subject, Q2: Preference, Q3: Type, Q4: Motivation, Q5: Environment
-            'science_help_practical_impact_lab': { name: 'Medicine (Doctor/Nurse)', category: '🧬 Health & Medicine', subjects: 'Biology, Chemistry, Physics', path: 'MBBS/Nursing Degree → Internship → Medical Practice', skills: 'Empathy, Communication, Focus, Resilience', growth: 'Specialist Doctor → Medical Director → Public Health Leader' },
-            'math_logic_solve_theoretical_discovery_office': { name: 'Software Engineering', category: '💻 Tech & Engineering', subjects: 'Mathematics, Computer Science, Logic', path: 'B.Sc. Computer Science → Internships → Full-time Role', skills: 'Problem-solving, Logical thinking, Continuous learning', growth: 'Junior Dev → Senior Dev → Tech Lead/CTO' },
-            'math_logic_solve_theoretical_money_office': { name: 'Economist/Financial Analyst', category: '💼 Business & Finance', subjects: 'Economics, Mathematics, Statistics', path: 'B.Sc. Economics → Masters/CFA → Analyst Role', skills: 'Data Analysis, Strategic thinking, Attention to detail', growth: 'Financial Analyst → Portfolio Manager → Chief Investment Officer' },
-            'humanities_lead_theoretical_prestige_office': { name: 'Lawyer/Legal Consultant', category: '⚖ Law & Government', subjects: 'Law, History, English/Communication', path: 'LL.B. → Law School/Bar Exam → Practice', skills: 'Research, Negotiation, Public speaking, Integrity', growth: 'Associate → Partner/Senior Counsel → Judge/Public Office' },
-            'humanities_help_practical_impact_field': { name: 'Social Worker/Counselor', category: '🧭 Social & Community', subjects: 'Sociology, Psychology, Ethics', path: 'B.Sc. Social Work/Psychology → Field Placement → Practice', skills: 'Empathy, Active listening, Crisis intervention', growth: 'Social Worker → Program Manager → Non-profit Executive Director' },
-            'arts_create_practical_impact_creative': { name: 'Journalist/Content Creator', category: '🎨 Arts & Media', subjects: 'English, Mass Communication, Media Studies', path: 'B.A. Mass Comm → Internships → Media Role', skills: 'Writing, Storytelling, Research, Objectivity', growth: 'Reporter → Editor/Producer → Media Strategist' },
-        };
 
-        // Fallback or default results if a unique combination isn't matched
-        const defaultSkill = { name: 'Digital Marketing (General)', category: '💻 Digital Skills', learn: 'Google Digital Garage, YouTube', duration: '3-6 months', tools: 'Phone/Laptop', growth: 'Learn → Certify → Practice → Freelance', earn: 'Run simple ad campaigns, manage business online presence.' };
-        const defaultCareer = { name: 'General Business Administration', category: '💼 Business & Finance', subjects: 'Mathematics, Business Studies', path: 'B.Sc. Business Admin → Internship → Entry-Level Management', skills: 'Communication, Organization, Teamwork', growth: 'Manager → Director → CEO' };
+        // --- CORE APPLICATION LOGIC ---
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setupTabNavigation();
+            document.getElementById('skill-quiz-form').addEventListener('submit', handleSkillQuiz);
+            document.getElementById('career-quiz-form').addEventListener('submit', handleCareerQuiz);
+            document.getElementById('s-download-btn').addEventListener('click', () => downloadReport('skill'));
+            document.getElementById('c-download-btn').addEventListener('click', () => downloadReport('career'));
+        });
+
+        function setupTabNavigation() {
+            const tabs = document.querySelectorAll('.tab-button');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetTab = tab.getAttribute('data-tab');
+
+                    // Deactivate all
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.style.display = 'none');
+
+                    // Activate selected
+                    tab.classList.add('active');
+                    document.getElementById(targetTab).style.display = 'block';
+                });
+            });
+        }
         
-        // --- QUIZ LOGIC ---
+        function getQuizResults(formId) {
+            const form = document.getElementById(formId);
+            const answers = {};
+            const questions = form.querySelectorAll('.quiz-question');
 
-        document.getElementById('skill-quiz-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            processQuiz('skill');
-        });
+            questions.forEach(q => {
+                const group = q.querySelector('.options-group');
+                const name = group.getAttribute('data-name');
+                const checked = q.querySelector('input[type="radio"]:checked');
+                answers[name] = checked ? checked.value : null;
+            });
+            return answers;
+        }
 
-        document.getElementById('career-quiz-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            processQuiz('career');
-        });
+        /**
+         * Compares user answers against all profiles to find the best match.
+         * The recommendation is personalized by prioritizing the profile 
+         * with the highest number of matching answers (3+ matches gets priority).
+         */
+        function determineResult(answers, data) {
+            let bestMatch = data[data.length - 1]; // Default/Fallback
+            let maxMatches = -1;
 
-        function processQuiz(type) {
-            const form = document.getElementById(`${type}-quiz-form`);
-            const questions = Array.from(form.elements).filter(el => el.type === 'radio' && el.checked);
+            for (const item of data) {
+                let matches = 0;
+                
+                // Compare answer to input criteria
+                for (const key in item.inputs) {
+                    const required = item.inputs[key];
+                    const user_answer = answers[key];
+                    
+                    if (user_answer === null) continue; // Skip if unanswered
+
+                    if (Array.isArray(required)) {
+                        if (required.includes(user_answer)) {
+                            matches++;
+                        }
+                    } else if (required === user_answer) {
+                        matches++;
+                    } else if (required === "N/A") {
+                        matches++; // Always matches the fallback criteria
+                    }
+                }
+                
+                // Prioritize matches that hit 3 or more criteria
+                if (matches >= 3) return item; 
+
+                // Otherwise, keep track of the closest match
+                if (matches > maxMatches) {
+                    maxMatches = matches;
+                    bestMatch = item;
+                }
+            }
             
-            if (questions.length < 5) {
-                alert('Please answer all 5 questions!');
+            return bestMatch;
+        }
+
+        function handleSkillQuiz(event) {
+            event.preventDefault();
+            const answers = getQuizResults('skill-quiz-form');
+            if (Object.values(answers).some(val => val === null)) {
+                alert("Please answer all 5 questions to find your skill!");
                 return;
             }
 
-            // Construct the key from answers
-            const answers = [];
-            for (let i = 1; i <= 5; i++) {
-                const qName = `${type}_q${i}`;
-                const checked = form.querySelector(`input[name="${qName}"]:checked`);
-                if (checked) {
-                    answers.push(checked.value);
-                }
-            }
-            const key = answers.join('_');
-            
-            let result;
-            if (type === 'skill') {
-                result = skillMap[key] || defaultSkill;
-                displaySkillResult(result);
-            } else {
-                result = careerMap[key] || defaultCareer;
-                displayCareerResult(result);
-            }
+            const resultItem = determineResult(answers, SKILL_DATA);
+            const [name, category, learn, duration, tools, growth, earn] = resultItem.result;
+
+            // Display results
+            document.getElementById('s-name').textContent = name;
+            document.getElementById('s-category').textContent = category;
+            document.getElementById('s-learn').textContent = learn;
+            document.getElementById('s-duration').textContent = duration;
+            document.getElementById('s-tools').textContent = tools;
+            document.getElementById('s-growth').textContent = growth;
+            document.getElementById('s-earn').textContent = earn;
+
+            document.getElementById('skill-quiz-form').style.display = 'none';
+            document.getElementById('skill-result').style.display = 'block';
         }
 
-        function displaySkillResult(result) {
-            document.getElementById('skill-name').textContent = result.name;
-            document.getElementById('skill-category').textContent = result.category;
-            document.getElementById('skill-learn').textContent = result.learn;
-            document.getElementById('skill-duration').textContent = result.duration;
-            document.getElementById('skill-tools').textContent = result.tools;
-            document.getElementById('skill-growth').textContent = result.growth;
-            document.getElementById('skill-earn').textContent = result.earn;
+        function handleCareerQuiz(event) {
+            event.preventDefault();
+            const answers = getQuizResults('career-quiz-form');
+            if (Object.values(answers).some(val => val === null)) {
+                alert("Please answer all 5 questions to find your career path!");
+                return;
+            }
 
-            document.getElementById('skill-quiz-section').style.display = 'none';
-            document.getElementById('skill-result-card').style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+            const resultItem = determineResult(answers, CAREER_DATA);
+            const [name, category, subjects, path, skills, growth] = resultItem.result;
 
-        function displayCareerResult(result) {
-            document.getElementById('career-name').textContent = result.name;
-            document.getElementById('career-category').textContent = result.category;
-            document.getElementById('career-subjects').textContent = result.subjects;
-            document.getElementById('career-path').textContent = result.path;
-            document.getElementById('career-skills').textContent = result.skills;
-            document.getElementById('career-growth').textContent = result.growth;
+            // Display results
+            document.getElementById('c-name').textContent = name;
+            document.getElementById('c-category').textContent = category;
+            document.getElementById('c-subjects').textContent = subjects;
+            document.getElementById('c-path').textContent = path;
+            document.getElementById('c-keyskills').textContent = skills;
+            document.getElementById('c-growth').textContent = growth;
 
-            document.getElementById('career-quiz-section').style.display = 'none';
-            document.getElementById('career-result-card').style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.getElementById('career-quiz-form').style.display = 'none';
+            document.getElementById('career-result').style.display = 'block';
         }
 
         function resetQuiz(type) {
-            const form = document.getElementById(`${type}-quiz-form`);
-            form.reset();
-            document.getElementById(`${type}-quiz-section`).style.display = 'block';
-            document.getElementById(`${type}-result-card`).style.display = 'none';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            const formId = `${type}-quiz-form`;
+            const resultId = `${type}-result`;
+
+            document.getElementById(formId).reset();
+            document.getElementById(formId).style.display = 'flex';
+            document.getElementById(resultId).style.display = 'none';
+            
+            // Uncheck all radio buttons visually and functionally
+            document.querySelectorAll(`#${formId} input[type="radio"]:checked`).forEach(radio => {
+                radio.checked = false;
+            });
         }
 
-        // --- TAB SWITCHING LOGIC ---
-
-        document.getElementById('tabs-nav').addEventListener('click', function(e) {
-            if (e.target.closest('.tab-button')) {
-                const button = e.target.closest('.tab-button');
-                const tabId = button.getAttribute('data-tab');
-                switchTab(tabId);
-            }
-        });
-
-        function switchTab(tabId) {
-            // Hide all tab contents
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.style.display = 'none');
-
-            // Deactivate all buttons
-            const buttons = document.querySelectorAll('.tab-button');
-            buttons.forEach(button => button.classList.remove('active'));
-
-            // Show the selected tab content
-            document.getElementById(tabId).style.display = 'block';
-
-            // Activate the clicked button
-            document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
-        }
-        
-        // Ensure initial tab is visible
-        document.addEventListener('DOMContentLoaded', () => {
-            switchTab('skill-finder');
-        });
-        
-        // --- PDF GENERATION (Simulated for Vanilla JS) ---
+        // --- DOWNLOAD/EMAIL FUNCTIONALITY ---
 
         function downloadReport(type) {
-            const nameEl = document.getElementById(`${type}-name`);
-            if (!nameEl || !nameEl.textContent) {
-                alert(`Please complete the ${type === 'skill' ? 'Skill Finder' : 'Career Path Finder'} quiz first!`);
-                return;
-            }
-
-            const reportName = nameEl.textContent;
-            let contentHTML;
+            const name = document.getElementById(`${type}-name`).textContent;
+            let content = `OKV PATHFINDER - Your ${type.toUpperCase()} Report\n\n`;
 
             if (type === 'skill') {
-                contentHTML = `
-                    <!DOCTYPE html><html><head><title>OKV Skill Report</title><style>body{font-family: Arial, sans-serif; padding: 20px;} h2{color: #2c7be5;} strong{color: #1c5d9e;}</style></head><body>
-                    <h2>OKV PATHFINDER Skill Report: ${reportName}</h2>
-                    <hr/>
-                    <p><strong>Category:</strong> ${document.getElementById('skill-category').textContent}</p>
-                    <p><strong>Learn From:</strong> ${document.getElementById('skill-learn').textContent}</p>
-                    <p><strong>Duration:</strong> ${document.getElementById('skill-duration').textContent}</p>
-                    <p><strong>Tools:</strong> ${document.getElementById('skill-tools').textContent}</p>
-                    <p><strong>Growth Path:</strong> ${document.getElementById('skill-growth').textContent}</p>
-                    <p><strong>How to Earn:</strong> ${document.getElementById('skill-earn').textContent}</p>
-                    <hr/>
-                    <p>This report was generated by OKV PATHFINDER. Start your journey today!</p>
-                    </body></html>
-                `;
-            } else {
-                contentHTML = `
-                    <!DOCTYPE html><html><head><title>OKV Career Report</title><style>body{font-family: Arial, sans-serif; padding: 20px;} h2{color: #2c7be5;} strong{color: #1c5d9e;}</style></head><body>
-                    <h2>OKV PATHFINDER Career Report: ${reportName}</h2>
-                    <hr/>
-                    <p><strong>Category:</strong> ${document.getElementById('career-category').textContent}</p>
-                    <p><strong>Core Subjects:</strong> ${document.getElementById('career-subjects').textContent}</p>
-                    <p><strong>Study Path:</strong> ${document.getElementById('career-path').textContent}</p>
-                    <p><strong>Key Skills:</strong> ${document.getElementById('career-skills').textContent}</p>
-                    <p><strong>Career Growth:</strong> ${document.getElementById('career-growth').textContent}</p>
-                    <hr/>
-                    <p>This report was generated by OKV PATHFINDER. Start your future today!</p>
-                    </body></html>
-                `;
+                content += `Recommended Skill: ${name}\n`;
+                content += `Category: ${document.getElementById('s-category').textContent}\n`;
+                content += `Learn From: ${document.getElementById('s-learn').textContent}\n`;
+                content += `Duration: ${document.getElementById('s-duration').textContent}\n`;
+                content += `Tools: ${document.getElementById('s-tools').textContent}\n`;
+                content += `Growth Path: ${document.getElementById('s-growth').textContent}\n`;
+                content += `How to Earn: ${document.getElementById('s-earn').textContent}\n\n`;
+            } else if (type === 'career') {
+                content += `Recommended Career: ${name}\n`;
+                content += `Category: ${document.getElementById('c-category').textContent}\n`;
+                content += `Core Subjects: ${document.getElementById('c-subjects').textContent}\n`;
+                content += `Study Path: ${document.getElementById('c-path').textContent}\n`;
+                content += `Key Skills: ${document.getElementById('c-keyskills').textContent}\n`;
+                content += `Career Growth: ${document.getElementById('c-growth').textContent}\n\n`;
             }
             
-            // Basic simulation of a PDF download by creating a blob and a temporary link
-            const filename = `OKV_Report_${reportName.replace(/[^a-zA-Z0-9]/g, '_')}.html`;
-            const blob = new Blob([contentHTML], { type: 'text/html' });
+            content += "--------------------------------------------------------";
+            content += "\n\nStart your journey today: https://okvtechnology.com/community";
+
+
+            // Simple text/PDF simulation
+            const blob = new Blob([content], { type: 'text/plain' });
             const url = URL.createObjectURL(blob);
-            
             const a = document.createElement('a');
             a.href = url;
-            a.download = filename;
+            a.download = `OKV_Pathfinder_${name.replace(/\s/g, '_')}_Report.txt`;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-
-            alert(`Downloading ${filename}. (A stylized HTML file is used to simulate the PDF export without external libraries.)`);
+            
+            alert(`Report for "${name}" generated and downloaded as a TXT file!`);
+        }
+        
+        function emailReport() {
+            // Simulation as requested (real implementation requires a backend)
+            const email = prompt("Enter your email address to receive the report:");
+            if (email && email.includes('@')) {
+                alert(`Report successfully emailed to ${email}! (Note: This is a simulation. A real app needs a server to send emails.)`);
+            } else {
+                alert("Email address invalid or delivery cancelled.");
+            }
         }
     </script>
-
 </body>
 </html>
