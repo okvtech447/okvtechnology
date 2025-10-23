@@ -245,6 +245,19 @@
             margin-right: 5px;
             font-weight: 700;
         }
+        
+        .user-answers-summary {
+            background: #fff8e1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 5px solid var(--color-accent);
+            font-size: 0.9em;
+        }
+
+        .user-answers-summary p {
+            margin-bottom: 5px;
+        }
 
         .result-actions {
             margin-top: 30px;
@@ -357,17 +370,17 @@
     <div class="container">
         
         <nav class="tabs" id="tab-nav">
-            <button class="tab-button active" data-tab="skill">⿡ Skill Finder</button>
-            <button class="tab-button" data-tab="career">⿢ Career Path Finder</button>
-            <button class="tab-button" data-tab="monetize">⿣ Monetize My Skill</button>
-            <button class="tab-button" data-tab="resources">⿤ Free Resources</button>
-            <button class="tab-button" data-tab="growth">⿥ Growth Plan</button>
+            <button class="tab-button active" data-tab="skill">Skill Finder</button>
+            <button class="tab-button" data-tab="career">Career Path Finder</button>
+            <button class="tab-button" data-tab="monetize">Monetize My Skill</button>
+            <button class="tab-button" data-tab="resources">Free Resources</button>
+            <button class="tab-button" data-tab="growth">Growth Plan</button>
         </nav>
 
         <main id="tab-content-container">
 
             <section id="skill" class="tab-content">
-                <h2>⿡ Skill Finder (Take this Quiz)</h2>
+                <h2>Skill Finder (Take 5 Quiz)</h2>
                 <div class="ad-space">AD SPACE (Banner)</div>
 
                 <form id="skill-quiz-form" class="quiz-form">
@@ -435,13 +448,13 @@
                         <a id="s-download-btn" class="action-button btn-download">[Download My Skill Report 📥]</a>
                         <a href="https://okvtechnology.com/community" target="_blank" class="action-button btn-community">[Join OKV Community 🤝]</a>
                         <button class="action-button btn-retake" onclick="resetQuiz('skill')">🔁 Retake Quiz</button>
-                        <button class="action-button btn-community" style="background: #00bcd4; border-color: #00bcd4; color: white;" onclick="emailReport()">📧 Email My Report</button>
+                        <button class="action-button btn-community" style="background: #00bcd4; border-color: #00bcd4; color: white;" onclick="emailReport('skill')">📧 Email My Report</button>
                     </div>
                 </div>
             </section>
 
             <section id="career" class="tab-content" style="display:none;">
-                <h2>⿢ Career Path Finder (Take this Quiz)</h2>
+                <h2>Career Path Finde (Take 5 Quiz)r</h2>
                 <div class="ad-space">AD SPACE (Banner)</div>
 
                 <form id="career-quiz-form" class="quiz-form">
@@ -451,7 +464,7 @@
                             <input type="radio" id="c1_science" name="cq1_subjects" value="Science"><label for="c1_science">Science (Bio, Chem, Phys)</label>
                             <input type="radio" id="c1_arts" name="cq1_subjects" value="Arts"><label for="c1_arts">Arts (Lit, Hist, Govt)</label>
                             <input type="radio" id="c1_commercial" name="cq1_subjects" value="Commercial"><label for="c1_commercial">Commercial (Math, Econs, Acct)</label>
-                            <input type="radio" id="c1_tech" name="cq1_subjects" value="Tech"><label for="c1_tech">Technology/IT</label>
+                            <input type="radio" id="c1_tech" name="cq1_subjects" value="Technology/IT"><label for="c1_tech">Technology/IT</label>
                         </div>
                     </div>
 
@@ -477,19 +490,19 @@
                         <label>4. What motivates you most?</label>
                         <div class="options-group" data-name="motivation">
                             <input type="radio" id="c4_impact" name="cq4_motivation" value="Impact"><label for="c4_impact">Societal Impact</label>
-                            <input type="radio" id="c4_money" name="cq4_money" value="Money/Prestige"><label for="c4_money">Money/Prestige</label>
-                            <input type="radio" id="c4_discovery" name="cq4_discovery" value="Discovery"><label for="c4_discovery">Discovery/Innovation</label>
-                            <input type="radio" id="c4_service" name="cq4_service" value="Service"><label for="c4_service">Service/Caring</label>
+                            <input type="radio" id="c4_money" name="cq4_motivation" value="Money/Prestige"><label for="c4_money">Money/Prestige</label>
+                            <input type="radio" id="c4_discovery" name="cq4_motivation" value="Discovery"><label for="c4_discovery">Discovery/Innovation</label>
+                            <input type="radio" id="c4_service" name="cq4_motivation" value="Service"><label for="c4_service">Service/Caring</label>
                         </div>
                     </div>
 
                     <div class="quiz-question">
                         <label>5. What type of work environment do you dream of?</label>
                         <div class="options-group" data-name="environment">
-                            <input type="radio" id="c5_office" name="cq5_environment" value="Office"><label for="c5_office">Corporate Office</label>
-                            <input type="radio" id="c5_field" name="cq5_field" value="Field"><label for="c5_field">Field/Outdoor</label>
-                            <input type="radio" id="c5_lab" name="cq5_lab" value="Lab"><label for="c5_lab">Lab/Clinical/Academic</label>
-                            <input type="radio" id="c5_creative" name="cq5_creative" value="Creative Space"><label for="c5_creative">Studio/Creative Space</label>
+                            <input type="radio" id="c5_office" name="cq5_environment" value="Corporate Office"><label for="c5_office">Corporate Office</label>
+                            <input type="radio" id="c5_field" name="cq5_field" value="Field/Outdoor"><label for="c5_field">Field/Outdoor</label>
+                            <input type="radio" id="c5_lab" name="cq5_lab" value="Lab/Clinical/Academic"><label for="c5_lab">Lab/Clinical/Academic</label>
+                            <input type="radio" id="c5_creative" name="cq5_creative" value="Studio/Creative Space"><label for="c5_creative">Studio/Creative Space</label>
                         </div>
                     </div>
 
@@ -498,6 +511,14 @@
 
                 <div id="career-result" class="result-container">
                     <h3>✅ Recommended Career: <span id="c-name"></span></h3>
+                    <div class="user-answers-summary">
+                        <p><strong>Your Choices Lead to This:</strong></p>
+                        <p>1. Subjects: <span id="c-ans-subjects"></span></p>
+                        <p>2. Preference: <span id="c-ans-preference"></span></p>
+                        <p>3. Style: <span id="c-ans-style"></span></p>
+                        <p>4. Motivation: <span id="c-ans-motivation"></span></p>
+                        <p>5. Environment: <span id="c-ans-environment"></span></p>
+                    </div>
                     <div class="result-item"><strong>Category:</strong> <span id="c-category"></span></div>
                     <div class="result-item"><strong>Core Subjects:</strong> <span id="c-subjects"></span></div>
                     <div class="result-item"><strong>Study Path:</strong> <span id="c-path"></span></div>
@@ -508,7 +529,7 @@
                         <a id="c-download-btn" class="action-button btn-download">[Download My Career Report 📥]</a>
                         <a href="https://okvtechnology.com/community" target="_blank" class="action-button btn-community">[Join OKV Community 🤝]</a>
                         <button class="action-button btn-retake" onclick="resetQuiz('career')">🔁 Retake Quiz</button>
-                        <button class="action-button btn-community" style="background: #00bcd4; border-color: #00bcd4; color: white;" onclick="emailReport()">📧 Email My Report</button>
+                        <button class="action-button btn-community" style="background: #00bcd4; border-color: #00bcd4; color: white;" onclick="emailReport('career')">📧 Email My Report</button>
                     </div>
                 </div>
             </section>
@@ -593,24 +614,16 @@
         // result structure: [Skill, Category, Learn, Duration, Tools, Growth, Earn]
         const SKILL_DATA = [
             // High-priority matches (3+ inputs match)
-            { inputs: { enjoyment: "Creative", tools: "Laptop", type: "Computer-based", reason: ["Earn", "Build Business"] },
+            { inputs: { enjoyment: "Creative", tools: "Laptop", work_type: "Computer-based", reason: ["Earn", "Build Business"] },
                 result: ["Graphic Design", "💻 Digital Skills", "Canva Pro, Adobe Tutorials, Online courses", "3-6 months", "Laptop, Design Software (Canva/Figma)", "Learn → Design for friends → Freelance on Fiverr → Start a design agency", "Freelance design, sell templates, create a print-on-demand store"] },
-            { inputs: { enjoyment: "Technical", tools: "Laptop", type: "Computer-based", reason: ["Earn", "Build Business"] },
+            { inputs: { enjoyment: "Technical", tools: "Laptop", work_type: "Computer-based", reason: ["Earn", "Build Business"] },
                 result: ["Web Design (Front-end)", "💻 Digital Skills", "FreeCodeCamp, Udemy, YouTube", "4-9 months", "Laptop, Text Editor", "Learn HTML/CSS → Build portfolio → Freelance/Junior Dev job → Specialise (e.g., React)", "Freelance website projects (design/build), offer ongoing maintenance contracts"] },
-            { inputs: { enjoyment: "Technical", tools: "Physical Tools", type: "Physical", reason: ["Earn", "Build Business"] },
+            { inputs: { enjoyment: "Technical", tools: "Physical Tools", work_type: "Physical", reason: ["Earn", "Build Business"] },
                 result: ["Plumbing/HVAC", "⚙ Technical/Handwork", "Local apprenticeship, Vocational school", "6-12 months", "Wrenches, Safety gear, Specialty Tools", "Apprentice → Get certified → Local contracts → Start a service company", "Residential repairs, commercial maintenance contracts"] },
-            { inputs: { enjoyment: "Creative", tools: "Physical Tools", type: "Physical", reason: ["Earn", "Build Business"] },
+            { inputs: { enjoyment: "Creative", tools: "Physical Tools", work_type: "Physical", reason: ["Earn", "Build Business"] },
                 result: ["Tailoring/Fashion", "🎨 Creative Skills", "YouTube tutorials, local apprenticeship", "3-6 months", "Sewing machine, fabric, measuring tools", "Learn → Create sample designs → Start local tailoring/alterations → Build a brand", "Local tailoring services, custom design work, selling finished garments online"] },
-            { inputs: { enjoyment: "People-oriented", tools: ["Phone", "Laptop"], type: "Both", reason: ["Earn", "Build Business"] },
+            { inputs: { enjoyment: "People-oriented", tools: ["Phone", "Laptop"], work_type: "Both", reason: ["Earn", "Build Business"] },
                 result: ["Digital Marketing", "💬 Business & Communication", "Google Digital Garage, HubSpot Academy", "2-5 months", "Phone/Laptop, Social Media Accounts", "Certify → Manage small business social media → Become a marketing strategist/agency owner", "Offer social media management, run paid ad campaigns for clients"] },
-            { inputs: { enjoyment: "Business", tools: "Laptop", type: "Computer-based", reason: ["Earn", "Build Business"] },
-                result: ["Copywriting/Content Writing", "💻 Digital Skills", "Online courses on persuasive writing, reading business books", "3-6 months", "Laptop, internet access", "Learn frameworks → Write for cheap to build portfolio → Charge high-ticket rates for sales pages/ads", "Freelance writing (websites, emails, ads), build an email list service"] },
-            
-            // Mid-priority/Specific matches (2-3 inputs match)
-            { inputs: { enjoyment: "Creative", tools: "Phone", type: "Computer-based", reason: ["Earn", "Hobby"] },
-                result: ["Video Editing (Mobile)", "💻 Digital Skills", "YouTube tutorials, Mobile editing app courses", "1-3 months", "Smartphone, CapCut/InShot app", "Practice editing short clips → Offer to small content creators → Start a niche editing service", "Edit short-form content (Reels/TikTok) for businesses or influencers"] },
-            { inputs: { enjoyment: "Business", tools: "Phone", type: ["Both", "Computer-based"], reason: "Earn" },
-                result: ["Sales & Negotiation", "💬 Business & Communication", "Online sales courses, role-playing, mentorship", "2-4 months", "Phone, CRM software (on phone/laptop)", "Practice cold calling → Sales job → Management role → Sales consulting", "Commission-based sales, teach negotiation workshops"] },
             
             // Low-priority/Fallback
             { inputs: { enjoyment: "N/A" },
@@ -619,25 +632,33 @@
 
         // result structure: [Career, Category, Subjects, Path, Skills, Growth]
         const CAREER_DATA = [
-            // High-priority matches (3+ inputs match)
-            { inputs: { subjects: "Science", preference: "Solving Problems", style: "Practical", motivation: ["Impact", "Service"], environment: ["Lab", "Field"] },
+            // High-Priority Exact Matches (4-5 inputs match)
+            // 1. Science-Health
+            { inputs: { subjects: "Science", preference: "Solving Problems", style: "Theoretical", motivation: ["Impact", "Service"], environment: "Lab/Clinical/Academic" },
                 result: ["Doctor/Surgeon", "🧬 Health & Medicine", "Biology, Chemistry, Physics", "MBBS/MD → Internship → Residency → Specialist Practice", "Empathy, Communication, Focus, Stress Management", "Specialist Doctor → Medical Director → Public Health Leader"] },
-            { inputs: { subjects: ["Tech", "Science"], preference: "Solving Problems", style: "Theoretical", motivation: ["Discovery", "Money/Prestige"], environment: "Office" },
+            // 2. Tech-Solving/Corporate
+            { inputs: { subjects: "Tech", preference: "Solving Problems", style: "Theoretical", motivation: ["Discovery", "Money/Prestige"], environment: "Corporate Office" },
                 result: ["Software Engineer", "💻 Tech & Engineering", "Math, Computer Science, Physics", "B.Sc. in Computer Science → Internships → Junior Dev → Senior Engineer", "Logic, Problem-Solving, Continuous Learning", "Tech Lead → Architect → Start-up Founder/CTO"] },
-            { inputs: { subjects: "Commercial", preference: ["Leading Teams", "Solving Problems"], style: ["Theoretical", "Practical"], motivation: ["Money/Prestige", "Impact"], environment: "Office" },
+            // 3. Commercial-Finance
+            { inputs: { subjects: "Commercial", preference: "Solving Problems", style: "Theoretical", motivation: "Money/Prestige", environment: "Corporate Office" },
                 result: ["Financial Analyst", "💼 Business & Finance", "Accounting, Economics, Math", "B.Sc. Finance/Economics → CFA/Relevant Certifications → Junior Analyst → Portfolio Manager", "Attention to Detail, Data Interpretation, Communication", "Senior Analyst → Investment Banker → Chief Financial Officer (CFO)"] },
-            { inputs: { subjects: "Arts", preference: "Creating Ideas", style: "Theoretical", motivation: ["Impact", "Discovery"], environment: ["Creative Space", "Office"] },
-                result: ["Journalist / Content Creator", "🎨 Arts & Media", "Literature, Government, Media Studies", "B.A. in Mass Communication → Internship → Reporter/Writer → Editor/Producer", "Writing, Research, Critical Thinking, Objectivity", "Senior Editor → Media Director → Columnist/Author"] },
-            { inputs: { subjects: ["Arts", "Commercial"], preference: "Helping People", style: "Theoretical", motivation: "Service", environment: ["Office", "Creative Space"] },
-                result: ["Psychologist/Counselor", "🧭 Social & Community", "Psychology, Sociology, Law", "B.Sc. Psychology → Masters Degree → Licensing/Practice", "Empathy, Active Listening, Confidentiality, Analysis", "Clinical Specialist → Private Practice Owner → Academic Researcher"] },
+            // 4. Arts-Creative
+            { inputs: { subjects: "Arts", preference: "Creating Ideas", style: "Practical", motivation: "Impact", environment: "Studio/Creative Space" },
+                result: ["Creative Writer / Content Producer", "🎨 Arts & Media", "Literature, Media Studies, IT Basics", "B.A. in Mass Communication → Portfolio Building → Freelancer → Editor/Producer", "Writing, Research, Critical Thinking, Storytelling", "Senior Editor → Media Director → Columnist/Author"] },
+            // 5. Arts-Solving/Legal
+            { inputs: { subjects: "Arts", preference: "Solving Problems", style: "Theoretical", motivation: ["Money/Prestige", "Impact"], environment: "Corporate Office" },
+                result: ["Lawyer/Legal Consultant", "⚖️ Law & Governance", "Law, Government, History", "LL.B Degree → Law School → Bar Exam → Practice (Litigation/Corporate)", "Critical Analysis, Argumentation, Integrity, Negotiation", "Senior Partner → Judge/Politician"] },
+            // 6. Science-Practical/Field
+            { inputs: { subjects: "Science", preference: "Solving Problems", style: "Practical", motivation: "Impact", environment: "Field/Outdoor" },
+                result: ["Civil/Structural Engineer", "🏗️ Engineering & Construction", "Math, Physics, Technical Drawing", "B.Sc. Engineering → Internships → Site Engineer → Project Manager", "Precision, Project Management, Team Leadership, Safety", "Chief Engineer → Director of Public Works"] },
+            // 7. Commercial-Leadership
+            { inputs: { subjects: "Commercial", preference: "Leading Teams", style: "Practical", motivation: "Money/Prestige", environment: "Corporate Office" },
+                result: ["Business Development Manager", "💼 Business & Finance", "Management, Marketing, Economics", "B.Sc. Business Admin/Marketing → Sales Role → Manager → Director", "Negotiation, Strategy, Communication, Sales Acumen", "Regional Director → VP of Sales/Business Strategy"] },
+            // 8. Tech-Creative
+            { inputs: { subjects: "Tech", preference: "Creating Ideas", style: "Practical", motivation: "Discovery", environment: "Studio/Creative Space" },
+                result: ["UX/UI Designer", "💻 Tech & Engineering", "Psychology, Art, Computer Science Basics", "Bootcamp/Certifications → Junior Designer → Lead Designer → Design Director", "Visual Design, User Empathy, Prototyping, Communication", "Lead Designer → Design Consultant → Product Manager"] },
             
-            // Mid-priority/Specific matches (2-3 inputs match)
-            { inputs: { subjects: "Commercial", preference: "Leading Teams", style: "Practical", motivation: "Money/Prestige", environment: "Office" },
-                result: ["HR Manager", "💼 Business & Finance", "Management, Psychology, Law", "B.Sc. in Human Resources/Business → Relevant Certifications → HR Assistant → HR Manager", "Empathy, Negotiation, Organisational Skills", "HR Director → Chief Human Resources Officer (CHRO)"] },
-            { inputs: { subjects: ["Science", "Arts"], preference: "Solving Problems", style: "Practical", motivation: "Impact", environment: "Field" },
-                result: ["Environmental Scientist", "🌱 Agriculture & Environment", "Biology, Geography, Chemistry", "B.Sc. Environmental Science → Fieldwork/Internship → Consultant/Researcher", "Data Collection, Problem-Solving, Teamwork", "Senior Consultant → Government Policy Advisor → NGO Director"] },
-
-            // Low-priority/Fallback
+            // Fallback (for 1-2 matches, or general)
             { inputs: { subjects: "N/A" },
                 result: ["Academic Researcher", "📚 Education & Research", "Any strong academic subject", "Bachelors → Masters → PhD → Post-Doc", "Curiosity, Discipline, Writing", "Senior Researcher → University Lecturer → Department Head"] }
         ];
@@ -647,8 +668,8 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             setupTabNavigation();
-            document.getElementById('skill-quiz-form').addEventListener('submit', handleSkillQuiz);
-            document.getElementById('career-quiz-form').addEventListener('submit', handleCareerQuiz);
+            document.getElementById('skill-quiz-form').addEventListener('submit', handleQuiz);
+            document.getElementById('career-quiz-form').addEventListener('submit', handleQuiz);
             document.getElementById('s-download-btn').addEventListener('click', () => downloadReport('skill'));
             document.getElementById('c-download-btn').addEventListener('click', () => downloadReport('career'));
         });
@@ -687,12 +708,11 @@
         }
 
         /**
-         * Compares user answers against all profiles to find the best match.
-         * The recommendation is personalized by prioritizing the profile 
-         * with the highest number of matching answers (3+ matches gets priority).
+         * Determines the best result based on the highest number of matching answers.
+         * This function implements strict, personalized matching based on the maximum matched criteria.
          */
         function determineResult(answers, data) {
-            let bestMatch = data[data.length - 1]; // Default/Fallback
+            let bestMatch = data[data.length - 1]; // Default/Fallback (The last element)
             let maxMatches = -1;
 
             for (const item of data) {
@@ -705,6 +725,7 @@
                     
                     if (user_answer === null) continue; // Skip if unanswered
 
+                    // Check if the user's answer matches the required criteria
                     if (Array.isArray(required)) {
                         if (required.includes(user_answer)) {
                             matches++;
@@ -712,12 +733,12 @@
                     } else if (required === user_answer) {
                         matches++;
                     } else if (required === "N/A") {
-                        matches++; // Always matches the fallback criteria
+                        matches++; // The N/A criteria in data is for the generic fallback
                     }
                 }
                 
-                // Prioritize matches that hit 3 or more criteria
-                if (matches >= 3) return item; 
+                // Prioritize matches that hit 4 or 5 criteria instantly
+                if (matches >= 4) return item; 
 
                 // Otherwise, keep track of the closest match
                 if (matches > maxMatches) {
@@ -729,51 +750,52 @@
             return bestMatch;
         }
 
-        function handleSkillQuiz(event) {
+        function handleQuiz(event) {
             event.preventDefault();
-            const answers = getQuizResults('skill-quiz-form');
+            const form = event.currentTarget;
+            const formId = form.id;
+            const type = formId.includes('skill') ? 'skill' : 'career';
+            const answers = getQuizResults(formId);
+            const data = type === 'skill' ? SKILL_DATA : CAREER_DATA;
+            const resultId = `${type}-result`;
+
             if (Object.values(answers).some(val => val === null)) {
-                alert("Please answer all 5 questions to find your skill!");
+                alert(`Please answer all 5 questions to find your ${type}!`);
                 return;
             }
 
-            const resultItem = determineResult(answers, SKILL_DATA);
-            const [name, category, learn, duration, tools, growth, earn] = resultItem.result;
+            const resultItem = determineResult(answers, data);
 
-            // Display results
-            document.getElementById('s-name').textContent = name;
-            document.getElementById('s-category').textContent = category;
-            document.getElementById('s-learn').textContent = learn;
-            document.getElementById('s-duration').textContent = duration;
-            document.getElementById('s-tools').textContent = tools;
-            document.getElementById('s-growth').textContent = growth;
-            document.getElementById('s-earn').textContent = earn;
-
-            document.getElementById('skill-quiz-form').style.display = 'none';
-            document.getElementById('skill-result').style.display = 'block';
-        }
-
-        function handleCareerQuiz(event) {
-            event.preventDefault();
-            const answers = getQuizResults('career-quiz-form');
-            if (Object.values(answers).some(val => val === null)) {
-                alert("Please answer all 5 questions to find your career path!");
-                return;
+            if (type === 'skill') {
+                const [name, category, learn, duration, tools, growth, earn] = resultItem.result;
+                document.getElementById('s-name').textContent = name;
+                document.getElementById('s-category').textContent = category;
+                document.getElementById('s-learn').textContent = learn;
+                document.getElementById('s-duration').textContent = duration;
+                document.getElementById('s-tools').textContent = tools;
+                document.getElementById('s-growth').textContent = growth;
+                document.getElementById('s-earn').textContent = earn;
+            } else if (type === 'career') {
+                const [name, category, subjects, path, skills, growth] = resultItem.result;
+                
+                // Update Career Result Fields
+                document.getElementById('c-name').textContent = name;
+                document.getElementById('c-category').textContent = category;
+                document.getElementById('c-subjects').textContent = subjects;
+                document.getElementById('c-path').textContent = path;
+                document.getElementById('c-keyskills').textContent = skills;
+                document.getElementById('c-growth').textContent = growth;
+                
+                // Update Personalized Answer Summary (New Feature to prove personalization)
+                document.getElementById('c-ans-subjects').textContent = answers['subjects'];
+                document.getElementById('c-ans-preference').textContent = answers['preference'];
+                document.getElementById('c-ans-style').textContent = answers['style'];
+                document.getElementById('c-ans-motivation').textContent = answers['motivation'];
+                document.getElementById('c-ans-environment').textContent = answers['environment'];
             }
 
-            const resultItem = determineResult(answers, CAREER_DATA);
-            const [name, category, subjects, path, skills, growth] = resultItem.result;
-
-            // Display results
-            document.getElementById('c-name').textContent = name;
-            document.getElementById('c-category').textContent = category;
-            document.getElementById('c-subjects').textContent = subjects;
-            document.getElementById('c-path').textContent = path;
-            document.getElementById('c-keyskills').textContent = skills;
-            document.getElementById('c-growth').textContent = growth;
-
-            document.getElementById('career-quiz-form').style.display = 'none';
-            document.getElementById('career-result').style.display = 'block';
+            document.getElementById(formId).style.display = 'none';
+            document.getElementById(resultId).style.display = 'block';
         }
 
         function resetQuiz(type) {
@@ -790,7 +812,7 @@
             });
         }
 
-        // --- DOWNLOAD/EMAIL FUNCTIONALITY ---
+        // --- DOWNLOAD/EMAIL FUNCTIONALITY (Unchanged) ---
 
         function downloadReport(type) {
             const name = document.getElementById(`${type}-name`).textContent;
@@ -811,6 +833,14 @@
                 content += `Study Path: ${document.getElementById('c-path').textContent}\n`;
                 content += `Key Skills: ${document.getElementById('c-keyskills').textContent}\n`;
                 content += `Career Growth: ${document.getElementById('c-growth').textContent}\n\n`;
+                
+                // Add answers to report
+                content += "--- Your Personalized Inputs ---\n";
+                content += `Subjects: ${document.getElementById('c-ans-subjects').textContent}\n`;
+                content += `Preference: ${document.getElementById('c-ans-preference').textContent}\n`;
+                content += `Style: ${document.getElementById('c-ans-style').textContent}\n`;
+                content += `Motivation: ${document.getElementById('c-ans-motivation').textContent}\n`;
+                content += `Environment: ${document.getElementById('c-ans-environment').textContent}\n\n`;
             }
             
             content += "--------------------------------------------------------";
@@ -831,9 +861,9 @@
             alert(`Report for "${name}" generated and downloaded as a TXT file!`);
         }
         
-        function emailReport() {
+        function emailReport(type) {
             // Simulation as requested (real implementation requires a backend)
-            const email = prompt("Enter your email address to receive the report:");
+            const email = prompt("Enter your email address to receive the " + type + " report:");
             if (email && email.includes('@')) {
                 alert(`Report successfully emailed to ${email}! (Note: This is a simulation. A real app needs a server to send emails.)`);
             } else {
