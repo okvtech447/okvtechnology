@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OKV Tech Store - Reliable Tech & Smart Security | Africa</title>
+    <style>
+        /* Using a sophisticated, clean font (Poppins remains modern) */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            /* Muted, Professional Palette */
+            --primary-color: #004B8C; /* Deep Tech Blue */
+            --secondary-color: #0077B6; /* Mid Blue Accent */
+            --accent-color: #CC4400; /* Subtle Conversion Orange */
+            --text-dark: #2C3E50; /* Dark Grey for Professionalism */
+            --text-light: #FFFFFF;
+            --bg-light: #F4F6F7; /* Off-White Background */
+            --gradient-hero: linear-gradient(135deg, #004B8C 0%, #0077B6 100%);
+            --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.08);
+            --border-radius-lg: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+            font-size: 16px;
+        }
+
+        /* --- Utility & Base Styles --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 25px; 
+        }
+
+        section {
+            padding: 100px 0;
+            scroll-margin-top: 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: var(--border-radius-lg);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 2px solid var(--accent-color);
+            cursor: pointer;
+        }
+        .cta-button:hover { 
+            background-color: #FF6A00; 
+            border-color: #FF6A00;
+        }
+        .btn-whatsapp { 
+            background-color: #25D366; 
+            border-color: #25D366;
+        }
+        .btn-whatsapp:hover { 
+            background-color: #38E677; 
+            border-color: #38E677;
+        }
+
+        /* --- 1. Navigation Menu (Sticky Header) --- */
+        #navbar {
+            background-color: var(--text-light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px; 
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: var(--primary-color);
+            transition: width 0.4s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+            left: 0;
+            background: var(--primary-color);
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* --- 2. HOME SECTION (Hero Area) --- */
+        #home {
+            background: var(--gradient-hero);
+            color: var(--text-light);
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        #home h1 {
+            font-size: 3.8rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        #home p {
+            font-size: 1.4rem;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        /* NEW BANNER STYLES */
+        .hero-banner-link {
+            display: block;
+            margin: 40px auto 20px auto;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            max-width: 1000px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
+            transition: transform 0.3s;
+        }
+        .hero-banner-link:hover {
+            transform: scale(1.01);
+        }
+        .hero-banner-image {
+            width: 100%;
+            height: 250px; /* Fixed height for consistency */
+            object-fit: cover;
+            display: block;
+            border-radius: var(--border-radius-lg);
+        }
+        /* END NEW BANNER STYLES */
+
+
+        .trust-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            font-size: 1rem;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 30px;
+            border-radius: var(--border-radius-lg);
+            margin-top: 40px;
+        }
+        .trust-row i { color: #FFC300; }
+        
+        /* --- 4. PRODUCTS / CATEGORIES SECTION (Updated Professional Look) --- */
+        #products {
+            background-color: var(--bg-light);
+        }
+        
+        /* Search Bar Styling */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px; /* Space for icon */
+            border: 2px solid #DCDCDC;
+            border-radius: 50px; /* Fully rounded for sleek look */
+            font-size: 1.05rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            outline: none;
+        }
+        .search-input:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.2);
+        }
+        .search-container i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #95A5A6;
+            font-size: 1.2rem;
+        }
+
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .category-tabs button {
+            padding: 12px 28px;
+            background-color: #E0E0E0;
+            border: none;
+            border-radius: 50px; /* Pill shape for tabs */
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            flex-shrink: 0;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .category-tabs button:hover, .category-tabs button.active {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            box-shadow: 0 4px 10px rgba(0, 75, 140, 0.3);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        /* Professional Product Card Look */
+        .product-card {
+            background-color: var(--text-light);
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+            overflow: hidden;
+            text-align: left; /* Text alignment left for cleaner look */
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-8px); /* Lift higher on hover */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-card-image-wrap {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        .product-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-color: #EEE;
+            transition: transform 0.5s ease;
+        }
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-card-content {
+            padding: 20px 20px 25px 20px;
+            flex-grow: 1; /* Ensures content fills space */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card h4 {
+            font-size: 1.2rem;
+            margin: 0 0 5px 0;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .product-card .short-desc {
+            color: #7F8C8D;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            flex-grow: 1; /* Pushes price to the bottom */
+        }
+
+        .product-card .price {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 15px;
+        }
+        
+        .product-card .open-modal-btn {
+            width: 100%;
+            padding: 10px 20px;
+            background-color: var(--secondary-color); 
+            border-color: var(--secondary-color);
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .product-card .open-modal-btn:hover {
+            background-color: #006AA7;
+            border-color: #006AA7;
+        }
+        
+        .no-results {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #95A5A6;
+            padding: 50px 0;
+        }
+        
+        /* --- 5. WHY CHOOSE US (Retained) --- */
+        #why-us { background-color: var(--text-light); }
+        .check-list { 
+            max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; 
+            font-size: 1.1rem; font-weight: 500; list-style: none;
+        }
+        .check-list li {
+            position: relative; padding-left: 30px; color: var(--text-dark); border-left: 3px solid var(--secondary-color);
+            padding: 10px 0 10px 20px; background-color: var(--bg-light); border-radius: var(--border-radius-lg); transition: all 0.2s;
+        }
+        .check-list li:hover { background-color: #EAECEE; }
+
+        /* --- 7. CONTACT SECTION (NEW STYLES) --- */
+        #contact { 
+            background-color: var(--bg-light); 
+            padding-bottom: 80px; 
+        }
+
+        .contact-content {
+            display: flex;
+            gap: 40px;
+            justify-content: space-between;
+            align-items: stretch; /* Stretch columns to be the same height */
+        }
+
+        .contact-info-block, .contact-form {
+            flex: 1;
+            padding: 40px; 
+            border-radius: var(--border-radius-lg);
+            background-color: var(--text-light);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+            transition: box-shadow 0.3s;
+        }
+        .contact-info-block:hover, .contact-form:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); 
+        }
+
+        .contact-info-block h3, .contact-form h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-weight: 700;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 10px;
+        }
+
+        .contact-info-block p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info-block i {
+            margin-right: 15px;
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            width: 25px; /* fixed width for better alignment */
+            text-align: center;
+        }
+        .contact-info-block a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact-info-block a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Form Styling Refinement */
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #DCDCDC;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .contact-form textarea {
+            resize: vertical;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 1px var(--secondary-color);
+            outline: none;
+        }
+        .contact-form button {
+            width: 100%;
+            text-align: center;
+        }
+
+
+        /* --- 8. FOOTER SECTION (NEW STYLES) --- */
+        footer {
+            background-color: #17202A; /* Very Dark Blue-Gray */
+            color: #CFCFCF; /* Light gray text */
+            padding: 60px 0 20px 0;
+            font-size: 0.95rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr 1fr 1.5fr; /* Adjusted proportions */
+            gap: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #3A4047; /* Lighter separator */
+        }
+
+        footer h4 {
+            color: var(--text-light); /* White heading */
+            font-size: 1.15rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin-bottom: 12px;
+        }
+
+        footer ul li a {
+            color: #CFCFCF;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer ul li a:hover {
+            color: var(--accent-color); /* Highlight on hover */
+        }
+        
+        .footer-grid > div:first-child p {
+            margin-top: 10px;
+            line-height: 1.8;
+            color: #99A3A4;
+        }
+
+        .social-icons a {
+            color: var(--text-light);
+            font-size: 1.6rem;
+            margin-right: 20px;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+            transform: scale(1.1);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: #777;
+        }
+        
+        /* --- MODAL POP-UP STYLES (Retained) --- */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 10000; /* Sit way on top */
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.6); /* Dark background overlay */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto; /* 10% from the top and centered */
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            width: 90%; 
+            max-width: 500px; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.4s ease-out;
+            position: relative;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 32px;
+            font-weight: bold;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: var(--accent-color);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #product-order-form {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #EEE;
+        }
+
+        #product-order-form label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--primary-color);
+            font-size: 0.95rem;
+        }
+
+        #product-order-form input[type="number"],
+        #product-order-form input[type="text"],
+        #product-order-form input[type="email"],
+        #product-order-form select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+        #product-order-form input[type="number"] { max-width: 100px; text-align: center; }
+
+        .modal-product-info h3 {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        .modal-product-info .current-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .payment-options {
+            display: flex;
+            flex-direction: column; /* Stack buttons vertically on small screens */
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .payment-btn {
+            width: 100%;
+            padding: 15px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.1s;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+        .payment-btn:active { transform: translateY(1px); }
+
+        #pay-online-btn {
+            background-color: var(--secondary-color); 
+        }
+        #pay-online-btn:hover { background-color: #006AA7; }
+
+        #pay-on-delivery-btn {
+            background-color: #8C98A6; /* A neutral gray for COD */
+        }
+        #pay-on-delivery-btn:hover { background-color: #7A8491; }
+        
+        .confirmation-box i {
+            font-size: 2.5rem;
+            color: #25D366;
+            margin-bottom: 15px;
+        }
+        .confirmation-box h4 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .confirmation-box p {
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 15px;
+            text-align: left;
+            padding: 0 10px;
+        }
+        .confirmation-box .cta-button {
+            width: auto;
+            margin-top: 15px;
+        }
+
+        /* ========================================= */
+        /* === MOBILE RESPONSIVENESS STYLES (Max 768px) === */
+        /* ========================================= */
+        @media (max-width: 768px) {
+            
+            .container {
+                padding: 0 15px; 
+            }
+
+            section { 
+                padding: 60px 0; 
+            }
+            
+            .section-title {
+                font-size: 1.8rem; 
+                margin-bottom: 30px;
+            }
+
+            /* 1. Navigation Menu */
+            .nav-content {
+                padding: 0 10px; 
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .menu-toggle { 
+                display: block; 
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px; 
+                left: 0;
+                width: 100%;
+                background-color: var(--text-light);
+                box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+                padding: 15px 0;
+                text-align: center;
+                gap: 10px;
+            }
+            .nav-links.active { 
+                display: flex; 
+            }
+            .nav-links a { 
+                padding: 10px 0; 
+                width: 80%; 
+                margin: 0 auto; 
+                border-bottom: 1px solid #EEE; 
+            }
+            .nav-links a:last-of-type { 
+                border-bottom: none; 
+            }
+            .nav-links .cta-button { 
+                margin: 10px 0; 
+            }
+            
+            /* 2. HOME SECTION (Hero Area) */
+            #home {
+                padding: 80px 0;
+            }
+            
+            #home h1 { 
+                font-size: 2.5rem; 
+            }
+            
+            #home p { 
+                font-size: 1.1rem; 
+                margin-bottom: 30px;
+            }
+            
+            .hero-cta-group { 
+                flex-direction: column; 
+                gap: 15px;
+            }
+            .cta-button {
+                width: 100%; 
+            }
+            
+            .hero-banner-image {
+                height: 150px; /* Smaller height on mobile */
+            }
+            
+            .trust-row { 
+                gap: 20px; 
+                font-size: 0.9rem;
+            }
+            
+            /* 4. PRODUCTS / CATEGORIES SECTION */
+            .category-tabs {
+                justify-content: flex-start; 
+                padding: 0 5px 10px 5px; 
+            }
+            .category-tabs button {
+                padding: 10px 20px; 
+            }
+
+            .product-grid { 
+                grid-template-columns: 1fr; 
+                gap: 20px;
+            }
+            
+            .product-card-image-wrap {
+                height: 150px; 
+            }
+            
+            /* 5. WHY CHOOSE US (Mobile Block Display) */
+            .check-list { 
+                grid-template-columns: 1fr; /* Force single column block display */
+                gap: 15px; /* Reduce gap */
+            }
+
+            /* 7. CONTACT SECTION */
+            .contact-content { 
+                flex-direction: column; 
+                gap: 30px; 
+            }
+            .contact-info-block, .contact-form {
+                max-width: 100%;
+                padding: 30px;
+            }
+            
+            /* 8. FOOTER SECTION */
+            footer {
+                padding: 40px 0 20px 0;
+            }
+            .footer-grid { 
+                grid-template-columns: 1fr; 
+                text-align: center; 
+                gap: 30px;
+            }
+            .footer-grid ul {
+                padding-left: 0; 
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header id="navbar">
+        <div class="container nav-content">
+            <a href="#home" class="logo">OKV TECH STORE</a>
+            
+            <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#products">Products</a>
+                <a href="#contact">Contact</a>
+                <a href="https://wa.me/yourwhatsappnumber" class="cta-button btn-whatsapp" target="_blank">WhatsApp</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h1>**Reliable Gadgets.Real Power. Real Security.</h1>
+            <p>Shop genuine **Laptops**, computer accessories, solar CCTV cameras, and smart electronics — delivered fast across Africa. **Built to work, even without NEPA.**</p>
+            
+            <div class="hero-cta-group">
+                <a href="#products" class="cta-button">Shop All Products</a>
+                <a href="https://wa.me/yourwhatsappnumber" class="cta-button btn-whatsapp" target="_blank">Chat with Sales</a>
+            </div>
+            
+            <a href="#products" class="hero-banner-link">
+                <img 
+                    src="https://via.placeholder.com/1000x250/004B8C/FFFFFF?text=CHANGE+ME:+High-Resolution+Banner+Image" 
+                    alt="Featured Product Banner" 
+                    class="hero-banner-image">
+            </a>
+            <div class="trust-row">
+                <span><i class="fas fa-certificate"></i> Verified Genuine</span>
+                <span><i class="fas fa-truck-loading"></i> Africa-wide Delivery</span>
+                <span><i class="fas fa-shield-alt"></i> Warranty Guaranteed</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About OKV Tech</h2>
+            <div class="about-text">
+                <p>OKV Tech is an innovative eCommerce brand dedicated to providing **authentic and energy-smart tech solutions** to customers across Africa. We bridge the gap between quality gadgets and reliable power, ensuring you stay connected and secure, regardless of the grid.</p>
+                <p style="margin-top: 15px;">Our curated selection of **laptops**, computer accessories, solar security cameras, and smart tools are tested for durability and performance in the local climate.</p>
+            </div>
+            
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Trusted Expertise</h4>
+                    <p>Over 5 years in the market, providing reliable technology and transparent advice.</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-battery-full"></i>
+                    <h4>Energy-Smart Solutions</h4>
+                    <p>We prioritize solar-powered and efficient products that work perfectly with unstable power supply.</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-headset"></i>
+                    <h4>Dedicated Support</h4>
+                    <p>Get real-time human assistance via WhatsApp for pre-sale questions and post-purchase issues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container">
+            <h2 class="section-title">Shop Our Featured Products</h2>
+            
+            <div class="search-container">
+                <input type="text" id="product-search" class="search-input" placeholder="Search Laptops, CCTV, or Accessories...">
+                <i class="fas fa-search"></i>
+            </div>
+            
+            <div class="category-tabs" id="category-tabs">
+                <button class="active" data-category="all">All Products</button>
+                <button data-category="laptops">Laptops</button>
+                <button data-category="accessories">Computer Accessories</button>
+                <button data-category="cctv">Solar CCTV Cameras</button>
+                <button data-category="electronics">Other Electronics</button>
+            </div>
+            
+            <div class="product-content">
+                <div class="product-grid" id="product-list-grid">
+                    </div>
+                
+                <div id="no-results-message" class="no-results" style="display: none;">
+                    No products found matching your search criteria. Try a different term or category.
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="https://wa.me/yourwhatsappnumber" class="cta-button" style="background-color: var(--primary-color); border-color: var(--primary-color);">Need Help Choosing? Chat Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us">
+        <div class="container">
+            <h2 class="section-title">Why Partner with OKV Tech</h2>
+            <ul class="check-list">
+                <li>Genuine & Tested Products: No fakes, just guaranteed authenticity.</li>
+                <li>Fast Africa-wide Delivery: Orders fulfilled within 3-7 working days across key African cities.</li>
+                <li>Dedicated WhatsApp Support: Real support before and after your purchase.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Success Stories</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-card-lite">
+                    <span style="color: gold;">⭐⭐⭐⭐⭐</span>
+                    <p>“The solar camera works perfectly and has given me peace of mind. Truly power-free security.”</p>
+                    <strong style="display: block; margin-top: 15px;">— Tunde L., Lagos, Nigeria</strong>
+                </div>
+                <div class="testimonial-card-lite">
+                    <span style="color: gold;">⭐⭐⭐⭐</span>
+                    <p>“The laptop battery was original and delivered quickly. Excellent value for money.”</p>
+                    <strong style="display: block; margin-top: 15px;">— Amaka K., Owerri, Nigeria</strong>
+                </div>
+                <div class="testimonial-card-lite">
+                    <span style="color: gold;">⭐⭐⭐⭐⭐</span>
+                    <p>“Professional and reliable service. I appreciate the quick chat support when placing my bulk order.”</p>
+                    <strong style="display: block; margin-top: 15px;">— Chidi A., Abuja, Nigeria</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p style="text-align: center; margin-bottom: 50px; font-size: 1.1rem;">Have questions, need a quote, or ready for a bulk purchase? We are here to help.</p>
+
+            <div class="contact-content">
+                <div class="contact-info-block">
+                    <h3>Direct Contact</h3>
+                    <p><i class="fas fa-phone-alt"></i> Phone: +2348104141138</p>
+                    <p><i class="fab fa-whatsapp"></i>WhatsApp: <a href="https://wa.me/yourwhatsappnumber" target="_blank">Chat Now</a></p>
+                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:info@okvtech.com">info@okvtech.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i>Location: Lagos, Nigeria (Serving Africa-wide)</p>
+                    
+                    <a href="https://wa.me/yourwhatsappnumber" class="cta-button btn-whatsapp" target="_blank" style="margin-top: 30px; width: 100%; text-align: center;">Chat with a Specialist</a>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Inquiry Form</h3>
+                    <form>
+                        <input type="text" placeholder="Your Full Name" required>
+                        <input type="email" placeholder="Email Address / Phone Number" required>
+                        <textarea placeholder="Your Message or Inquiry" rows="5" required></textarea>
+                        <button type="submit" class="cta-button" style="background-color: var(--primary-color); border-color: var(--primary-color);">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <h4>OKV Tech Store</h4>
+                <p>Your trusted source for professional-grade gadgets and power-smart security solutions across Africa.</p>
+            </div>
+            <div>
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Our Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Warranty & Returns</a></li>
+                    <li><a href="#">FAQ / Help Center</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="social-icons">
+                <h4>Connect with Us</h4>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 OKV Tech Store – Reliable Gadgets. Real Power. Real Security.</p>
+        </div>
+    </footer>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+
+            <div id="modal-details-view">
+                <div class="modal-product-info">
+                    <img id="modal-product-image-details" src="" alt="Product Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px; margin-bottom: 20px;">
+                    
+                    <h3 id="modal-product-name-details">Product Name Placeholder</h3>
+                    <p class="current-price">Price: ₦<span id="modal-product-price-details">0</span></p>
+                    
+                    <p id="modal-product-description" style="margin-bottom: 25px; color: #555;"></p>
+                    
+                    <button id="order-now-button" class="cta-button" style="width: 100%;">Order Now & Checkout</button>
+                </div>
+            </div>
+
+            <div id="modal-form-view" style="display: none;">
+                <div class="modal-product-info">
+                    <h3 id="modal-product-name-form">Product Name Placeholder</h3>
+                    <p class="current-price">Total Payable: ₦<span id="modal-total-price">0</span> (Qty: <span id="modal-quantity-display">1</span>)</p>
+                </div>
+                
+                <form id="product-order-form" onsubmit="return false;">
+                    <input type="hidden" name="productId" id="modal-product-id">
+                    <input type="hidden" name="productPrice" id="modal-product-raw-price">
+                    <input type="hidden" name="productName" id="modal-product-actual-name">
+
+                    <label for="quantity">Number of Products to Buy:</label>
+                    <input type="number" id="quantity" name="quantity" value="1" min="1" required>
+
+                    <label for="customerName">Your Full Name:</label>
+                    <input type="text" id="customerName" name="customerName" required>
+                    
+                    <label for="customerEmail">Email Address:</label>
+                    <input type="email" id="customerEmail" name="customerEmail" required>
+
+                    <label for="customerPhone">Phone Number:</label>
+                    <input type="text" id="customerPhone" name="customerPhone" required>
+
+                    <label for="customerAddress">Full Delivery Address:</label>
+                    <input type="text" id="customerAddress" name="customerAddress" required>
+                    
+                    <label for="customerCountry">Country:</label>
+                    <select id="customerCountry" name="customerCountry" required></select>
+
+                    <label for="customerRegion">State/Region:</label>
+                    <select id="customerRegion" name="customerRegion" required>
+                        <option value="">Select Region</option>
+                    </select>
+
+                    <div class="payment-options">
+                        <button type="submit" class="payment-btn" id="pay-online-btn" data-payment-type="online">
+                            Pay Online (Secure Checkout)
+                        </button>
+                        <button type="submit" class="payment-btn" id="pay-on-delivery-btn" data-payment-type="delivery">
+                            Pay on Delivery (Submit Order)
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="modal-confirmation-view" style="display: none; text-align: center;">
+                <div id="confirmation-details" class="confirmation-box">
+                    </div>
+                <a href="https://wa.me/yourwhatsappnumber" target="_blank" class="cta-button btn-whatsapp" style="margin-top: 30px; width: 100%;">
+                    <i class="fab fa-whatsapp"></i> Chat Support Now
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.getElementById('nav-links');
+            const menuToggle = document.getElementById('menu-toggle');
+            const productListGrid = document.getElementById('product-list-grid');
+            const categoryButtons = document.querySelectorAll('#category-tabs button');
+            const searchInput = document.getElementById('product-search');
+            const noResultsMessage = document.getElementById('no-results-message');
+            
+            let currentCategory = 'all'; 
+
+            // --- Product Data Consolidation ---
+            const ALL_PRODUCTS = [
+                // Laptops
+                { id: 'LAP001', category: 'laptops', name: 'Dell XPS 13 i7 (New/Refurb)', price: 650000, 
+                    desc: '11th Gen i7, 16GB RAM, 512GB SSD. Premium build and performance.', 
+                    fullDesc: 'Genuine, Grade A Refurbished Dell XPS 13. Features 11th Gen Intel i7, 16GB LPDDR4x RAM, 512GB NVMe SSD, and a stunning 13.4-inch FHD+ display. 12-month hardware warranty included.', 
+                    img: 'images/laptops/placeholder-dell-i7.jpg' },
+                { id: 'LAP002', category: 'laptops', name: 'HP EliteBook Core i5', price: 280000, 
+                    desc: '8th Gen i5, 8GB RAM, 256GB SSD. Business-grade durability.', 
+                    fullDesc: 'Reliable and robust HP EliteBook. Ideal for professionals. 8th Gen i5 processor, 8GB RAM (expandable), and fast 256GB SSD. Long battery life and a rugged chassis. Ready to use out of the box.', 
+                    img: 'images/laptops/placeholder-hp-core-i5.jpg' },
+                // Accessories
+                { id: 'ACC001', category: 'accessories', name: 'Laptop Battery Replacement (Original)', price: 12500, 
+                    desc: 'Original high-capacity cell with a 6-month warranty.', 
+                    fullDesc: 'Genuine, high-performance battery with Grade A+ cells. Guaranteed 6-month replacement warranty and designed for 500+ charge cycles. Compatible with most common HP and Dell models. Check model compatibility before purchase.', 
+                    img: 'images/accessories/placeholder-laptop-battery.jpg' },
+                { id: 'ACC002', category: 'accessories', name: 'Ultra-Slim Wireless Keyboard', price: 9800, 
+                    desc: 'Silent keys, rechargeable, and multi-device support.', 
+                    fullDesc: 'Durable, full-size keyboard with an aluminum alloy shell. Silent scissor keys for quiet typing. Rechargeable via USB-C (cable included). Connects via Bluetooth 5.0 to 3 devices simultaneously (PC, tablet, phone).', 
+                    img: 'images/accessories/placeholder-wireless-keyboard.jpg' },
+                { id: 'ACC003', category: 'accessories', name: 'Ergonomic Bluetooth Mouse', price: 4500, 
+                    desc: 'Comfortable grip, adjustable DPI, and long battery life.', 
+                    fullDesc: 'Vertical ergonomic design reduces wrist strain. Adjustable DPI settings (800/1200/1600). Connects instantly via Bluetooth (no dongle needed). Perfect for long hours of computer work.', 
+                    img: 'images/accessories/placeholder-mouse.jpg' },
+                // CCTV
+                { id: 'CCTV001', category: 'cctv', name: 'Wireless Solar CCTV 1080p', price: 32000, 
+                    desc: '24/7 power independence. Motion detection and remote view.', 
+                    fullDesc: 'Fully wireless 1080p security camera powered by an integrated solar panel and large internal battery. Features two-way audio, full-color night vision, and cloud/SD card storage options. Perfect for remote locations or homes without stable power.', 
+                    img: 'images/cctv/placeholder-solar-cctv.jpg' },
+                { id: 'CCTV002', category: 'cctv', name: 'Solar PTZ 4G Security Camera', price: 48500, 
+                    desc: 'Pan-Tilt-Zoom, 4G SIM support, and 2K resolution.', 
+                    fullDesc: 'The ultimate security solution. Features 360° pan-tilt-zoom control via app, 2K HD resolution, and a dedicated slot for a 4G SIM card for areas with no WiFi coverage. Solar charging ensures continuous operation.', 
+                    img: 'images/cctv/placeholder-solar-ptz.jpg' },
+                // Electronics
+                { id: 'ELEC001', category: 'electronics', name: 'High-Capacity 20000mAh Power Bank', price: 15000, 
+                    desc: 'Fast charging for multiple devices on the go.', 
+                    fullDesc: 'Giant 20,000mAh capacity can charge a smartphone up to 4 times. Features 22.5W fast charging via USB-C PD and dual USB-A ports. Built-in safety features protect against overcharging and short circuits. Ideal for travel and blackouts.', 
+                    img: 'images/electronics/placeholder-powerbank.jpg' },
+                { id: 'ELEC002', category: 'electronics', name: 'Mini UPS for Router/CCTV', price: 22000, 
+                    desc: 'Keeps WiFi running during light outages (up to 4 hours).', 
+                    fullDesc: 'Uninterruptible Power Supply (UPS) designed specifically for DC devices like WiFi routers, modems, and small CCTV systems. Provides seamless power backup for 3-4 hours during brief power cuts. Simple plug-and-play setup.', 
+                    img: 'images/electronics/placeholder-mini-inverter.jpg' },
+                { id: 'ELEC003', category: 'electronics', name: 'Premium Wireless Earbuds', price: 8500, 
+                    desc: 'Crystal clear audio quality, 20-hour battery case.', 
+                    fullDesc: 'Comfortable, sweat-proof design with active noise reduction for calls. Provides 5 hours playtime per charge, with an additional 15 hours from the magnetic charging case. Quick-pairing and supports all Bluetooth 5.0 devices.', 
+                    img: 'images/electronics/placeholder-earbuds.jpg' }
+            ];
+
+            // --- Product Rendering Function (Combines Filtering and Search) ---
+            function renderProducts() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                
+                // 1. Filter by Category
+                let filteredProducts = ALL_PRODUCTS;
+                if (currentCategory !== 'all') {
+                    filteredProducts = ALL_PRODUCTS.filter(p => p.category === currentCategory);
+                }
+                
+                // 2. Filter by Search Term
+                if (searchTerm) {
+                    filteredProducts = filteredProducts.filter(p => 
+                        p.name.toLowerCase().includes(searchTerm) || 
+                        p.desc.toLowerCase().includes(searchTerm) || 
+                        p.fullDesc.toLowerCase().includes(searchTerm) ||
+                        p.category.toLowerCase().includes(searchTerm)
+                    );
+                }
+                
+                // 3. Render
+                productListGrid.innerHTML = '';
+                
+                if (filteredProducts.length === 0) {
+                    noResultsMessage.style.display = 'block';
+                } else {
+                    noResultsMessage.style.display = 'none';
+                    filteredProducts.forEach(product => {
+                        const card = document.createElement('div');
+                        card.className = 'product-card';
+                        card.innerHTML = `
+                            <div class="product-card-image-wrap">
+                                <img src="${product.img}" alt="${product.name}">
+                            </div>
+                            <div class="product-card-content">
+                                <h4>${product.name}</h4>
+                                <p class="short-desc">${product.desc}</p>
+                                <span class="price">₦${product.price.toLocaleString('en-NG')}</span>
+                                <button class="cta-button open-modal-btn" 
+                                    data-product-id="${product.id}" 
+                                    data-product-name="${product.name}" 
+                                    data-product-price="${product.price}"
+                                    data-product-desc="${product.fullDesc}"
+                                    data-img-src="${product.img}">
+                                    View Details
+                                </button>
+                            </div>
+                        `;
+                        productListGrid.appendChild(card);
+                    });
+                }
+                
+                // Reattach event listeners to the new buttons
+                attachModalListeners();
+            }
+
+            // --- Event Listeners ---
+            
+            // Mobile Menu Toggle
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Category Filtering
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.getAttribute('data-category');
+                    searchInput.value = ''; // Clear search when category changes
+                    renderProducts();
+                });
+            });
+
+            // Search Input Filtering (Debounced for performance)
+            let searchTimeout;
+            searchInput.addEventListener('input', () => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    // Remove 'active' class from category buttons when typing in search
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    currentCategory = 'all'; // Treat search as 'all' category 
+                    renderProducts();
+                }, 300); // 300ms delay
+            });
+
+            // Smooth Scrolling (Retained)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if (this.getAttribute('href').length > 1) {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(this.getAttribute('href'));
+
+                        if (targetElement) {
+                            if (navLinks.classList.contains('active')) {
+                                navLinks.classList.remove('active');
+                            }
+                            
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 85, 
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+
+            // =========================================
+            // === MODAL POP-UP AND ORDER LOGIC (REFACTORED) ===
+            // =========================================
+            const modal = document.getElementById('product-modal');
+            const closeBtn = document.querySelector('.close-btn');
+            const orderNowBtn = document.getElementById('order-now-button');
+
+            const detailsView = document.getElementById('modal-details-view');
+            const formView = document.getElementById('modal-form-view');
+            const confirmationView = document.getElementById('modal-confirmation-view');
+            const confirmationDetails = document.getElementById('confirmation-details');
+            
+            const orderForm = document.getElementById('product-order-form');
+            const payOnlineBtn = document.getElementById('pay-online-btn');
+            const payOnDeliveryBtn = document.getElementById('pay-on-delivery-btn');
+            const quantityInput = document.getElementById('quantity');
+            
+            const modalProductNameDetails = document.getElementById('modal-product-name-details');
+            const modalProductPriceDetails = document.getElementById('modal-product-price-details');
+            const modalProductDescription = document.getElementById('modal-product-description');
+            const modalProductImageDetails = document.getElementById('modal-product-image-details');
+            
+            let selectedPaymentType = '';
+            let currentProductPrice = 0; 
+            let currentProductName = ''; 
+            let currentProductId = '';
+
+            function updateModalTotal() {
+                const quantity = Number(quantityInput.value) || 1;
+                const totalAmount = quantity * currentProductPrice;
+                
+                document.getElementById('modal-total-price').textContent = totalAmount.toLocaleString('en-NG');
+                document.getElementById('modal-quantity-display').textContent = quantity;
+            }
+            
+            function hideAllViews() {
+                detailsView.style.display = 'none';
+                formView.style.display = 'none';
+                confirmationView.style.display = 'none';
+            }
+            
+            // --- 1. Open Modal Listener (Must be attached after rendering) ---
+            function attachModalListeners() {
+                document.querySelectorAll('.open-modal-btn').forEach(button => {
+                    button.onclick = function(e) {
+                        e.preventDefault(); 
+                        
+                        currentProductName = this.getAttribute('data-product-name');
+                        currentProductPrice = Number(this.getAttribute('data-product-price'));
+                        currentProductId = this.getAttribute('data-product-id');
+
+                        const productDesc = this.getAttribute('data-product-desc');
+                        const imgSrc = this.getAttribute('data-img-src');
+
+                        const formattedPrice = currentProductPrice.toLocaleString('en-NG');
+
+                        modalProductNameDetails.textContent = currentProductName;
+                        modalProductPriceDetails.textContent = formattedPrice;
+                        modalProductDescription.textContent = productDesc; 
+                        modalProductImageDetails.src = imgSrc; 
+                        modalProductImageDetails.alt = currentProductName;
+
+                        hideAllViews();
+                        detailsView.style.display = 'block';
+
+                        modal.style.display = 'block';
+                    };
+                });
+            }
+
+            // --- 2. "Order Now" Button Click (Transition to Form View) ---
+            orderNowBtn.addEventListener('click', () => {
+                document.getElementById('modal-product-id').value = currentProductId;
+                document.getElementById('modal-product-raw-price').value = currentProductPrice; 
+                document.getElementById('modal-product-actual-name').value = currentProductName;
+                document.getElementById('modal-product-name-form').textContent = currentProductName;
+                
+                quantityInput.value = 1;
+                updateModalTotal(); 
+
+                hideAllViews();
+                formView.style.display = 'block';
+            });
+            
+            // Listen for quantity change to update total amount
+            quantityInput.addEventListener('change', updateModalTotal);
+
+            // --- 3. Close Modal Handlers ---
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+                hideAllViews();
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    hideAllViews();
+                }
+            });
+
+            // --- 4. Payment Button Click Handlers (Capture intent) ---
+            payOnlineBtn.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                selectedPaymentType = 'online';
+                orderForm.dispatchEvent(new Event('submit')); 
+            });
+
+            payOnDeliveryBtn.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                selectedPaymentType = 'delivery';
+                orderForm.dispatchEvent(new Event('submit')); 
+            });
+
+            // --- 5. Form Submission & Confirmation Logic (Instructions Pop-up) ---
+            orderForm.addEventListener('submit', function(e) {
+                e.preventDefault(); 
+
+                if (!orderForm.checkValidity()) {
+                    orderForm.reportValidity();
+                    selectedPaymentType = ''; 
+                    return; 
+                }
+
+                const formData = new FormData(orderForm);
+                const orderData = Object.fromEntries(formData.entries());
+                orderData.paymentType = selectedPaymentType;
+                
+                const totalAmount = Number(orderData.quantity) * Number(orderData.productPrice);
+                const orderId = `${orderData.productId}-${Date.now().toString().slice(-6)}`;
+                const formattedAmount = totalAmount.toLocaleString('en-NG');
+
+                console.log('Final Order Submission Data:', orderData);
+                // **In a real setup, this data would be sent to the server for processing.**
+
+                let confirmationHTML = '';
+
+                if (selectedPaymentType === 'online') {
+                    confirmationHTML = `
+                        <i class="fas fa-check-circle"></i>
+                        <h4>Order Placed: ${orderId}</h4>
+                        <p style="text-align: center;">**Your Secure Payment Step:**</p>
+                        <p>1. **Total:** <strong style="color: var(--accent-color);">₦${formattedAmount}</strong> is required for ${orderData.productName}.</p>
+                        <p>2. **Next Step:** Click the button below to be securely redirected to our payment partner (Paystack/Flutterwave).</p>
+                        <p>3. **Delivery:** Once payment is confirmed, we will dispatch your order within 24 hours.</p>
+                        <a href="https://paystack.com/pay/placeholder" target="_blank" class="cta-button" style="width: 80%; background-color: var(--secondary-color); border-color: var(--secondary-color);">
+                            Proceed to Secure Payment
+                        </a>
+                    `;
+                } else if (selectedPaymentType === 'delivery') {
+                    confirmationHTML = `
+                        <i class="fas fa-shipping-fast"></i>
+                        <h4>Order Submitted: ${orderId}</h4>
+                        <p style="text-align: center;">**Payment on Delivery Instructions:**</p>
+                        <p>1. **Total Due:** <strong style="color: var(--accent-color);">₦${formattedAmount}</strong> (Cash or Transfer at point of delivery).</p>
+                        <p>2. **Confirmation:** Our sales agent will call you within 1-2 hours to confirm your address and State/Region (${orderData.customerRegion}) availability for COD.</p>
+                        <p>3. **Timeline:** Delivery takes 1-3 working days within Nigeria, and 4-7 days for other African countries.</p>
+                        <button type="button" class="cta-button" onclick="modal.style.display='none'">
+                            I Understand, Close
+                        </button>
+                    `;
+                }
+                
+                confirmationDetails.innerHTML = confirmationHTML;
+                hideAllViews();
+                confirmationView.style.display = 'block';
+                selectedPaymentType = ''; 
+            });
+            
+            
+            // =========================================
+            // === DYNAMIC DROPDOWN LOGIC (AFRICA-WIDE) (Retained) ===
+            // =========================================
+            const customerRegionSelect = document.getElementById('customerRegion');
+            const customerCountrySelect = document.getElementById('customerCountry');
+            
+            const africanRegions = {
+                'Nigeria': [
+                    'Abia', 'Adamawa', 'Akwa Ibom', 'Anambra', 'Bauchi', 'Bayelsa', 'Benue', 'Borno', 
+                    'Cross River', 'Delta', 'Ebonyi', 'Edo', 'Ekiti', 'Enugu', 'FCT Abuja', 'Gombe', 
+                    'Imo', 'Jigawa', 'Kaduna', 'Kano', 'Katsina', 'Kebbi', 'Kogi', 'Kwara', 'Lagos', 
+                    'Nasarawa', 'Niger', 'Ogun', 'Ondo', 'Osun', 'Oyo', 'Plateau', 'Rivers', 'Sokoto', 
+                    'Taraba', 'Yobe', 'Zamfara'
+                ],
+                'Ghana': ['Ashanti', 'Bono', 'Central', 'Eastern', 'Greater Accra', 'Northern', 'Oti', 'Savannah', 'Upper East', 'Upper West', 'Volta', 'Western'],
+                'Kenya': ['Nairobi', 'Mombasa', 'Nakuru', 'Kisumu', 'Eldoret', 'Machakos', 'Kiambu'],
+                'South Africa': ['Gauteng', 'Western Cape', 'KwaZulu-Natal', 'Eastern Cape', 'Limpopo', 'Mpumalanga', 'Free State'],
+                'Egypt': ['Cairo', 'Giza', 'Alexandria', 'Sharqia', 'Dakahlia'],
+                'Other International': ['N/A'] // Fallback for international
+            };
+
+            const countries = [
+                { code: 'NG', name: 'Nigeria', group: 'Africa' },
+                { code: 'GH', name: 'Ghana', group: 'Africa' },
+                { code: 'KE', name: 'Kenya', group: 'Africa' },
+                { code: 'ZA', name: 'South Africa', group: 'Africa' },
+                { code: 'EG', name: 'Egypt', group: 'Africa' },
+                { code: 'OTH', name: 'Other International', group: 'International' }
+            ];
+            
+            // Populate Country Dropdown
+            let africaGroup = document.createElement('optgroup');
+            africaGroup.label = "African Countries";
+            let internationalGroup = document.createElement('optgroup');
+            internationalGroup.label = "Rest of World";
+
+            countries.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country.name;
+                option.textContent = country.name;
+                if (country.code === 'NG') {
+                    option.selected = true;
+                }
+                if (country.group === 'Africa') {
+                    africaGroup.appendChild(option);
+                } else {
+                    internationalGroup.appendChild(option);
+                }
+            });
+            customerCountrySelect.appendChild(africaGroup);
+            customerCountrySelect.appendChild(internationalGroup);
+            
+            
+            // Populate State/Region Dropdown based on Country
+            function updateRegionDropdown(selectedCountry) {
+                customerRegionSelect.innerHTML = '<option value="">Select State/Region</option>'; 
+                
+                const regions = africanRegions[selectedCountry];
+                
+                if (selectedCountry === 'Other International') {
+                    customerRegionSelect.innerHTML = '<option value="International">Provide Full Address in Detail Field</option>';
+                    customerRegionSelect.value = 'International';
+                    customerRegionSelect.disabled = true;
+                } else if (!regions || (regions.length === 1 && regions[0] === 'N/A')) {
+                    // For African countries not explicitly listed with regions
+                    customerRegionSelect.innerHTML = '<option value="City/Region Required">Enter City/Region in Address</option>';
+                    customerRegionSelect.value = 'City/Region Required';
+                    customerRegionSelect.disabled = false;
+                } else {
+                    customerRegionSelect.disabled = false;
+                    regions.sort().forEach(region => {
+                        const option = document.createElement('option');
+                        option.value = region;
+                        option.textContent = region;
+                        customerRegionSelect.appendChild(option);
+                    });
+                }
+                customerRegionSelect.selectedIndex = 0;
+            }
+            
+            // Initial population based on default (Nigeria)
+            updateRegionDropdown('Nigeria');
+            
+            // Listener for Country change
+            customerCountrySelect.addEventListener('change', (e) => {
+                updateRegionDropdown(e.target.value);
+            });
+
+            // Initial rendering of all products on load
+            renderProducts();
+        });
+    </script>
+
+</body>
+</html>
