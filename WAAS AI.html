@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OKV Tech Website Design | Ai Integration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /*
+        Theming CSS Setup: Defining variables for both light and dark modes.
+        The 'light' class on the HTML tag will override the dark defaults.
+        */
+
+        /* Base colors for the Dark Theme (Default) */
+        :root {
+            --color-bg-primary: #0f172a; /* Slate-900 */
+            --color-bg-secondary: #1e293b; /* Slate-800 */
+            --color-text-primary: #f8fafc; /* Slate-50 */
+            --color-accent-main: #3b82f6; /* Blue-500 */
+            --color-accent-secondary: #a855f7; /* Violet-500 */
+            --color-whatsapp: #25d366; /* WhatsApp Green */
+        }
+
+        /* Light Theme Override */
+        .light {
+            --color-bg-primary: #f1f5f9; /* Slate-100 */
+            --color-bg-secondary: #ffffff; /* White */
+            --color-text-primary: #0f172a; /* Slate-900 */
+            --color-accent-main: #1d4ed8; /* Blue-700 */
+            --color-accent-secondary: #4f46e5; /* Indigo-600 */
+        }
+        
+        /* Apply background and smooth scrolling globally */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            scroll-behavior: smooth;
+        }
+
+        /* Custom gradient text for logos and highlights */
+        .icon-gradient {
+            background-image: linear-gradient(45deg, var(--color-accent-main), var(--color-accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hero Section Glow */
+        .hero-glow-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at top center, rgba(59, 130, 246, 0.1) 0%, transparent 60%);
+        }
+        
+        /* Responsive Image Styling for projects */
+        .project-image-container {
+            overflow: hidden;
+            height: 200px; /* Fixed height for consistency */
+        }
+        .project-image {
+            transition: transform 0.6s ease;
+        }
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        /* Mobile Menu Styling */
+        .mobile-menu-container {
+            width: 80%; /* Takes 80% of the screen width */
+            max-width: 300px;
+            /* Starts off-screen to the left */
+            transform: translateX(-100%); 
+            transition: transform 0.3s ease-out;
+        }
+        .mobile-menu-container.open {
+            transform: translateX(0);
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--color-whatsapp);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. FIXED NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-[var(--color-bg-primary)]/90 backdrop-blur-sm border-b border-slate-700 dark:border-slate-800 transition-colors duration-500 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            
+            <!-- Mobile Menu Toggle Button (Left Side) -->
+            <button id="mobile-menu-open-button" aria-label="Open Menu" class="md:hidden p-2 rounded-full text-[var(--color-text-primary)] hover:bg-slate-700 light:hover:bg-slate-200 transition-colors duration-300">
+                <span data-lucide="menu" class="w-6 h-6"></span>
+            </button>
+
+            <!-- Logo/Brand (Centered on Mobile, Left on Desktop) -->
+            <a href="#home" class="text-2xl font-extrabold icon-gradient tracking-tight mx-auto md:mx-0">
+                OKV<span class="text-[var(--color-text-primary)]">Tech</span>
+            </a>
+            
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex space-x-10">
+                <a href="#home" class="text-sm font-semibold hover:text-[var(--color-accent-main)] transition duration-200">Home</a>
+                <a href="#about" class="text-sm font-semibold hover:text-[var(--color-accent-main)] transition duration-200">About</a>
+                <a href="#services" class="text-sm font-semibold hover:text-[var(--color-accent-main)] transition duration-200">Services</a>
+                <a href="#projects" class="text-sm font-semibold hover:text-[var(--color-accent-main)] transition duration-200">Projects</a>
+                <a href="#contact" class="text-sm font-semibold hover:text-[var(--color-accent-main)] transition duration-200">Contact</a>
+            </nav>
+
+            <!-- Theme Toggle Button -->
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" aria-label="Toggle Theme" class="p-2 rounded-full text-[var(--color-text-primary)] bg-[var(--color-bg-secondary)] hover:bg-slate-700 light:hover:bg-slate-200 transition-colors duration-300">
+                    <span data-lucide="sun" class="w-5 h-5 dark:hidden"></span>
+                    <span data-lucide="moon" class="w-5 h-5 hidden dark:block"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- 2. MOBILE OFF-CANVAS MENU -->
+    <div id="mobile-menu" class="mobile-menu-container fixed top-0 left-0 h-full z-[60] bg-[var(--color-bg-secondary)] p-6 shadow-2xl md:hidden flex flex-col border-r border-slate-700/50">
+        <!-- Menu Header / Close Button -->
+        <div class="flex justify-between items-center mb-10">
+            <a href="#home" class="text-2xl font-extrabold icon-gradient tracking-tight">
+                OKV<span class="text-[var(--color-text-primary)]">Tech</span>
+            </a>
+            <button id="mobile-menu-close-button" aria-label="Close Menu" class="p-2 rounded-full text-[var(--color-text-primary)] hover:bg-slate-700 light:hover:bg-slate-200 transition-colors duration-300">
+                <span data-lucide="x" class="w-6 h-6"></span>
+            </button>
+        </div>
+        
+        <!-- Navigation Links -->
+        <nav class="flex flex-col space-y-6 flex-grow">
+            <a href="#home" class="text-xl font-semibold hover:text-[var(--color-accent-main)] transition duration-200" onclick="closeMobileMenu()">Home</a>
+            <a href="#about" class="text-xl font-semibold hover:text-[var(--color-accent-main)] transition duration-200" onclick="closeMobileMenu()">About</a>
+            <a href="#services" class="text-xl font-semibold hover:text-[var(--color-accent-main)] transition duration-200" onclick="closeMobileMenu()">Services</a>
+            <a href="#projects" class="text-xl font-semibold hover:text-[var(--color-accent-main)] transition duration-200" onclick="closeMobileMenu()">Projects</a>
+            <a href="#contact" class="text-xl font-semibold hover:text-[var(--color-accent-main)] transition duration-200" onclick="closeMobileMenu()">Contact</a>
+        </nav>
+
+        <!-- Social Icons (Optional Mobile Footer) -->
+        <div class="mt-8 pt-4 border-t border-slate-700/50 flex space-x-6">
+            <a href="#" aria-label="LinkedIn" class="text-slate-400 hover:text-[var(--color-accent-main)] transition"><span data-lucide="linkedin" class="w-5 h-5"></span></a>
+            <a href="#" aria-label="Twitter" class="text-slate-400 hover:text-[var(--color-accent-main)] transition"><span data-lucide="twitter" class="w-5 h-5"></span></a>
+        </div>
+    </div>
+
+
+    <main class="relative">
+        
+        <!-- 3. HERO SECTION -->
+        <section id="home" class="pt-16 pb-12 md:pt-24 md:pb-16 text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+            <div class="hero-glow-overlay"></div>
+            <div class="relative z-10">
+                <span class="text-lg font-medium icon-gradient uppercase tracking-widest mb-4 inline-block">Future-Proof Your Business</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                    Intelligent <span class="icon-gradient">Systems.</span><br> Exceptional Design.
+                </h1>
+                <p class="text-xl text-slate-400 dark:text-slate-400 max-w-4xl mx-auto mb-12 transition-colors duration-500">
+                    OKV Technology designs powerful, responsive websites fused with AI capabilities for **automation and conversion**. We deliver digital assets built for growth.
+                </p>
+
+                <!-- Call to Action Buttons -->
+                <div class="space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#contact" class="inline-block bg-[var(--color-accent-main)] hover:bg-[var(--color-accent-secondary)] text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-[1.03] shadow-lg shadow-blue-500/30">
+                        Discuss a Project
+                    </a>
+                    <a href="#about" class="inline-block border border-[var(--color-accent-main)] text-[var(--color-accent-main)] font-semibold py-3 px-8 rounded-full transition duration-300 transform hover:scale-[1.03] hover:bg-[var(--color-accent-main)] hover:text-white">
+                        Learn Our Process →
+                    </a>
+                </div>
+            </div>
+
+            <!-- New Image Placeholder Section -->
+            <div class="mt-16 md:mt-24 w-full relative z-10">
+                <div class="h-64 sm:h-96 w-full rounded-2xl overflow-hidden border border-slate-700/50 bg-[var(--color-bg-secondary)] flex items-center justify-center p-2">
+                    <!-- Placeholder image with clear instructions for replacement -->
+                    <img src="https://placehold.co/1200x600/1e293b/94a3b8?text=Website+Showcase+Placeholder" 
+                         alt="Digital Product Placeholder" 
+                         class="w-full h-full object-cover rounded-xl border border-slate-700/50"
+                         onerror="this.onerror=null; this.src='https://placehold.co/1200x600/1e293b/94a3b8?text=Website+Showcase+Placeholder';">
+                </div>
+                <p class="text-sm text-center text-slate-500 mt-4">High-fidelity web design and AI integration showcase. **Replace the 'src' above with your project screenshot.**</p>
+            </div>
+            <!-- End Image Placeholder Section -->
+        </section>
+        
+        <!-- 4. ABOUT SECTION -->
+        <section id="about" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-800 transition-colors duration-500">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Content Column -->
+                <div>
+                    <span class="text-lg font-medium icon-gradient uppercase tracking-widest mb-4 inline-block">Our Approach</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-[var(--color-text-primary)]">
+                        Design Focused on <span class="icon-gradient">Real Results</span>
+                    </h2>
+                    <p class="text-xl text-slate-400 mb-8">
+                        We don't just build websites; we craft digital solutions that are deeply rooted in strategic **problem-solving**. Our process ensures every pixel and line of code serves a measurable business goal.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <span data-lucide="compass" class="flex-shrink-0 w-6 h-6 text-[var(--color-accent-secondary)] mt-1"></span>
+                            <div>
+                                <h4 class="text-xl font-semibold text-[var(--color-text-primary)]">Strategy & Discovery</h4>
+                                <p class="text-slate-400 text-sm">Understanding your audience, market, and business challenges is our first critical step. No design starts without a clear roadmap.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span data-lucide="layers" class="flex-shrink-0 w-6 h-6 text-[var(--color-accent-secondary)] mt-1"></span>
+                            <div>
+                                <h4 class="text-xl font-semibold text-[var(--color-text-primary)]">Iterative Development</h4>
+                                <p class="text-slate-400 text-sm">We build in agile sprints, allowing for continuous feedback and refinement, ensuring the final product meets future demands.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span data-lucide="activity" class="flex-shrink-0 w-6 h-6 text-[var(--color-accent-secondary)] mt-1"></span>
+                            <div>
+                                <h4 class="text-xl font-semibold text-[var(--color-text-primary)]">Performance & Scale</h4>
+                                <p class="text-slate-400 text-sm">Optimization is non-negotiable. We deliver clean, fast code and architecture built to scale with your organization's growth.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- You can add a placeholder image here if desired -->
+            </div>
+        </section>
+        
+        <!-- 5. SERVICES – "What We Offer" -->
+        <section id="services" class="py-16 bg-[var(--color-bg-secondary)] border-t border-b border-slate-700 transition-colors duration-500">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[var(--color-text-primary)]">
+                        Our Core <span class="icon-gradient">Industry Focus</span>
+                    </h2>
+                    <p class="text-lg text-slate-400 max-w-3xl mx-auto">
+                        We specialize in developing digital platforms tailored for maximum efficiency and engagement in key sectors.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Service Card 1: School/Education Platforms -->
+                    <div class="p-8 bg-[var(--color-bg-primary)] rounded-xl shadow-lg border border-slate-700/50 hover:border-[var(--color-accent-main)] transition-all duration-300">
+                        <span data-lucide="graduation-cap" class="w-10 h-10 text-[var(--color-accent-main)] mb-4"></span>
+                        <h3 class="text-2xl font-bold mb-2 text-[var(--color-text-primary)]">Education & E-Learning Systems</h3>
+                        <p class="text-slate-400 text-base">Robust school management portals, LMS integration, student/parent dashboards, and automated enrollment solutions.</p>
+                    </div>
+                    
+                    <!-- Service Card 2: Healthcare/Medical Systems -->
+                    <div class="p-8 bg-[var(--color-bg-primary)] rounded-xl shadow-lg border border-slate-700/50 hover:border-[var(--color-accent-main)] transition-all duration-300">
+                        <span data-lucide="heart-pulse" class="w-10 h-10 text-[var(--color-accent-main)] mb-4"></span>
+                        <h3 class="text-2xl font-bold mb-2 text-[var(--color-text-primary)]">Medical & Telehealth Portals</h3>
+                        <p class="text-slate-400 text-base">Secure, compliant websites for hospitals and clinics, featuring online appointment scheduling and virtual consultation capabilities.</p>
+                    </div>
+
+                    <!-- Service Card 3: Real Estate & Hospitality -->
+                    <div class="p-8 bg-[var(--color-bg-primary)] rounded-xl shadow-lg border border-slate-700/50 hover:border-[var(--color-accent-main)] transition-all duration-300">
+                        <span data-lucide="map-pin" class="w-10 h-10 text-[var(--color-accent-main)] mb-4"></span>
+                        <h3 class="text-2xl font-bold mb-2 text-[var(--color-text-primary)]">Real Estate & Hospitality Platforms</h3>
+                        <p class="text-slate-400 text-base">Geo-location property listing sites, elegant restaurant/hotel reservation systems, and high-impact visual showcases.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FEATURED PROJECTS – SIMPLIFIED CARDS -->
+        <section id="projects" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[var(--color-text-primary)]">
+                    Selected <span class="icon-gradient">Projects</span>
+                </h2>
+                <p class="text-lg text-slate-400 max-w-3xl mx-auto">
+                    A glimpse into the diverse, high-impact digital solutions we have delivered across various sectors.
+                </p>
+            </div>
+
+            <!-- 3-column responsive grid for 6 projects -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <!-- Project Card 1: Real Estate Platform -->
+                <div class="bg-[var(--color-bg-secondary)] rounded-xl border border-slate-700/50 group project-card transition-all duration-300 hover:border-[var(--color-accent-main)]">
+                    <div class="project-image-container rounded-t-xl">
+                        <!-- Easily replaceable image source here -->
+                        <img src="https://placehold.co/800x500/1e293b/a855f7?text=Real+Estate+Portal" 
+                             alt="Luxury Real Estate Portal Mockup" 
+                             class="w-full project-image h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-[var(--color-accent-secondary)] uppercase tracking-wider mb-2 block">Real Estate</span>
+                        <h3 class="text-xl font-bold text-[var(--color-text-primary)] mb-3">High-End Property Listing Platform</h3>
+                        <p class="text-slate-400 text-sm mb-4">A fast, geo-location-enabled portal for browsing luxury properties with integrated CRM features.</p>
+                        <a href="#" class="w-full block text-center bg-[var(--color-accent-main)] hover:bg-[var(--color-accent-secondary)] text-white font-semibold py-3 rounded-lg transition duration-300">
+                            View Case Study →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: School/E-Learning Platform -->
+                <div class="bg-[var(--color-bg-secondary)] rounded-xl border border-slate-700/50 group project-card transition-all duration-300 hover:border-[var(--color-accent-main)]">
+                    <div class="project-image-container rounded-t-xl">
+                        <!-- Easily replaceable image source here -->
+                        <img src="https://placehold.co/800x500/1e293b/3b82f6?text=School+System+Dashboard" 
+                             alt="Modular School Dashboard Mockup" 
+                             class="w-full project-image h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-[var(--color-accent-main)] uppercase tracking-wider mb-2 block">Education</span>
+                        <h3 class="text-xl font-bold text-[var(--color-text-primary)] mb-3">Modular School Management System</h3>
+                        <p class="text-slate-400 text-sm mb-4">A complete institutional portal with automated student enrollment and parent communication features.</p>
+                        <a href="#" class="w-full block text-center bg-[var(--color-accent-main)] hover:bg-[var(--color-accent-secondary)] text-white font-semibold py-3 rounded-lg transition duration-300">
+                            View Case Study →
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project Card 3: Medical/Healthcare System -->
+                <div class="bg-[var(--color-bg-secondary)] rounded-xl border border-slate-700/50 group project-card transition-all duration-300 hover:border-[var(--color-accent-main)]">
+                    <div class="project-image-container rounded-t-xl">
+                        <!-- Easily replaceable image source here -->
+                        <img src="https://placehold.co/800x500/1e293b/a855f7?text=Medical+Appointment+Portal" 
+                             alt="Telehealth Patient Portal Mockup" 
+                             class="w-full project-image h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-[var(--color-accent-secondary)] uppercase tracking-wider mb-2 block">Healthcare</span>
+                        <h3 class="text-xl font-bold text-[var(--color-text-primary)] mb-3">EHR-Ready Medical Centre Website</h3>
+                        <p class="text-slate-400 text-sm mb-4">Secure patient appointment scheduling, record access, and virtual consultation integration for clinics.</p>
+                        <a href="#" class="w-full block text-center bg-[var(--color-accent-main)] hover:bg-[var(--color-accent-secondary)] text-white font-semibold py-3 rounded-lg transition duration-300">
+                            View Case Study →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 4: Restaurant Website -->
+                <div class="bg-[var(--color-bg-secondary)] rounded-xl border border-slate-700/50 group project-card transition-all duration-300 hover:border-[var(--color-accent-main)]">
+                    <div class="project-image-container rounded-t-xl">
+                        <!-- Easily replaceable image source here -->
+                        <img src="https://placehold.co/800x500/1e293b/3b82f6?text=Premium+Restaurant+Site" 
+                             alt="Premium Restaurant Website Mockup" 
+                             class="w-full project-image h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-[var(--color-accent-main)] uppercase tracking-wider mb-2 block">Hospitality</span>
+                        <h3 class="text-xl font-bold text-[var(--color-text-primary)] mb-3">Visual Menu & Reservation System</h3>
+                        <p class="text-slate-400 text-sm mb-4">Elegant website featuring high-quality visuals, online ordering, and real-time table booking management.</p>
+                        <a href="#" class="w-full block text-center bg-[var(--color-accent-main)] hover:bg-[var(--color-accent-secondary)] text-white font-semibold py-3 rounded-lg transition duration-300">
+                            View Case Study →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 5: Hotel/Resort Website -->
+                <div class="bg-[var(--color-bg-secondary)] rounded-xl border border-slate-700/50 group project-card transition-all duration-300 hover:border-[var(--color-accent-main)]">
+                    <div class="project-image-container rounded-t-xl">
+                        <!-- Easily replaceable image source here -->
+                        <img src="https://placehold.co/800x500/1e293b/a855f7?text=Luxury+Hotel+Website" 
+                             alt="Luxury Hotel/Resort Website Mockup" 
+                             class="w-full project-image h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-[var(--color-accent-secondary)] uppercase tracking-wider mb-2 block">Hospitality</span>
+                        <h3 class="text-xl font-bold text-[var(--color-text-primary)] mb-3">High-Conversion Hotel Booking Site</h3>
+                        <p class="text-slate-400 text-sm mb-4">Custom booking engine integration, high-res gallery, and dynamic pricing display for resorts.</p>
+                        <a href="#" class="w-full block text-center bg-[var(--color-accent-main)] hover:bg-[var(--color-accent-secondary)] text-white font-semibold py-3 rounded-lg transition duration-300">
+                            View Case Study →
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project Card 6: NGO's/Community Platform Websites -->
+                <div class="bg-[var(--color-bg-secondary)] rounded-xl border border-slate-700/50 group project-card transition-all duration-300 hover:border-[var(--color-accent-main)]">
+                    <div class="project-image-container rounded-t-xl">
+                        <!-- Easily replaceable image source here -->
+                        <img src="https://placehold.co/800x500/1e293b/3b82f6?text=NGO+Donation+Platform" 
+                             alt="NGO Donation Platform Mockup" 
+                             class="w-full project-image h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-[var(--color-accent-main)] uppercase tracking-wider mb-2 block">Non-Profit / Social</span>
+                        <h3 class="text-xl font-bold text-[var(--color-text-primary)] mb-3">Secure Global Donation Platform</h3>
+                        <p class="text-slate-400 text-sm mb-4">Built for compliance and trust, featuring transparent reporting and multi-currency support for donors.</p>
+                        <a href="#" class="w-full block text-center bg-[var(--color-accent-main)] hover:bg-[var(--color-accent-secondary)] text-white font-semibold py-3 rounded-lg transition duration-300">
+                            View Case Study →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 7. CONTACT & CALL TO ACTION - UPDATED WITH WHATSAPP -->
+        <section id="contact" class="py-16 bg-[var(--color-bg-secondary)] transition-colors duration-500">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-[var(--color-text-primary)]">
+                    Ready to Start <span class="icon-gradient">Your Project?</span>
+                </h2>
+                <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+                    Tell us about your challenge. We'll show you how intelligent design can solve it.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="mailto:info@okvtechnology.com" class="bg-[var(--color-accent-main)] hover:bg-[var(--color-accent-secondary)] text-white font-bold py-3 px-10 rounded-full shadow-lg shadow-blue-500/40 transition duration-300 transform hover:scale-105">
+                        <span data-lucide="send" class="inline w-5 h-5 mr-2"></span>
+                        Send Inquiry
+                    </a>
+                    <a href="https://wa.me/2348104141138?text=Hello%20OKV%20Tech%2C%20I'd%20like%20to%20discuss%20a%20website%20project." target="_blank" class="bg-[var(--color-whatsapp)] hover:bg-green-700 text-white font-bold py-3 px-10 rounded-full shadow-lg shadow-green-500/40 transition duration-300 transform hover:scale-105">
+                        <span data-lucide="message-square" class="inline w-5 h-5 mr-2"></span>
+                        Message on WhatsApp
+                    </a>
+                    <a href="tel:+2348104141138" class="bg-transparent border border-slate-500 hover:border-[var(--color-accent-secondary)] text-[var(--color-text-primary)] hover:text-[var(--color-accent-secondary)] font-semibold py-3 px-10 rounded-full transition duration-300 transform hover:scale-105">
+                        <span data-lucide="phone" class="inline w-5 h-5 mr-2"></span>
+                        Call Us Today
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- 8. FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/2348104141138?text=Hello%20OKV%20Tech%2C%20I'd%20like%20to%20discuss%20a%20website%20project." target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <span data-lucide="message-circle" class="w-7 h-7"></span>
+    </a>
+
+    <!-- 9. FOOTER - CONTACT INFO CONFIRMED -->
+    <footer class="bg-[var(--color-bg-primary)] border-t border-slate-700 pt-12 pb-6 transition-colors duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+                <!-- Logo/Tagline -->
+                <div>
+                    <h4 class="text-2xl font-extrabold icon-gradient mb-3">OKV<span class="text-[var(--color-text-primary)]">Tech</span></h4>
+                    <p class="text-slate-400 text-sm">Where innovation meets intelligence.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h5 class="text-[var(--color-text-primary)] font-semibold mb-4 border-l-2 border-[var(--color-accent-main)] pl-3">Navigation</h5>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a href="#home" class="hover:text-[var(--color-accent-main)] transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-[var(--color-accent-main)] transition">About</a></li>
+                        <li><a href="#services" class="hover:text-[var(--color-accent-main)] transition">Services</a></li>
+                        <li><a href="#projects" class="hover:text-[var(--color-accent-main)] transition">Projects</a></li>
+                        <li><a href="#contact" class="hover:text-[var(--color-accent-main)] transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div>
+                    <h5 class="text-[var(--color-text-primary)] font-semibold mb-4 border-l-2 border-[var(--color-accent-main)] pl-3">Resources</h5>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-[var(--color-accent-main)] transition">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-[var(--color-accent-main)] transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-[var(--color-accent-main)] transition">Support</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h5 class="text-[var(--color-text-primary)] font-semibold mb-4 border-l-2 border-[var(--color-accent-main)] pl-3">Connect</h5>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li class="flex items-center space-x-2"><span data-lucide="mail" class="w-4 h-4"></span><span>info@okvtechnology.com</span></li>
+                        <li class="flex items-center space-x-2"><span data-lucide="phone" class="w-4 h-4"></span><a href="tel:+2348104141138" class="hover:text-[var(--color-accent-main)] transition">+234 8104141138</a></li>
+                        <li class="flex items-start space-x-2"><span data-lucide="map-pin" class="w-4 h-4 mt-0.5 flex-shrink-0"></span><span class="text-left">No 11, Opp ols WAEC Office, Moferere Ado-Ekiti, Ekiti State, Nigeria</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center text-slate-500 text-xs pt-8 border-t border-slate-700">
+                Copyright © 2025 OKV Technology. All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- JavaScript for Theme Toggle and Smooth Scrolling -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        const htmlEl = document.documentElement;
+        const toggleButton = document.getElementById('theme-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openBtn = document.getElementById('mobile-menu-open-button');
+        const closeBtn = document.getElementById('mobile-menu-close-button');
+
+
+        // --- Theme Toggle Logic ---
+        function toggleTheme() {
+            if (htmlEl.classList.contains('light')) {
+                htmlEl.classList.remove('light');
+                htmlEl.classList.add('dark');
+            } else {
+                htmlEl.classList.remove('dark');
+                htmlEl.classList.add('light');
+            }
+        }
+
+        if (toggleButton) {
+            toggleButton.addEventListener('click', toggleTheme);
+        }
+
+        // --- Mobile Menu Logic ---
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden'; // Disable background scrolling
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = ''; // Re-enable background scrolling
+        }
+
+        if (openBtn) {
+            openBtn.addEventListener('click', openMobileMenu);
+        }
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeMobileMenu);
+        }
+
+        // --- Smooth Scrolling for Navigation ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu.classList.contains('open')) {
+                        closeMobileMenu();
+                    }
+
+                    // Custom scroll implementation to allow for fixed header offset
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
