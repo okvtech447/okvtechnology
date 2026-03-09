@@ -87,22 +87,25 @@ nav ul li a:hover {
   cursor: pointer;
   font-size: 1.5rem;
 }
-      .hero {
-    height: 60vh; /* Reduced height */
-    position: relative;
-    overflow: hidden;
-    margin-top: 50px;
-  }
+      /* Update these specific properties in your CSS */
 
-  .hero-slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 300%;
-    height: 100%;
-    display: flex;
-    transition: transform 0.2s ease-in-out;
-  }
+.hero {
+  height: 60vh;
+  position: relative;
+  overflow: hidden;
+  margin-top: 80px; /* Increased margin to prevent overlap with header */
+}
+
+.hero-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;
+  display: flex;
+  transition: transform 1.5s ease-in-out; /* Smoother transition between slides */
+  animation: slide 30s infinite; /* Slowed down from 15s to 30s */
+}
 
   .hero-slide {
     width: 33.33%;
@@ -1220,7 +1223,7 @@ nav ul li a:hover {
           showSlide(currentSlide);
         }
     
-        setInterval(nextSlide, 5000);
+        setInterval(nextSlide, 8000);
     
         // Scroll to top button
         const scrollTopBtn = document.querySelector('.scroll-top-btn');
